@@ -5,7 +5,7 @@
   TERM = "alacritty"
 
 [shell]
-  program = "/bin/bash"
+  program = "/usr/bin/bash"
   args = ["-l"]
 
 [scrolling]
@@ -15,7 +15,7 @@
   hide_when_typing = true
 
 [bell]
-  animation = EaseOutExpo
+  # animation = EaseOutExpo
   duration = 0
 
 

@@ -3,25 +3,23 @@
 # Last Change: 2023.05.05
 
 
-set-hook -g window-renamed \
-  " \
-  run -b ~/.config/tmux/hook/key.sh     \;  \
-  run -b ~/.config/tmux/hook/color.sh   \;  \
+set-hook -g window-renamed[10] " \
+  run -b ~/.config/tmux/hook/key.sh  \;  \
   "
 
-set-hook -g pane-focus-in \
-  " \
-  run -b ~/.config/tmux/hook/key.sh     \;  \
-  run -b ~/.config/tmux/hook/color.sh   \;  \
-  run -b ~/.config/tmux/hook/status.sh  \;  \
+set-hook -g pane-focus-in[10] " \
+  run -b ~/.config/tmux/hook/key.sh  \;  \
   "
 
-set-hook -g pane-exited \
-  " \
-  run -b ~/.config/tmux/hook/key.sh     \;  \
-  run -b ~/.config/tmux/hook/color.sh   \;  \
-  run -b ~/.config/tmux/hook/status.sh  \;  \
-  "
+# set-hook -g after-new-session[10] " \
+#   run -b ~/.config/tmux/hook/ueberzug_on.sh  \;  \
+#   "
+# set-hook -g after-new-window[10] " \
+#   run -b ~/.config/tmux/hook/ueberzug_on.sh  \;  \
+#   "
+# set-hook -g split-window[10] " \
+#   run -b ~/.config/tmux/hook/  \;  \
+#   "
 
 
 

@@ -7,11 +7,12 @@
 let g:colors_name = 'forest'
 
 
-" \ ' Normal           none none      gglt xxxx ' ,
+" hi Normal guibg=NONE ctermbg=NONE
 let s:settings = [
   \
   \ ' CocMenuSel       none bold      whte lldk ' ,
   \
+  \ ' Normal           none none      none none ' ,
   \ ' NormalNC         none none      grlt grdk ' ,
   \ ' MsgArea          none none      gglt xxxx ' ,
   \ ' Title            none bold      yyyy none ' ,

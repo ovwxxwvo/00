@@ -15,7 +15,6 @@ call plug#begin('~/.config/nvim/plugged')
   " Make sure you use single quotes
 
 
-
 call plug#end()
   " Initialize plugin system
   " - Automatically executes `filetype plugin indent on` and `syntax enable`.

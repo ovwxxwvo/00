@@ -4,11 +4,12 @@
 
 
 # set default
-  # set -g  default-terminal    "screen-256color"
-  # set -ga terminal-overrides  ",xterm-256color:Tc"
-  set -g  default-terminal    "tmux-256color"
+  # set -ga terminal-overrides  "fbterm"
+  # set -ga terminal-overrides  "xterm-256color"
   set -ga terminal-overrides  "alacritty:RGB"
-  set -g  default-command     "exec /bin/fish"
+  set -g  default-terminal    "tmux-256color"
+  set -g  default-shell       "/usr/bin/bash"
+  set -g  default-command     "exec fish"
 
 # set key
   set -g  xterm-keys         on
@@ -27,7 +28,7 @@
   set -g automatic-rename   on
   set -g monitor-activity   off
   set -g visual-activity    off
-  set -g status             off
+  set -g status             on
   set -g status-position    bottom
   # set -g automatic-rename-format  '#{pane_current_command}'
   # set -g automatic-rename-format  "#( ps -t '#{pane_tty}' | tail -n 1 )"

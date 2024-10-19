@@ -12,7 +12,7 @@
 
 # tab & win
   bind -n   C-Space       selectp -R
-  bind -n   C-q           kill-pane
+  bind -n   C-q           run -b "~/.config/tmux/script/key_q.sh"
   bind -n  $c_m           new-window      # C-m
   bind -n  $c_bracketl    splitw -h       # C-[
   bind -n  $c_bracketr    splitw -v       # C-]

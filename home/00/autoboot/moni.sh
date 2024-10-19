@@ -5,7 +5,7 @@ cd $( dirname $0 )
 source ../status/$( basename $0 )
   FILE=$MONI_FILE
   DPI='Xft.dpi:'
-  # echo $FILE
+  echo $FILE
   DEF=$MONI_DEF
   DEVS=(` echo ${MONI_DEVS[@]} `)
   ACTS=(` echo ${MONI_ACTS[@]} `)
@@ -27,10 +27,19 @@ function set_monitor {
         # xrandr --output ${DEVS[$i]} --off
         xrandr --output ${DEVS[$i]} --scale 1 --mode ${MODES[$i]} --rate ${RATES[$i]}
       else echo $i 'exteral'
+        xrandr --output ${DEVS[$i]} --scale 1 --mode ${MODES[$i]} --rate ${RATES[$i]} --rotate normal
         # xrandr --output ${DEVS[$i]} --mode ${MODES[$i]} --scale 1
-        xrandr --output ${DEVS[$i]} --scale 1 --mode ${MODES[$i]} --rate ${RATES[$i]} --right-of ${DEVS[i-1]} --rotate left
+        # xrandr --output ${DEVS[$i]} --scale 1 --mode ${MODES[$i]} --rate ${RATES[$i]} --right-of ${DEVS[i-1]} --rotate left
       fi
       done
+  fi
+  # xrdb $FILE
+  # xrdb -merge $FILE
+  # echo $WIDTHS
+  if   [[ $MONI_MODES =~ '2560' ]]; then
+    echo $DPI 180 > $FILE
+  elif [[ $MONI_MODES =~ '1920' ]]; then
+    echo $DPI 140 > $FILE
   fi
   xrdb -merge $FILE
 }

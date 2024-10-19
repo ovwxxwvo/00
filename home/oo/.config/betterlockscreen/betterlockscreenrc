@@ -1,0 +1,48 @@
+# BETTERLOCK config, better screen lock.
+# Maintainer:	 Jessee Chan <CYPHER0@foxmail.com>
+# Last Change: 2023.06.15
+
+
+# options
+  time_format="%H:%M:%S"
+  locktext="HELLO !"
+  font="JetBrainsMono Nerd Font"
+  solid_color=202020
+
+  display_on=0
+  lock_timeout=1800
+  wallpaper_cmd="feh --bg-scale"
+  span_image=false
+  quiet=false
+
+  fx_list=(dim blur dimblur pixel dimpixel color)
+  dim_level=40
+  blur_level=1
+  pixel_scale=10,1000
+
+
+# color
+  bgcolor=00000080
+
+          loginbox=00000080
+       loginshadow=00000000
+       insidecolor=00000000
+    insidevercolor=00000000
+  insidewrongcolor=00000000
+    separatorcolor=00000000
+
+      greetercolor=ffffffff
+       layoutcolor=ffffffff
+        verifcolor=ffffffff
+         timecolor=ffffffff
+        modifcolor=ffffffff
+
+         ringcolor=000000ff
+      ringvercolor=00ff00ff
+    ringwrongcolor=ff0000ff
+
+        wrongcolor=ff0000ff
+         bshlcolor=00ff00ff
+        keyhlcolor=ffff00ff
+
+

@@ -5,7 +5,7 @@
 
 import = [
 
-"~/.config.alacritty.basic.toml"  ,
+"~/.config/alacritty/basic.toml"  ,
 "~/.config/alacritty/window.toml" ,
 "~/.config/alacritty/color.toml"  ,
 

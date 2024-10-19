@@ -23,6 +23,8 @@ function press_key {
       echo '' > $PROFILE
     else
       for i in ${EXPORT[@]}; do echo "$i" >> $VN_PROFILE; done
+      eval " ${EXPORT[0]} ; ${EXPORT[1]} ; clash & "
+      # echo " ${EXPORT[0]} ; ${EXPORT[1]} ; clash & "
     fi
   fi
   }

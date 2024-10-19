@@ -2,10 +2,14 @@
 # Syntax: simple "KEY=VAL" pairs on separate lines
 
 
+# LANG=zh_CN.UTF-8
+# LC_ALL=zh_CN.UTF-8
+
 # XMODIFIERS=@im=fcitx
 # QT_IM_MODULE=fcitx
 # GTK_IM_MODULE=fcitx
 # SDL_IM_MODULE=fcitx
-# GLFW_IM_MODULE=ibus
+# GLFW_IM_MODULE=fcitx
+
 
 

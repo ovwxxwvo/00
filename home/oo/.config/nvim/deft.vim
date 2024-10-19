@@ -19,6 +19,6 @@ source ~/.config/nvim/vim/plugin/markdownpreview.vim
 " source ~/.config/nvim/vim/keymap/edit.vim
 " source ~/.config/nvim/vim/keymap/func.vim
 
-source ~/.config/nvim/vim/color/forest.vim
+" source ~/.config/nvim/vim/color/forest.vim
 
 

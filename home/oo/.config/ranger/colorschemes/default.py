@@ -1,15 +1,15 @@
 # This file is part of ranger, the console file manager.
 # License: GNU GPL version 3, see the file "AUTHORS" for details.
 
+
 from __future__ import (absolute_import, division, print_function)
 
 from ranger.gui.colorscheme import ColorScheme
 from ranger.gui.color import (
-    black, blue, cyan, green, magenta, red, white, yellow, default,
+    default_colors, default,
+    black, blue, cyan, green, magenta, red, white, yellow,
     normal, bold, reverse, dim, BRIGHT,
-    default_colors,
-)
-
+    )
 
 class Default(ColorScheme):
     progress_bar_color = blue
@@ -181,3 +181,5 @@ class Default(ColorScheme):
                 fg = red
 
         return fg, bg, attr
+
+

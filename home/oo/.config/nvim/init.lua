@@ -19,4 +19,6 @@ require('keymap.functn')
 require('keymap.window')
 require('keymap.plugin')
 
+require('color.defaut')
+
 

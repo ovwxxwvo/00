@@ -12,6 +12,7 @@
   bind --user  \cf        end-of-line
   bind --user  \cs      backward-word
   bind --user  \cd       forward-word
+  bind --user  \cz       forward-char
 
 # key delete
   bind --user  \cw  backward-kill-word
@@ -23,11 +24,12 @@
   bind --user  \ct    up-or-search
   bind --user  \cg  down-or-search
 
-# key
-  bind --user  \cz  delete-or-exit
+# key do
   bind --user  \cu  undo
   bind --user  \cr  echo\ -n\ \(clear\ \|\ string\ replace\ \\e\\\[3J\ \"\"\)\;\ commandline\ -f\ repaint
 
 # key
   bind --user  \t   complete
+  bind --user  \cq  delete-or-exit
+
 

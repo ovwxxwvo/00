@@ -14,7 +14,7 @@
   set nocompatible      " behave very Vi compatible (not advisable)
   set ttimeout		      " time out for key codes
   set ttimeoutlen=100	  " wait up to 100ms after Esc for special key
-  set cmdheight=1       " number of lines used for the command-line
+  set cmdheight=0       " number of lines used for the command-line
   set mouse=a           " list of flags for using the mouse
 
 " gui
@@ -29,7 +29,7 @@
     set guioptions -=L  " remove scroll bar
   endif                 "
 " termimal
-  set title             " show info in the window title
+  set title            " show info in the window title
   let &t_EI = "\e[1 q" " NORMAL  mode
   let &t_SI = "\e[5 q" " INSERT  mode
   let &t_SR = "\e[3 q" " REPLACE mode

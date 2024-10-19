@@ -10,7 +10,7 @@
     | tail -n 1 )
 
 # let, vi & ra get their own key
-  if [[ $cmd =~ 'vi' || $cmd =~ 'ra' ]]; then
+  if [[ $cmd =~ 'vi' || $cmd =~ 'jo' ]]; then
     # tmux display ' key, vi & ra '
     tmux source ~/.config/tmux/key/unctrl.tmx
     tmux source ~/.config/tmux/key/redo.tmx

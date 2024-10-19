@@ -33,6 +33,9 @@ source ../status/$( basename $0 )
 
 function press_key {
 # set monitor
+    # for i in ${!DEVS[@]}; do
+    #   xrandr --output ${DEVS[$i]} --scale 1 --mode ${MODES[$i]} --rate ${RATES[$i]} --rotate normal
+    #   done
   # return if only one monitor
   if   [ $ONLYONE -eq 1 ]; then
     echo 'only one monitor'

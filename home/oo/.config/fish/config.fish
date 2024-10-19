@@ -5,7 +5,9 @@
 
 source  ~/.profile
 
+
 source  ~/.config/fish/basic.fsh
+
 source  ~/.config/fish/key/ctrl.fsh
 source  ~/.config/fish/key/copy.fsh
 

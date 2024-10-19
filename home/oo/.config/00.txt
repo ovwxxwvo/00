@@ -1,7 +1,6 @@
 # link config,
 
 
-# ln -s  ~/.config/betterlock/betterlock.cfg  ~/.config/betterlockscreenrc  \
 # ln -s  ~/.config/fcitx5                     ~/.local/share/fcitx5         \
 # ln -s  ~/.config/kodi                       ~/.kodi                       \
 

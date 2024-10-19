@@ -2,7 +2,7 @@
 <addon id="repository.00"
 		name="Kodi Add-on repository 00"
 		version="3.3.1"
-		provider-name="Team Kodi">
+		provider-name="oooxxooo">
   <requires>
     <import addon="xbmc.addon" version="12.0.0"/>
   </requires>

@@ -17,6 +17,9 @@ local basic =  require('keymap/basic')
 local t = {
   { a, '<F1>',   '<ESC>:only<CR>:split<CR>:e.<CR><C-w>H', opt, },
 
+  --
+  { a, 'Ü',       '<ESC>jA', opt, },
+
   -- page
   -- { a, '<C-k>',  '<C-u>'       , opt, },
   -- { a, '<C-l>',  '<C-d>'       , opt, },

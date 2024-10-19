@@ -1,0 +1,25 @@
+# TMUX config, terminal multiplexer.
+# Maintainer:	 Jessee Chan <CYPHER0@foxmail.com>
+# Last Change: 2024.08.12
+
+
+set-hook -g window-renamed[20] \
+  " \
+  run -b ~/.config/tmux/ui/status.sh  \;  \
+  run -b ~/.config/tmux/ui/color.sh   \;  \
+  "
+
+set-hook -g pane-focus-in[20] \
+  " \
+  run -b ~/.config/tmux/ui/status.sh  \;  \
+  run -b ~/.config/tmux/ui/color.sh   \;  \
+  run -b ~/.config/tmux/ui/rename.sh  \;  \
+  "
+
+set-hook -g pane-focus-out[20] \
+  " \
+  run -b ~/.config/tmux/ui/status.sh  \;  \
+  run -b ~/.config/tmux/ui/color.sh   \;  \
+  "
+
+
