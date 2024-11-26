@@ -1,0 +1,36 @@
+#!/usr/bin/env sh
+
+
+CMD=$STATE_CMD
+PID=$( ps aux | grep -v 'grep' \
+  | grep "$CMD" | sed -n '1p' \
+  | awk -F"[\t ]+" '{print $2}' \
+  )
+# echo $CMD $PID
+
+NAME=$( basename $0 \
+  | cut -d '.' -f 1 \
+  )
+FDMJ=$( \
+  echo -n $STATE_LIST \
+  | awk -v RS="#" -v FS="[\t |]+" \
+  '{ \
+  if ( $2 == "'"$NAME"'" ) {print $3} \
+  }' \
+  )
+FDMN=$( \
+  echo -n $STATE_LIST \
+  | awk -v RS="#" -v FS="[\t |]+" \
+  '{ \
+  if ( $2 == "'"$NAME"'" ) {print $4} \
+  }' \
+  )
+FLMJ="/proc/$PID/fd/$FDMJ"
+FLMN="/proc/$PID/fd/$FDMN"
+# echo $STATE_LIST
+# echo $NAME : $FDMJ : $FLMJ
+# echo $NAME : $FDMN : $FLMN
+# cat $FLMJ
+# cat $FLMN
+
+

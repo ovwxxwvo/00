@@ -1,0 +1,225 @@
+# JOSHUTO config,
+# Maintainer:  Jessee Chan <CYPHER0@foxmail.com>
+# Last Change: 2024.08.24
+
+
+[default_view]
+
+keymap = [
+
+  # script
+    # { keys = ["-"], commands = ["shell /home/oo/.config/joshuto/script/test.sh"] },
+    { keys = ["u"], commands = ["shell /home/oo/.config/joshuto/script/ueber_sever.sh"] },
+
+  # go
+    { keys = ["g", "o"], commands = ["cd /0000/HH¦DATA/"] },
+    { keys = ["g", "h"], commands = ["cd /home/"] },
+
+    { keys = ["g", "x"], commands = ["cd /home/config/home/00/"] },
+    { keys = ["g", "c"], commands = ["cd /home/config/home/oo/.config/"] },
+    { keys = ["g", "d"], commands = ["cd /home/download/"] },
+    { keys = ["g", "a"], commands = ["cd /home/program/"] },
+    { keys = ["g", "b"], commands = ["cd /home/project/"] },
+    { keys = ["g", "v"], commands = ["cd /home/script/"] },
+    { keys = ["g", "z"], commands = ["cd /home/download/zero/"] },
+
+    { keys = ["g", "."], commands = ["cd /0000/HH¦DATA/sex(儿童不宜)/"] },
+    { keys = ["g", "t"], commands = ["cd /0000/HH¦DATA/10_note/"] },
+    { keys = ["g", "r"], commands = ["cd /0000/HH¦DATA/21_office/"] },
+    { keys = ["g", "e"], commands = ["cd /0000/HH¦DATA/22_photo/"] },
+    { keys = ["g", "w"], commands = ["cd /0000/HH¦DATA/23_music/"] },
+    { keys = ["g", "q"], commands = ["cd /0000/HH¦DATA/24_movie/"] },
+    { keys = ["g", "s"], commands = ["cd /0000/HH¦DATA/25_study/"] },
+    { keys = ["g", "T"], commands = ["cd /0000/HH¦DATA/10_memory/"] },
+    { keys = ["g", "R"], commands = ["cd /0000/HH¦DATA/11_docmt/"] },
+    { keys = ["g", "E"], commands = ["cd /0000/HH¦DATA/12_image/"] },
+    { keys = ["g", "W"], commands = ["cd /0000/HH¦DATA/13_audio/"] },
+    { keys = ["g", "Q"], commands = ["cd /0000/HH¦DATA/14_video/"] },
+
+    { keys = ["g", "f", "i"], commands = ["cd /home/config/home/oo/.config/i3/"       ] },
+    { keys = ["g", "f", "a"], commands = ["cd /home/config/home/oo/.config/alacritty/"] },
+    { keys = ["g", "f", "t"], commands = ["cd /home/config/home/oo/.config/tmux/"     ] },
+    { keys = ["g", "f", "f"], commands = ["cd /home/config/home/oo/.config/fish/"     ] },
+    { keys = ["g", "f", "r"], commands = ["cd /home/config/home/oo/.config/joshuto/"  ] },
+    { keys = ["g", "f", "v"], commands = ["cd /home/config/home/oo/.config/nvim/"     ] },
+    { keys = ["g", "f", "m"], commands = ["cd /home/config/home/oo/.config/mpv/"      ] },
+
+    { keys = ["g", "F", "r"], commands = ["cd /"        ] },
+    { keys = ["g", "F", "e"], commands = ["cd /etc"     ] },
+    { keys = ["g", "F", "m"], commands = ["cd /mnt"     ] },
+    { keys = ["g", "F", "t"], commands = ["cd /tmp"     ] },
+    { keys = ["g", "F", "h"], commands = ["cd /home"    ] },
+    { keys = ["g", "F", "c"], commands = ["cd ~/.config"] },
+
+  # move
+    { keys = ["k"], commands = ["cursor_move_up"] },
+    { keys = ["l"], commands = ["cursor_move_down"] },
+    { keys = ["j"], commands = ["cd .."] },
+    { keys = [";"], commands = ["open"] },
+    { keys = ["i"], commands = ["cursor_move_page_up 0.5"] },
+    { keys = ["o"], commands = ["cursor_move_page_down 0.5"] },
+    { keys = [","], commands = ["parent_cursor_move_up"] },
+    { keys = ["."], commands = ["parent_cursor_move_down"] },
+    { keys = ["<"], commands = ["tab_switch -1"] },
+    { keys = [">"], commands = ["tab_switch 1"] },
+
+  # rename
+    { keys = ["c"], commands = [":rename "] },
+    { keys = ["b"], commands = ["bulk_rename"] },
+    { keys = ["a"], commands = ["rename_prepend"] },
+    { keys = ["s"], commands = ["rename_append"] },
+
+  # command
+    { keys = ["="], commands = ["set_mode"] },
+    { keys = [":"], commands = [":"] },
+    { keys = ["'"], commands = [":shell "] },
+    { keys = ["/"], commands = [":search "] },
+    { keys = ["n"], commands = ["search_next"] },
+    { keys = ["h"], commands = ["search_prev"] },
+
+  # make
+    { keys = ["m", "k", "d"], commands = [":mkdir "] },
+    { keys = ["m", "k", "f"], commands = [":touch "] },
+
+  # search
+    { keys = ["f", "f"], commands = [":search "] },
+    { keys = ["f", "z"], commands = ["subdir_fzf"] },
+    { keys = ["f", "s"], commands = ["search_fzf"] },
+
+  # show
+    { keys = ["`"], commands = ["toggle_hidden"] },
+    { keys = ["w"], commands = ["show_tasks --exit-key=w"] },
+
+  # ctrl
+    { keys = ["ctrl+ "], commands = ["tab_switch 1"] },
+    { keys = ["ctrl+t"], commands = ["new_tab"] },
+    { keys = ["ctrl+q"], commands = ["close_tab"] },
+    { keys = ["q"], commands = ["close_tab"] },
+    { keys = ["Q"], commands = ["quit --output-current-directory"] },
+
+  # arrow keys
+    { keys = ["arrow_up"], commands = ["cursor_move_up"] },
+    { keys = ["arrow_down"], commands = ["cursor_move_down"] },
+    { keys = ["arrow_left"], commands = ["cd .."] },
+    { keys = ["arrow_right"], commands = ["open"] },
+    { keys = ["\n"], commands = ["open"] },
+    { keys = ["home"], commands = ["cursor_move_home"] },
+    { keys = ["end"], commands = ["cursor_move_end"] },
+    { keys = ["page_up"], commands = ["cursor_move_page_up"] },
+    { keys = ["page_down"], commands = ["cursor_move_page_down"] },
+    { keys = ["ctrl+b"], commands = ["cursor_move_page_up"] },
+    { keys = ["ctrl+f"], commands = ["cursor_move_page_down"] },
+
+  # #
+    { keys = ["escape"], commands = ["escape"] },
+    { keys = ["alt+t"], commands = ["new_tab --cursor"] },
+    { keys = ["T"], commands = ["new_tab --current"] },
+    { keys = ["R"], commands = ["reload_dirlist"] },
+
+    { keys = ["alt+1"], commands = ["tab_switch_index 1"] },
+    { keys = ["alt+2"], commands = ["tab_switch_index 2"] },
+    { keys = ["alt+3"], commands = ["tab_switch_index 3"] },
+    { keys = ["alt+4"], commands = ["tab_switch_index 4"] },
+    { keys = ["alt+5"], commands = ["tab_switch_index 5"] },
+
+    { keys = ["1"], commands = ["numbered_command 1"] },
+    { keys = ["2"], commands = ["numbered_command 2"] },
+    { keys = ["3"], commands = ["numbered_command 3"] },
+    { keys = ["4"], commands = ["numbered_command 4"] },
+    { keys = ["5"], commands = ["numbered_command 5"] },
+    { keys = ["6"], commands = ["numbered_command 6"] },
+    { keys = ["7"], commands = ["numbered_command 7"] },
+    { keys = ["8"], commands = ["numbered_command 8"] },
+    { keys = ["9"], commands = ["numbered_command 9"] },
+
+  # #
+    { keys = ["G"], commands = ["cursor_move_end"] },
+    { keys = ["r"], commands = ["open_with"] },
+    { keys = ["g", "g"], commands = ["cursor_move_home"] },
+
+    # { keys = ["H"], commands = ["cursor_move_page_home"] },
+    # { keys = ["L"], commands = ["cursor_move_page_middle"] },
+    # { keys = ["M"], commands = ["cursor_move_page_end"] },
+
+    # { keys = ["c", "d"], commands = [":cd "] },
+    { keys = ["d", "d"], commands = ["cut_files"] },
+    { keys = ["y", "y"], commands = ["copy_files"] },
+    { keys = ["y", "n"], commands = ["copy_filename"] },
+    { keys = ["y", "."], commands = ["copy_filename_without_extension"] },
+    { keys = ["y", "p"], commands = ["copy_filepath"] },
+    { keys = ["y", "a"], commands = ["copy_filepath --all-selected=true"] },
+    { keys = ["y", "d"], commands = ["copy_dirpath"] },
+
+    { keys = ["p", "l"], commands = ["symlink_files --relative=false"] },
+    { keys = ["p", "L"], commands = ["symlink_files --relative=true"] },
+
+    { keys = ["delete"], commands = ["delete_files"] },
+    { keys = ["d", "D"], commands = ["delete_files"] },
+
+    { keys = ["p", "p"], commands = ["paste_files"] },
+    { keys = ["p", "o"], commands = ["paste_files --overwrite=true"] },
+
+    { keys = [" "], commands = ["select --toggle=true"] },
+    { keys = ["t"], commands = ["select --all=true --toggle=true"] },
+    { keys = ["V"], commands = ["toggle_visual"] },
+
+    { keys = ["|"], commands = [":search_inc "] },
+    { keys = ["\\"], commands = [":search_glob "] },
+
+    { keys = ["S", "r"], commands = ["sort reverse"] },
+    { keys = ["S", "l"], commands = ["sort lexical"] },
+    { keys = ["S", "m"], commands = ["sort mtime"] },
+    { keys = ["S", "n"], commands = ["sort natural"] },
+    { keys = ["S", "s"], commands = ["sort size"] },
+    { keys = ["S", "e"], commands = ["sort ext"] },
+
+    { keys = ["M", "s"], commands = ["linemode size"] },
+    { keys = ["M", "m"], commands = ["linemode mtime"] },
+    { keys = ["M", "u"], commands = ["linemode user"] },
+    { keys = ["M", "p"], commands = ["linemode perm"] },
+    { keys = ["M", "M"], commands = ["linemode size | mtime"] },
+    { keys = ["M", "U"], commands = ["linemode user | group"] },
+
+    { keys = ["?"], commands = ["help"] },
+
+]
+
+[task_view]
+
+keymap = [
+  # arrow keys
+  { keys = ["arrow_up"], commands = ["cursor_move_up"] },
+  { keys = ["arrow_down"], commands = ["cursor_move_down"] },
+  { keys = ["home"], commands = ["cursor_move_home"] },
+  { keys = ["end"], commands = ["cursor_move_end"] },
+
+  # vim-like keybindings
+  { keys = ["j"], commands = ["cursor_move_down"] },
+  { keys = ["k"], commands = ["cursor_move_up"] },
+  { keys = ["g", "g"], commands = ["cursor_move_home"] },
+  { keys = ["G"], commands = ["cursor_move_end"] },
+
+  { keys = ["w"], commands = ["show_tasks"] },
+  { keys = ["escape"], commands = ["show_tasks"] },
+]
+
+[help_view]
+
+keymap = [
+  # arrow keys
+  { keys = ["arrow_up"], commands = ["cursor_move_up"] },
+  { keys = ["arrow_down"], commands = ["cursor_move_down"] },
+  { keys = ["home"], commands = ["cursor_move_home"] },
+  { keys = ["end"], commands = ["cursor_move_end"] },
+
+  # vim-like keybindings
+  { keys = ["j"], commands = ["cursor_move_down"] },
+  { keys = ["k"], commands = ["cursor_move_up"] },
+  { keys = ["g", "g"], commands = ["cursor_move_home"] },
+  { keys = ["G"], commands = ["cursor_move_end"] },
+
+  { keys = ["w"], commands = ["show_tasks"] },
+  { keys = ["escape"], commands = ["show_tasks"] },
+]
+
+

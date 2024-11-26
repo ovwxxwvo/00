@@ -1,0 +1,17 @@
+# FBTERM config, standalone replacement of Linux kernel terminal.
+# Maintainer:  Jessee Chan <CYPHER0@foxmail.com>
+# Last Change: 2024.07.30
+
+
+# sudo chmod u+s /usr/bin/fbterm
+# TERM=fbterm
+
+text-encodings=UTF-8
+ambiguous-wide=yes
+input-method=fcitx5-fbterm
+
+font-names=JetBrainsMono Nerd Font
+font-size=32
+
+
+

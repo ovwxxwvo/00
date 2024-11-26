@@ -1,0 +1,12 @@
+<settings version="2">
+    <setting id="preset_pack">10</setting>
+    <setting id="user_preset_folder" default="true" />
+    <setting id="last_preset_folder">/usr/share/kodi/addons/visualization.projectm//resources/projectM/presets/presets_eyetune</setting>
+    <setting id="last_preset_idx">21</setting>
+    <setting id="last_locked_status" default="true">false</setting>
+    <setting id="shuffle" default="true">true</setting>
+    <setting id="quality">256</setting>
+    <setting id="smooth_duration">40</setting>
+    <setting id="preset_duration">40</setting>
+    <setting id="beat_sens">40</setting>
+</settings>

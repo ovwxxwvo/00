@@ -1,0 +1,10 @@
+# rime config, an improved dynamic & tiling window manager.
+
+
+patch:
+  # translator/enable_user_dict: false
+  key_binder/bindings:
+    - {when: has_menu, accept: space, send: space}
+    - {when: composing, accept: space, send: Escape}
+
+

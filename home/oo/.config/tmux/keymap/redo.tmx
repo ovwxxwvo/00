@@ -1,0 +1,36 @@
+# TMUX config, terminal multiplexer.
+# Maintainer:	 Jessee Chan <CYPHER0@foxmail.com>
+# Last Change: 2023.05.15
+
+
+# basic
+  bind -n  $c_tab         " source ~/.config/tmux/key/ctrl.tmx \; display 'Reloaded Tmux Key' "   # C-Esc
+  bind -n  $c_escape      copy-mode       # C-Tab
+
+# tab & win
+  bind -n  $c_m           new-window      # C-m
+  bind -n  $c_bracketl    splitw -h       # C-[
+  bind -n  $c_bracketr    splitw -v       # C-]
+  bind -n  $c_apostrophe  next-layout     # C-'
+
+# tab focus
+  bind -n  $c_key1        selectw -t 1    # C-1
+  bind -n  $c_key2        selectw -t 2    # C-2
+  bind -n  $c_key3        selectw -t 3    # C-3
+  bind -n  $c_key4        selectw -t 4    # C-4
+  bind -n  $c_key5        selectw -t 5    # C-5
+  bind -n  $c_key6        selectw -t 6    # C-6
+  bind -n  $c_key7        selectw -t 7    # C-7
+  bind -n  $c_key8        selectw -t 8    # C-8
+  bind -n  $c_key9        selectw -t 9    # C-9
+  bind -n  $c_key0        selectw -t 10   # C-0
+# tab focus
+  bind -n  $c_comma       selectw -p      # C-,
+  bind -n  $c_period      selectw -n      # C-.
+# win focus
+  bind -n   C-j           selectp -L      # C-j
+  bind -n   C-k           selectp -U      # C-k
+  bind -n   C-l           selectp -D      # C-l
+  bind -n  $c_semicolon   selectp -R      # C-;
+
+

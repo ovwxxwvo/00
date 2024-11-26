@@ -1,0 +1,45 @@
+# SWAYBAR config,
+# Maintainer:	 Jessee Chan <CYPHER0@foxmail.com>
+# Last Change: 2024.11.05
+
+
+cpu              = ""
+memory_mem       = ""
+disk_drive       = "󰋊"
+cpu_boost_on     = ""
+cpu_boost_off    = ""
+memory_swap      = ""
+
+bluetooth        = ""
+net_wired        = ""
+net_wireless     = ""
+net_loopback     = ""
+net_up           = ""
+net_down         = ""
+net_vpn          = "󰖂"
+net_bridge       = "󱜠"
+net_modem        = "󰘂"
+
+volume           = [ "","","","","","","","","","" ]
+microphone       = [ "", "" ]
+volume_muted     = ""
+microphone_muted = ""
+
+time             = ""
+webcam           = "󰖠"
+
+## ##
+  # weather_default       = ""
+  # weather_sun           = ""
+  # weather_moon          = ""
+  # weather_clouds        = ""
+  # weather_rain          = ""
+  # weather_snow          = ""
+  # weather_fog           = ""
+  # weather_thunder       = ""
+  # weather_clouds_night  = ""
+  # weather_rain_night    = ""
+  # weather_fog_night     = ""
+  # weather_thunder_night = ""
+
+

@@ -1,0 +1,13 @@
+{
+   "registry-mirrors": [
+
+   https://mirrors.tuna.tsinghua.edu.cn/
+   https://docker.mirrors.ustc.edu.cn
+   https://mirror.ccs.tencentyun.com
+   https://ku24g35b.mirror.aliyuncs.com
+   http://mirrors.sohu.com/
+   http://hub-mirror.c.163.com
+   https://registry.docker-cn.com
+
+  ]
+}

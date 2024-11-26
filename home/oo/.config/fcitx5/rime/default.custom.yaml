@@ -1,0 +1,16 @@
+# rime config, an improved dynamic & tiling window manager.
+
+
+patch:
+  "switcher/hotkeys":  # 這個列表裏每項定義一個快捷鍵，使哪個都中
+    - "Control+grave"  # 你看寫法並不是 Ctrl+` 而是與 IBus 一致的表示法
+    # - F4
+  "menu/page_size": 4
+
+  schema_list:
+    - schema: wubi_pinyin
+    - schema: wubi86
+    - schema: luna_pinyin_simp
+
+
+

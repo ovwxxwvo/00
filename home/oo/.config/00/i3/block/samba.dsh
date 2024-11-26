@@ -1,0 +1,36 @@
+#!/usr/bin/env dash
+
+
+cd $( dirname $0 )
+. ./basic.rc
+
+LABEL='SM'
+  ENABLE=$SM_ENABLE
+  ACTIVE=$SM_ACTIVE
+  STATE=$SM_STATE
+
+show_block() {
+  if [ $ACTIVE -eq 1 ]; then
+    BLOCK="$LABEL"
+  else
+    BLOCK=""
+  fi
+  echo $BLOCK
+  echo $BLOCK
+  }
+
+show_color() {
+  if [ $ENABLE -eq 0 ]; then return; fi
+  if   [ $ACTIVE -eq 1 ] && [ $STATE -eq 1 ]; then
+    echo $COLOR_OOOO
+  elif [ $ACTIVE -eq 1 ] && [ $STATE -eq 0 ]; then
+    echo $COLOR_WHTE
+  elif [ $ACTIVE -eq 0 ]; then
+    echo $COLOR_GRLT
+  fi
+  }
+
+show_block
+show_color
+
+

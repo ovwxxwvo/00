@@ -1,0 +1,28 @@
+#!/usr/bin/env dash
+
+
+. ~/.config/swaybar/block/icon.ash
+. ~/.config/swaybar/block/color.ash
+LABEL="$ICON_screen"
+
+
+show_block() {
+  while true; do
+    BLOCK="$LABEL"
+    echo "$BLOCK"
+    sleep 1
+    break
+  done
+    BLOCK=""
+    echo "$BLOCK"
+  }
+
+show_color() {
+    echo $clr_resk
+  }
+
+
+show_block
+# show_color
+
+

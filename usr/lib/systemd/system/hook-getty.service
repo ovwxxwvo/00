@@ -1,0 +1,12 @@
+[Unit]
+Description=hook getty
+After=systemd-user-sessions.service plymouth-quit-wait.service
+After=getty.service
+
+[Service]
+ExecStart=/home/00/autoserv/hook_getty.sh
+
+[Install]
+WantedBy=getty.target
+
+

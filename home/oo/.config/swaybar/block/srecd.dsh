@@ -1,0 +1,35 @@
+#!/usr/bin/env dash
+
+
+. ~/.config/swaybar/block/icon.ash
+. ~/.config/swaybar/block/color.ash
+LABEL="$ICON_screen"
+
+
+ACTIVE=$( ps -ef \
+  |grep -Ev "grep|man" \
+  |grep -oc ' wf-recorder -a ' \
+  )
+# echo srecd $ACTIVE
+
+show_block() {
+  if [ $ACTIVE -eq 1 ]; then
+    BLOCK="$LABEL"
+  else
+    BLOCK=""
+  fi
+  echo "$BLOCK"
+  echo "$BLOCK"
+  }
+
+show_color() {
+  if [ $ACTIVE -eq 1 ]; then
+    echo $clr_resk
+  fi
+  }
+
+
+show_block
+show_color
+
+

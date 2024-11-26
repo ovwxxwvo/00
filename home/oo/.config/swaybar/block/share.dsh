@@ -1,0 +1,37 @@
+#!/usr/bin/env dash
+
+
+. ~/.config/swaybar/block/icon.ash
+. ~/.config/swaybar/block/color.ash
+LABEL="$ICON_SHARE"
+
+
+ACTIVE=$( systemctl status smb nmb \
+  | grep -o 'active (running)' \
+  | grep -c 'active (running)' \
+  | grep -c '2'
+  )
+# echo SH $ACTIVE
+
+
+show_block() {
+  if [ $ACTIVE -eq 1 ]; then
+    BLOCK="$LABEL"
+  else
+    BLOCK=""
+  fi
+  echo "$BLOCK"
+  echo "$BLOCK"
+  }
+
+show_color() {
+  if [ $ACTIVE -eq 1 ]; then
+    echo $clr_yelt
+  fi
+  }
+
+
+show_block
+show_color
+
+

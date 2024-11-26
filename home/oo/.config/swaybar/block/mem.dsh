@@ -1,0 +1,46 @@
+#!/usr/bin/env dash
+
+
+. ~/.config/swaybar/block/icon.ash
+. ~/.config/swaybar/block/color.ash
+LABEL="$ICON_MEM"
+
+
+USAGE=$( top -bn 1 \
+  | grep 'Mem :' \
+  | awk -F"[\t :,]+" '{print $3,$7}' \
+  | awk '{ printf "%02d", ($2/$1*100) }' \
+  )
+  # | awk '{ printf "%04.1f", ($2/$1*100) }' \
+# echo $LABEL $USAGE
+
+
+show_block() {
+  BLOCK="$LABEL $USAGE%"
+  echo "$BLOCK"
+  echo "$BLOCK"
+  }
+
+show_color() {
+  if   [ $USAGE -le 5  ]; then
+    echo $clr_gylt
+  elif [ $USAGE -le 15 ]; then
+    echo $clr_cylt
+  elif [ $USAGE -le 30 ]; then
+    echo $clr_grlt
+  elif [ $USAGE -le 45 ]; then
+    echo $clr_lelt
+  elif [ $USAGE -le 60 ]; then
+    echo $clr_yelt
+  elif [ $USAGE -le 75 ]; then
+    echo $clr_orlt
+  elif [ $USAGE -le 90 ]; then
+    echo $clr_relt
+  fi
+  }
+
+
+show_block
+show_color
+
+

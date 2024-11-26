@@ -1,0 +1,191 @@
+#!/usr/bin/env dash
+
+
+cd $( dirname $0 )
+  # . ./basic.rc
+  STATE_CMD='bash ./autostat/redir.sh'
+  STATE_LIST='
+    # vm     | 100 | 200 |
+    # cpu    | 101 | 201 |
+    # mem    | 102 | 202 |
+    # lock   | 103 | 203 |
+    # power  | 104 | 204 |
+    # led    | 105 | 205 |
+    # vol    | 106 | 206 |
+    # wlan   | 107 | 207 |
+    # btth   | 108 | 208 |
+    # udisk  | 109 | 209 |
+    # vpn    | 110 | 210 |
+    # share  | 111 | 211 |
+    # samba  | 112 | 212 |
+    '
+  IFS='#'
+  set -- $STATE_LIST
+  echo $STATE_LIST
+
+SF_SH=".sh"
+  SF_STA=".sta"
+  SF_BAK=".bak"
+  DT_FL="/tmp/block/"
+  DT_FD="/proc/$$/fd/"
+  DT_SRC="/home/00/status"
+  NAMES=` \
+    echo -e $STATE_LIST | grep '|' \
+    | awk -F"[\t #]+" '{print $2}' \
+    `
+  FDMJS=` \
+    echo -e $STATE_LIST | grep '|' \
+    | awk -F"[\t |]+" '{print $3}' \
+    `
+  FDMNS=` \
+    echo -e $STATE_LIST | grep '|' \
+    | awk -F"[\t |]+" '{print $4}' \
+    `
+  PT_FL_STA=` \
+    echo -e $STATE_LIST | grep '|' \
+    | awk -F"[\t |]+" -v ORS=" " \
+    '{print "'"$DT_FL"'" $2 "'"$SF_STA"'" }' \
+    `
+  PT_FL_BAK=` \
+    echo -e $STATE_LIST | grep '|' \
+    | awk -F"[\t |]+" -v ORS=" " \
+    '{print "'"$DT_FL"'" $2 "'"$SF_BAK"'" }' \
+    `
+  PT_FD_MJR=` \
+    echo -e $STATE_LIST | grep '|' \
+    | awk -F"[\t |]+" -v ORS=" " \
+    '{print "'"$DT_FD"'" $3 }' \
+    `
+  PT_FD_MNR=` \
+    echo -e $STATE_LIST | grep '|' \
+    | awk -F"[\t |]+" -v ORS=" " \
+    '{print "'"$DT_FD"'" $4 }' \
+    `
+  echo $NAMES
+  echo $FDMJS
+  echo $FDMNS
+  echo $PT_FL_STA
+  echo $PT_FL_BAK
+  echo $PT_FD_MJR
+  echo $PT_FD_MNR
+  MEM=` free | grep 'Mem:' \
+    | awk -F"[\t ]+" '{print $2}' `
+read REPLY
+
+mk_desc() {
+  #
+    # mkdir $DT_FL
+    # mkfifo $ DT_FL_VM
+    # touch $DT_FL_VM
+    # exec  101<> $DT_FL_VM
+    # rm    $DT_FL_VM
+    # exec  $FD_VM<&-
+    # rmdir $DT_FL
+  mkdir $DT_FL
+  echo touch $PT_FL_STA
+read REPLY
+    exec  101<> "${PT_FL_STA[1]}"
+    exec  102<> "${PT_FL_STA[2]}"
+    exec  103<> "${PT_FL_STA[3]}"
+    exec  104<> "${PT_FL_STA[4]}"
+    exec  105<> "${PT_FL_STA[5]}"
+    exec  106<> "${PT_FL_STA[6]}"
+    exec  107<> "${PT_FL_STA[7]}"
+    exec  108<> "${PT_FL_STA[8]}"
+    exec  109<> "${PT_FL_STA[9]}"
+    exec  110<> "${PT_FL_STA[10]}"
+    exec  111<> "${PT_FL_STA[11]}"
+    exec  112<> "${PT_FL_STA[12]}"
+  for i in ${!NAMES[@]}; do
+    echo rm    ${PT_FL_STA[i]}
+    rm    ${PT_FL_STA[i]}
+    done
+  for i in ${!NAMES[@]}; do
+    echo touch ${PT_FL_BAK[i]}
+    touch ${PT_FL_BAK[i]}
+    done
+  # DT_FL_VM="$DT_FL$FL_VM"
+    exec  200<> "${PT_FL_BAK[0]}"
+    exec  201<> "${PT_FL_BAK[1]}"
+    exec  202<> "${PT_FL_BAK[2]}"
+    exec  203<> "${PT_FL_BAK[3]}"
+    exec  204<> "${PT_FL_BAK[4]}"
+    exec  205<> "${PT_FL_BAK[5]}"
+    exec  206<> "${PT_FL_BAK[6]}"
+    exec  207<> "${PT_FL_BAK[7]}"
+    exec  208<> "${PT_FL_BAK[8]}"
+    exec  209<> "${PT_FL_BAK[9]}"
+    exec  210<> "${PT_FL_BAK[10]}"
+    exec  211<> "${PT_FL_BAK[11]}"
+    exec  212<> "${PT_FL_BAK[12]}"
+  for i in ${!NAMES[@]}; do
+    echo rm    ${PT_FL_BAK[i]}
+    rm    ${PT_FL_BAK[i]}
+    done
+  rmdir $DT_FL
+  echo $$
+  }
+
+rd_vmst() {
+  nice vmstat 1 > ${PT_FD_MJR[0]} &
+  while true; do
+    vmstat > ${PT_FD_MJR[0]}
+    sleep 60; done
+  }
+
+rd_fdmj() {
+  vm=$( \
+    cat -n ${PT_FD_MJR[0]} \
+    | tr -d '\0' \
+    | tail -n 1 \
+    | awk -F"[\t ]+" '{ print $6,$17 }' \
+    )
+  # echo $vm
+  echo $vm \
+    | awk -F"[\t ]+" \
+    '{ \
+    if ( $2 != 0 ) \
+    {printf "USAGE=%02d%\n", (100-$2)} \
+    else {print "99%"} \
+    }' \
+    > ${PT_FD_MJR[1]}
+  echo $vm \
+    | awk -F"[\t ]+" \
+    '{ \
+    if ( $1 != "'"$MEM"'" ) \
+    {printf "USAGE=%02d%\n", (100-100*$1/"'"$MEM"'")} \
+    else {print "99%"} \
+    }' \
+    > ${PT_FD_MJR[2]}
+  for i in ${!NAMES[@]}; do
+    echo ${NAMES[i]} |grep -E "vm|cpu|mem" > /dev/null
+    if [ $? -eq 0 ]; then continue; fi
+    # echo "source ./${NAMES[i]}$SF_SH > ${PT_FD_MJR[i]}"
+    source $DT_SRC/${NAMES[i]}$SF_SH > ${PT_FD_MJR[i]}
+    done
+  }
+
+rd_fdmn() {
+  for i in ${!NAMES[@]}; do
+    echo ${NAMES[i]} |grep -E "vm|cpu|mem" > /dev/null
+    if [ $? -eq 0 ]; then continue; fi
+    source $DT_SRC/${NAMES[i]}$SF_SH > ${PT_FD_MNR[i]}
+    done
+  }
+
+echo "<<<"
+  # echo $$
+  mk_desc
+read REPLY
+  # sleep 1
+  rd_vmst &
+  # sleep 1
+  while true; do rd_fdmn; sleep 60; done &
+  # sleep 1
+  while true; do rd_fdmj; sleep  1; done &
+echo "<<<"
+
+# echo $$
+read REPLY
+
+

@@ -1,0 +1,5 @@
+<rules>
+	<node name="/home/oo/.kodi/userdata/library/video/movies" />
+	<node name="/home/oo/.kodi/userdata/library/video/tvshows" />
+	<node name="/home/oo/.kodi/userdata/library/video/musicvideos" />
+</rules>

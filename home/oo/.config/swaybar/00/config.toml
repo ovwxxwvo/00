@@ -1,0 +1,67 @@
+# SWAYBAR config,
+# Maintainer:	 Jessee Chan <CYPHER0@foxmail.com>
+# Last Change: 2024.11.05
+
+
+icons_format          = "{icon}"
+  [icons]
+  icons               = "default"
+  [theme]
+  theme               = "darkgrey"
+
+
+[[block]]
+  block               = "cpu"
+  interval            = 1
+  format              = "$icon$utilization"
+  format_alt          = "$icon$utilization[$frequency]{$boost|}$barchart "
+  warning_cpu         = 60
+  critical_cpu        = 80
+  info_cpu            = 20
+
+[[block]]
+  block               = "memory"
+  format              = "$icon $mem_used_percents.eng(w:1)"
+  format_alt          = "$icon $mem_used_percents.eng(w:1)[$mem_used.eng(w:3,u:B,p:Mi)/$mem_total.eng(w:3,u:B,p:Mi)]"
+  # format_alt          = "$icon $swap_used_percents.eng(w:2)[$swap_used.eng(w:3,u:B,p:Mi)/$swap_total.eng(w:3,u:B,p:Mi)]"
+  interval            = 1
+  warning_mem         = 60
+  critical_mem        = 80
+
+[[block]]
+  block               = "disk_space"
+  format              = "$icon $available"
+  format_alt          = "$icon $percentage[$available/$total]"
+  interval            = 360
+  warning             = 20.0
+  alert               = 10.0
+  path                = "/"
+  info_type           = "available"
+  alert_unit          = "GB"
+  [[block.click]]
+  button              = "right"
+  update              = true
+
+[[block]]
+  block               = "bluetooth"
+  mac                 = "00:18:09:92:1B:BA"
+  format              = "{$icon} "
+  # format_alt          = "{$icon} [$name][$available]"
+  disconnected_format = "{$icon}x"
+
+[[block]]
+  block               = "net"
+  format              = "{$icon} "
+  format_alt          = "{$icon} [$ssid]$signal_strength"
+  inactive_format     = "{$icon}x"
+
+[[block]]
+  block               = "sound"
+  format              = "$icon $volume"
+
+[[block]]
+  block               = "time"
+  format              = "$timestamp.datetime(f:'%d/%b %T %a') "
+  interval            = 1
+
+

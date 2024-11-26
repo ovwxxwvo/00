@@ -1,0 +1,51 @@
+# SWAYLOCK config,
+# Maintainer:	 Jessee Chan <CYPHER0@foxmail.com>
+# Last Change: 2024.10.05
+
+
+screenshots
+grace=0
+
+clock
+timestr=%T
+datestr=%Y.%m.%d  %a
+
+indicator
+indicator-radius=100
+indicator-thickness=5
+
+fade-in=0.2
+effect-blur=8x4
+effect-vignette=0.8:0.8
+
+separator-color=00000000
+line-color=00000000
+line-ver-color=00000000
+line-clear-color=00000000
+line-wrong-color=00000000
+line-caps-lock-color=00000000
+
+inside-color=00000080
+inside-ver-color=00000080
+inside-clear-color=00000080
+inside-wrong-color=00000080
+inside-caps-lock-color=00000080
+
+ring-color=50b0b0
+ring-ver-color=5080b0
+ring-clear-color=50b080
+ring-wrong-color=b05080
+ring-caps-lock-color=8050b0
+
+text-color=d0ffa0
+text-ver-color=a0a0ff
+text-clear-color=a0ffa0
+text-wrong-color=ffa0a0
+text-caps-lock-color=ffa0ff
+
+key-hl-color=e0e020
+bs-hl-color=e08020
+caps-lock-key-hl-color=e02020
+caps-lock-bs-hl-color=20e0e0
+
+

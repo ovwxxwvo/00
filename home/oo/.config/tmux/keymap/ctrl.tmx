@@ -1,0 +1,63 @@
+# TMUX config, terminal multiplexer.
+# Maintainer:	 Jessee Chan <CYPHER0@foxmail.com>
+# Last Change: 2023.05.15
+
+
+# basic
+  bind -n   C-v           run -b ' tmux set-buffer "$(xclip -o -sel clipboard)" ; tmux paste-buffer '
+  bind -n   F1            " split-window -h \; swap-pane -U "
+  bind -n  $c_tab         " source ~/.config/tmux/keymap/ctrl.tmx \; display 'Reloaded Tmux Key' "   # C-Esc
+  bind -n  $c_escape      copy-mode       # C-Tab
+  # bind -n  $c_grave       " set -g status off "
+
+# tab & win
+  bind -n   C-Space       selectp -R
+  bind -n   C-q           run -b "~/.config/tmux/key/exit.sh"
+  bind -n  $c_m           new-window      # C-m
+  bind -n  $c_bracketl    splitw -h       # C-[
+  bind -n  $c_bracketr    splitw -v       # C-]
+  bind -n  $c_apostrophe  next-layout     # C-'
+
+# tab focus
+  bind -n  $c_key1        selectw -t 1    # C-1
+  bind -n  $c_key2        selectw -t 2    # C-2
+  bind -n  $c_key3        selectw -t 3    # C-3
+  bind -n  $c_key4        selectw -t 4    # C-4
+  bind -n  $c_key5        selectw -t 5    # C-5
+  bind -n  $c_key6        selectw -t 6    # C-6
+  bind -n  $c_key7        selectw -t 7    # C-7
+  bind -n  $c_key8        selectw -t 8    # C-8
+  bind -n  $c_key9        selectw -t 9    # C-9
+  bind -n  $c_key0        selectw -t 10   # C-0
+# tab focus
+  bind -n  $c_comma       selectw -p      # C-,
+  bind -n  $c_period      selectw -n      # C-.
+# win focus
+  bind -n   C-j           selectp -L      # C-j
+  bind -n   C-k           selectp -U      # C-k
+  bind -n   C-l           selectp -D      # C-l
+  bind -n  $c_semicolon   selectp -R      # C-;
+
+# win move out tab
+  # bind -n   C-!           join-pane -t 1
+  # bind -n   C-@           join-pane -t 2
+  # bind -n   C-#           join-pane -t 3
+  # bind -n   C-$           join-pane -t 4
+  # bind -n   C-%           join-pane -t 5
+  # bind -n   C-^           join-pane -t 6
+  # bind -n   C-&           join-pane -t 7
+  # bind -n   C-*           join-pane -t 8
+  # bind -n   C-(           join-pane -t 9
+  # bind -n   C-)           join-pane -t 10
+# win move  in tab
+  bind -n   C-S-Left      swapp -U
+  bind -n   C-S-Right     swapp -D
+  bind -n   C-S-Up        swapp -U
+  bind -n   C-S-Down      swapp -D
+# win resize
+  bind -n   C-Up          resizep -U 2
+  bind -n   C-Down        resizep -D 2
+  bind -n   C-Left        resizep -L 2
+  bind -n   C-Right       resizep -R 2
+
+

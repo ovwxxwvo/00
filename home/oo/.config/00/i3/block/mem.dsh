@@ -1,0 +1,32 @@
+#!/usr/bin/env dash
+
+
+cd $( dirname $0 )
+. ./basic.rc
+
+LABEL='MEM'
+
+show_block() {
+  BLOCK="$LABEL:$USAGE%"
+  echo $BLOCK
+  echo $BLOCK
+  }
+
+show_color() {
+  if   [ $USAGE -gt 80 ]; then
+    echo $COLOR_RRRR
+  elif [ $USAGE -gt 60 ]; then
+    echo $COLOR_OOOO
+  elif [ $USAGE -gt 40 ]; then
+    echo $COLOR_YYYY
+  elif [ $USAGE -gt 20 ]; then
+    echo $COLOR_LLLL
+  else
+    echo $COLOR_WHTE
+  fi
+  }
+
+show_block
+show_color
+
+

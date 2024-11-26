@@ -1,0 +1,33 @@
+# LEMURS config, a tui login manager.
+
+
+screen_bg            = "#101010"
+border_fg            = "#006060"
+shutdown_hint_fg     = "#303030"
+reboot_hint_fg       = "#303030"
+
+env_toggle_fg        = "#ffff60"
+env_select_fg        = "#006060"
+env_beside_fg        = "#303030"
+env_swaper_fg        = "#303030"
+env_noenvs_fg        = "#600060"
+env_select_fg_focus  = "#006060"
+env_beside_fg_focus  = "#303030"
+env_swaper_fg_focus  = "#ffb060"
+env_noenvs_fg_focus  = "#600000"
+
+usr_title_fg         = "#006060"
+usr_content_fg       = "#303030"
+usr_border_fg        = "#303030"
+usr_title_fg_focus   = "#ffb060"
+usr_content_fg_focus = "#006060"
+usr_border_fg_focus  = "#006060"
+
+pwd_title_fg         = "#006060"
+pwd_content_fg       = "#303030"
+pwd_border_fg        = "#303030"
+pwd_title_fg_focus   = "#ffb060"
+pwd_content_fg_focus = "#006060"
+pwd_border_fg_focus  = "#006060"
+
+

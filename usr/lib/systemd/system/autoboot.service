@@ -1,0 +1,13 @@
+[Unit]
+Description=auto boot script one-shot
+After=systemd-user-sessions.service plymouth-quit-wait.service
+After=getty.service
+
+[Service]
+ExecStart=/home/00/autoboot.sh
+Type=oneshot
+
+[Install]
+WantedBy=getty.target
+
+

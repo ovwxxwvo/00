@@ -1,0 +1,33 @@
+#!/usr/bin/env dash
+
+
+cd $( dirname $0 )
+. ./basic.rc
+
+LABEL='ET' # 󰖩
+  ENABLE=$EN_ENABLE
+  POWER=$EN_POWER
+  STATE=$EN_STATE
+
+show_block() {
+  if   [ $ENABLE -eq 1 ]; then
+    BLOCK=$LABEL
+  else
+    BLOCK=""
+  fi
+  echo $BLOCK
+  echo $BLOCK
+  }
+
+show_color() {
+  if   [ $POWER -eq 0 ]; then
+    echo $COLOR_GRLT
+  elif [ $STATE -ne 0 ]; then
+    echo $COLOR_YYYY
+  fi
+  }
+
+show_block
+show_color
+
+

@@ -1,0 +1,61 @@
+# TMUX config, terminal multiplexer.
+# Maintainer:	 Jessee Chan <CYPHER0@foxmail.com>
+# Last Change: 2023.05.15
+
+
+# basic
+  bind -T prefix   v           run -b ' tmux set-buffer "$(xclip -o -sel clipboard)" ; tmux paste-buffer '
+  bind -T prefix   Tab         " source ~/.config/tmux/key/ctrl.tmx \; display 'Reloaded Tmux Key' "   # C-Esc
+  bind -T prefix   Escape      copy-mode       # C-Tab
+
+# tab & win
+  bind -T prefix   Space       selectp -R
+  bind -T prefix   q           kill-pane
+  bind -T prefix   m           new-window      # C-m
+  bind -T prefix   [           splitw -h       # C-[
+  bind -T prefix   ]           splitw -v       # C-]
+  bind -T prefix  \'           next-layout     # C-'
+
+# tab focus
+  bind -T prefix   1           selectw -t 1    # C-1
+  bind -T prefix   2           selectw -t 2    # C-2
+  bind -T prefix   3           selectw -t 3    # C-3
+  bind -T prefix   4           selectw -t 4    # C-4
+  bind -T prefix   5           selectw -t 5    # C-5
+  bind -T prefix   6           selectw -t 6    # C-6
+  bind -T prefix   7           selectw -t 7    # C-7
+  bind -T prefix   8           selectw -t 8    # C-8
+  bind -T prefix   9           selectw -t 9    # C-9
+  bind -T prefix   0           selectw -t 10   # C-0
+# tab focus
+  bind -T prefix  \,           selectw -p      # C-,
+  bind -T prefix  \.           selectw -n      # C-.
+# win focus
+  bind -T prefix   j           selectp -L      # C-j
+  bind -T prefix   k           selectp -U      # C-k
+  bind -T prefix   l           selectp -D      # C-l
+  bind -T prefix  \;           selectp -R      # C-;
+
+# win move out tab
+  # bind -T prefix  "!"          join-pane -t 1
+  # bind -T prefix  "@"          join-pane -t 2
+  # bind -T prefix  "#"          join-pane -t 3
+  # bind -T prefix  "$"          join-pane -t 4
+  # bind -T prefix  "%"          join-pane -t 5
+  # bind -T prefix  "^"          join-pane -t 6
+  # bind -T prefix  "&"          join-pane -t 7
+  # bind -T prefix  "*"          join-pane -t 8
+  # bind -T prefix  "("          join-pane -t 9
+  # bind -T prefix  ")"          join-pane -t 10
+# win move  in tab
+  bind -T prefix   S-Left      swapp -U
+  bind -T prefix   S-Right     swapp -D
+  bind -T prefix   S-Up        swapp -U
+  bind -T prefix   S-Down      swapp -D
+# win resize
+  bind -T prefix   Up          resizep -U 2
+  bind -T prefix   Down        resizep -D 2
+  bind -T prefix   Left        resizep -L 2
+  bind -T prefix   Right       resizep -R 2
+
+

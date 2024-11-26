@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<node order="30" type="filter">
+	<label>TVshow</label>
+	<icon>DefaultTVShows.png</icon>
+	<content>tvshows</content>
+	<order direction="ascending">sorttitle</order>
+</node>

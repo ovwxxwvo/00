@@ -1,0 +1,27 @@
+# TMUX config, terminal multiplexer.
+# Maintainer:	 Jessee Chan <CYPHER0@foxmail.com>
+# Last Change: 2023.05.15
+
+
+# key copy-mode-vi
+  bind -T copy-mode-vi  C-Escape send-keys -X cancel
+  bind -T copy-mode-vi  Escape send-keys -X cancel
+
+  bind -T copy-mode-vi  j      send-keys -X cursor-left
+  bind -T copy-mode-vi  k      send-keys -X cursor-up
+  bind -T copy-mode-vi  l      send-keys -X cursor-down
+  bind -T copy-mode-vi  \;     send-keys -X cursor-right
+
+  bind -T copy-mode-vi  \,     send-keys -X previous-word
+  bind -T copy-mode-vi  \.     send-keys -X next-word-end
+  bind -T copy-mode-vi  m      send-keys -X start-of-line
+  bind -T copy-mode-vi  \/     send-keys -X end-of-line
+
+  bind -T copy-mode-vi  i      send-keys -X page-up
+  bind -T copy-mode-vi  o      send-keys -X page-down
+
+  bind -T copy-mode-vi  v      send-keys -X begin-selection
+  bind -T copy-mode-vi  y      send-keys -X copy-pipe
+
+
+

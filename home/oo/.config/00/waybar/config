@@ -1,0 +1,182 @@
+{
+
+// //
+  "layer"    : "top",  // Waybar at top layer
+  "position" : "top",  // Waybar position (top|bottom|left|right)
+  "spacing"  :  0,      // Gaps between modules (4px)
+  // "height"   : 10,     // Waybar height (to be removed for auto height)
+  // "width"    : 1280,   // Waybar width
+
+"modules-left"   : [
+  // "custom/space01",
+  "sway/workspaces",
+  "sway/mode",
+  "sway/scratchpad",
+  ],
+
+"modules-center" : [
+  "sway/window",
+  "custom/space",
+  ],
+
+"modules-right"  : [
+  "cpu",
+  "memory",
+  "pulseaudio",
+  "backlight",
+  "temperature",
+  "bluetooth",
+  "network",
+  "idle_inhibitor",
+  // "custom/space01",
+  "clock",
+  "keyboard-state",
+  "tray",
+  ],
+
+
+"sway/window": {
+  "format"              : "{title}",
+  "max-length"          : 50,
+  },
+
+"sway/mode": {
+  "format"              : "<span style=\"italic\">{}</span>"
+  },
+
+"sway/scratchpad": {
+  "format"              : "{icon} {count}",
+  "format-icons"        : ["","",],
+  "show-empty"          : false,
+  "tooltip"             : true,
+  "tooltip-format"      : "{app}: {title}",
+  },
+
+"custom/space": {
+  "format"              : "    ",
+	"tooltip"             : false,
+  },
+
+"custom/space01": {
+  "format"              : " ",
+	"tooltip"             : false,
+  },
+
+
+"tray": {
+  "icon-size"           : 16,
+  "spacing"             : 0,
+  },
+
+"clock": {
+  "format"              : "{:%Y.%m.%d %H:%M:%S}",
+  "interval"            : 1,
+  "tooltip"             : true,
+  "tooltip-format"      : "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+  },
+
+"keyboard-state": {
+  "format": {
+        "numlock"       :"",
+        "capslock"      : "{icon}",
+        },
+  "format-icons"        : {
+      "locked"          : "A",
+      "unlocked"        : ""
+      },
+  "capslock"            : true,
+  // "numlock"             : true,
+  },
+
+"idle_inhibitor": {
+  "format"              : "{icon}",
+  "format-icons"        : {
+      "activated"       : " ",
+      "deactivated"     : " "
+  }
+  },
+
+"temperature": {
+  "format"              : "{icon}{temperatureC}°C",
+  "format-icons"        : ["", "", ""],
+  },
+
+"cpu": {
+  "format"              : " {usage}%",
+  "tooltip"             : true,
+  },
+
+"memory": {
+  "format"              : " {}%",
+  "tooltip"             : true,
+  },
+
+"backlight": {
+  "format"              : "{percent}% {icon}",
+  "format-icons"        : ["", "", "", "", "", "", "", "", ""],
+  },
+
+"pulseaudio": {
+  "format"              : "{icon} {volume}%",
+  "format-muted"        : "  {volume}% ",
+  "format-icons"        : {
+      "default"         : ["", "", ""]
+      },
+  "format-source"       : " {volume}%",
+  "format-source-muted" : "",
+  },
+
+"network": {
+  "format"                            : "x",
+  "format-wifi"                       : "^",
+  "format-disconnected"               : "x",
+  "format-linked"                     : "!",
+  "format-ethernet"                   : " ",
+  "format-alt"                        : " [{essid}]",
+  "tooltip-format"                    : "[ {essid} ] [{ifname}: {ipaddr}/{gwaddr}]",
+  "tooltip-format-wifi"               : "{essid} ({signalStrength}%) ",
+  "tooltip-format-disconnected"       : "Disconnected",
+  "format-linked"                     : "NO IP",
+  "tooltip-format-ethernet"           : "{ifname} ",
+  },
+
+"bluetooth": {
+  "format"                            : "x",
+  "format-connected"                  : "^",
+  "format-disabled"                   : "!",
+  "format-alt"                        : " ",
+  "tooltip-format"                    : "{controller_alias}\t{controller_address}",
+  "tooltip-format-connected"          : "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+  "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
+  },
+
+
+"power-profiles-daemon": {
+  "format": "{icon}",
+  "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+  "tooltip": true,
+  "format-icons": {
+    "default": "",
+    "performance": "",
+    "balanced": "",
+    "power-saver": ""
+    }
+  },
+
+"battery": {
+  "states": {
+      // "good": 95,
+      "warning" : 30,
+      "critical": 15
+      },
+  "format"          : "{capacity}% {icon}",
+  "format-full"     : "{capacity}% {icon}",
+  "format-charging" : "{capacity}% ",
+  "format-plugged"  : "{capacity}% ",
+  "format-alt"      : "{time} {icon}",
+  "format-icons"    : ["", "", "", "", ""]
+  },
+
+}
+
+

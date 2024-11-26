@@ -1,0 +1,53 @@
+<!-- KODI config, the ultimate entertainment center. -->
+<!-- Maintainer:	Jessee Chan <CYPHER0@foxmail.com> -->
+<!-- Last Change: 2023.12.20 -->
+
+
+<sources>
+<!--  -->
+
+<pictures> <default pathversion="1"></default>
+    <source><name>00_家庭-挑选</name><path pathversion="1">/0000/HH¦DATA/10_memory/00_家庭-精选</path><allowsharing>true</allowsharing></source>
+  </pictures>
+
+<music>    <default pathversion="1"></default>
+    <source><name>music</name><path pathversion="1">/0000/HH¦DATA/23_music</path><allowsharing>true</allowsharing></source>
+    <source><name>music_00</name><path pathversion="1">/0000/HH¦DATA/23_music/music_00</path><allowsharing>true</allowsharing></source>
+    <source><name>music_02</name><path pathversion="1">/0000/HH¦DATA/23_music/music_02</path><allowsharing>true</allowsharing></source>
+    <source><name>music_04</name><path pathversion="1">/0000/HH¦DATA/23_music/music_04</path><allowsharing>true</allowsharing></source>
+    <source><name>music_06</name><path pathversion="1">/0000/HH¦DATA/23_music/music_06</path><allowsharing>true</allowsharing></source>
+    <source><name>music_08</name><path pathversion="1">/0000/HH¦DATA/23_music/music_08</path><allowsharing>true</allowsharing></source>
+    <source><name>music_10</name><path pathversion="1">/0000/HH¦DATA/23_music/music_10</path><allowsharing>true</allowsharing></source>
+    <source><name>music_14</name><path pathversion="1">/0000/HH¦DATA/23_music/music_14</path><allowsharing>true</allowsharing></source>
+    <source><name>music_15</name><path pathversion="1">/0000/HH¦DATA/23_music/music_15</path><allowsharing>true</allowsharing></source>
+    <source><name>music_16</name><path pathversion="1">/0000/HH¦DATA/23_music/music_16</path><allowsharing>true</allowsharing></source>
+    <source><name>music_17</name><path pathversion="1">/0000/HH¦DATA/23_music/music_17</path><allowsharing>true</allowsharing></source>
+    <source><name>music_18</name><path pathversion="1">/0000/HH¦DATA/23_music/music_18</path><allowsharing>true</allowsharing></source>
+    <source><name>music_19</name><path pathversion="1">/0000/HH¦DATA/23_music/music_19</path><allowsharing>true</allowsharing></source>
+    <source><name>music_20</name><path pathversion="1">/0000/HH¦DATA/23_music/music_20</path><allowsharing>true</allowsharing></source>
+    <source><name>music_21</name><path pathversion="1">/0000/HH¦DATA/23_music/music_21</path><allowsharing>true</allowsharing></source>
+    <source><name>music_22</name><path pathversion="1">/0000/HH¦DATA/23_music/music_22</path><allowsharing>true</allowsharing></source>
+    <source><name>music_24</name><path pathversion="1">/0000/HH¦DATA/23_music/music_24</path><allowsharing>true</allowsharing></source>
+  </music>
+
+<video>    <default pathversion="1"></default>
+  <source><name>movie</name><path pathversion="1">/0000/HH¦DATA/24_movie/</path><allowsharing>true</allowsharing></source>
+  <source><name>drama</name><path pathversion="1">/0000/HH¦DATA/24_movie/02_drama/</path><allowsharing>true</allowsharing></source>
+  <source><name>movie</name><path pathversion="1">/0000/HH¦DATA/24_movie/03_movie/</path><allowsharing>true</allowsharing></source>
+  <source><name>sport</name><path pathversion="1">/0000/HH¦DATA/24_movie/11_sport/</path><allowsharing>true</allowsharing></source>
+  <source><name>music</name><path pathversion="1">/0000/HH¦DATA/24_movie/12_music/</path><allowsharing>true</allowsharing></source>
+  </video>
+
+<!--  -->
+  <files>
+      <default pathversion="1"></default>
+  </files>
+  <games>
+      <default pathversion="1"></default>
+  </games>
+  <programs>
+      <default pathversion="1"></default>
+  </programs>
+</sources>
+
+

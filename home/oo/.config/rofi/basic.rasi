@@ -1,0 +1,22 @@
+// ROFI config,
+
+
+configuration {
+
+  modes:       [ combi ];
+  combi-modes: [ window, drun, run ];
+
+  font:        "JetBrainsMono Nerd Font  24";
+	terminal:    "alacritty";
+
+  show-icons:          true;
+  drun-display-format: "{icon} {name}";
+
+  display-combi:  "󰘳";
+  display-window: "";
+  display-drun:   "";
+  display-run:    "";
+
+  }
+
+

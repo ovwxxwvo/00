@@ -1,0 +1,23 @@
+# SWAYBAR config,
+# Maintainer:	 Jessee Chan <CYPHER0@foxmail.com>
+# Last Change: 2024.11.05
+
+
+separator    = "|"
+
+separator_bg = "#20202080"
+separator_fg = "#202020c0"
+
+idle_bg      = "#202020c0"
+info_bg      = "#202020c0"
+good_bg      = "#202020c0"
+warning_bg   = "#202020c0"
+critical_bg  = "#202020c0"
+
+idle_fg      = "#d0d0d0"
+info_fg      = "#a0a0ff"
+good_fg      = "#a0ffa0"
+warning_fg   = "#ffffa0"
+critical_fg  = "#ffa0a0"
+
+

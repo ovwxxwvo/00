@@ -1,0 +1,8 @@
+[Plymouth Theme]
+Name=Arch
+Description=Arch theme by Jessie Chan
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/arch
+ScriptFile=/usr/share/plymouth/themes/arch/theme.script

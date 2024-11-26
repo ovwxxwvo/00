@@ -1,0 +1,44 @@
+#!/usr/bin/env dash
+
+
+cd $( dirname $0 )
+. ./basic.rc
+
+LABEL='WL' # 󰖩
+  ENABLE=$WL_ENABLE
+  POWER=$WL_POWER
+  STATE=$WL_STATE
+  QUALITY=$WL_QUALITY
+
+show_block() {
+  if   [ $ENABLE -eq 1 ]; then
+    BLOCK=$LABEL
+  else
+    BLOCK=""
+  fi
+  echo $BLOCK
+  echo $BLOCK
+  }
+
+show_color() {
+  if   [ $POWER -eq 0 ]; then
+    echo $COLOR_GRLT
+  elif [ $STATE -eq 0 ]; then
+    echo $COLOR_WHTE
+  elif [ $QUALITY -le 100 ]; then
+    echo $COLOR_GGGG
+  elif [ $QUALITY -le 80  ]; then
+    echo $COLOR_LLLL
+  elif [ $QUALITY -le 60  ]; then
+    echo $COLOR_YYYY
+  elif [ $QUALITY -le 40  ]; then
+    echo $COLOR_OOOO
+  elif [ $QUALITY -le 20  ]; then
+    echo $COLOR_RRRR
+  fi
+  }
+
+show_block
+show_color
+
+

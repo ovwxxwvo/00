@@ -1,0 +1,40 @@
+#!/usr/bin/env dash
+
+
+cd $( dirname $0 )
+. ./basic.rc
+
+LABEL='BT' # 󰂯
+  ENABLE=$BT_ENABLE
+  POWER=$BT_POWER
+  PAIR=$BT_PAIR
+  CONN=$BT_CONN
+
+show_block() {
+  if [ $ENABLE -eq 1 ]; then
+    BLOCK=$LABEL
+  else
+    BLOCK=""
+  fi
+  echo $BLOCK
+  echo $BLOCK
+  }
+
+show_color() {
+  if [ $POWER -eq 0 ]; then
+    echo $COLOR_GRLT
+  elif [ $PAIR -eq 1 ] && [ $CONN -eq 1 ]; then
+    echo $COLOR_AAAA
+  elif [ $PAIR -eq 1 ] && [ $CONN -eq 0 ]; then
+    echo $COLOR_WHTE
+  elif [ $PAIR -eq 0 ] && [ $CONN -eq 1 ]; then
+    echo $COLOR_RRRR
+  elif [ $PAIR -eq 0 ] && [ $CONN -eq 0 ]; then
+    echo $COLOR_VVVV
+  fi
+  }
+
+show_block
+show_color
+
+

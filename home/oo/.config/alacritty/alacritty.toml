@@ -1,0 +1,19 @@
+# ALACRITTY config, the gpu enhanced terminal emulator.
+# Maintainer:  Jessee Chan <CYPHER0@foxmail.com>
+# Last Change: 2023.12.31
+
+
+[general]
+
+import = [
+
+"~/.config/alacritty/basic.toml"  ,
+"~/.config/alacritty/window.toml" ,
+"~/.config/alacritty/color.toml"  ,
+
+"~/.config/alacritty/key/char.toml" ,
+"~/.config/alacritty/key/ctrl.toml" ,
+
+]
+
+

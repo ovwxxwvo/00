@@ -1,0 +1,17 @@
+# Static information about the filesystems.
+# See fstab(5) for details.
+
+
+# <file system> <dir> <type> <options> <dump> <pass>
+
+
+# /dev/md3        LABEL=ARCH
+UUID=1702ae66-1df2-44b1-8ef4-7e3f1c0f05fe	 /      ext4 rw,relatime,stripe=256	0 1
+
+# /dev/md4        LABEL=HOME
+UUID=3e1dca80-0b47-4e78-974c-bb8d565d3e5f	 /home  ext4 rw,relatime,stripe=256	0 2
+
+# /dev/nvme0n1p1  LABEL=UEFI
+UUID=E3B5-AC29                             /uefi 	vfat rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=ascii,shortname=mixed,utf8,errors=remount-ro 0 2
+
+

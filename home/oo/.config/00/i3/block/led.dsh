@@ -1,0 +1,30 @@
+#!/usr/bin/env dash
+
+
+cd $( dirname $0 )
+. ./basic.rc
+
+LABEL='L:'
+
+show_block() {
+  if [ $LED_EDP -eq 1 ]; then
+    BLOCK=$LABEL$LED_BKLIT
+  else
+    BLOCK=''
+  fi
+  echo $BLOCK
+  echo $BLOCK
+  }
+
+show_color() {
+  if [ $LED_BKLIT -gt 85 ]; then
+    echo $COLOR_PPPP
+  else
+    echo $COLOR_WHTE
+  fi
+  }
+
+show_block
+show_color
+
+

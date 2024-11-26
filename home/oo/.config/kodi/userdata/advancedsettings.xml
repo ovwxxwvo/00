@@ -1,0 +1,10 @@
+<!-- KODI config, the ultimate entertainment center. -->
+<!-- Maintainer:	Jessee Chan <CYPHER0@foxmail.com> -->
+<!-- Last Change: 2023.12.20 -->
+
+
+<advancedsettings version="1.0">
+  <seeksteps>1, 2, 3, 4, 5, 10, 20, 30, 40, 50, 60</seeksteps>
+</advancedsettings>
+
+

@@ -1,0 +1,32 @@
+# SOUND config,
+
+
+ctl.!default {
+  type hw
+  card Audio
+}
+# pcm.!default {
+#   type hw
+#   card Audio
+# }
+playback.pcm {
+  type hw
+  card Audio
+}
+capture.pcm {
+  type hw
+  card 1
+}
+
+
+# pcm.!default {
+#    type hw
+#    card 1
+# }
+#
+# ctl.!default {
+#    type hw
+#    card 1
+# }
+
+

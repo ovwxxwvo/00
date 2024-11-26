@@ -1,0 +1,83 @@
+// ROFI config,
+
+
+* {
+  width:            var( width, 60% );
+  spacing:          0.0%;
+  boader:           0.0%;
+  margin:           0.0%;
+  padding:          0.0%;
+
+  // background-color: transparent;
+  background-color: #80808040;
+  text-color:       #ffff00;
+  }
+
+window {
+  children:         [mainbox];
+  anchor:           center;
+  location:         center;
+  margin:           0.0%;
+  padding:          0.8%;
+  background-color: #40404040;
+  }
+
+mainbox {
+  children:         [inputbar,listview];
+  location:         center;
+  orientation:      vertical;
+  margin:           0.2%;
+  padding:          0.2%;
+  }
+
+inputbar {
+  children:         [prompt,entry];
+  location:         center;
+  orientation:      horizontal;
+  margin:           0.2%;
+  padding:          0.2%;
+  }
+
+listview {
+  location:         center;
+  layout:           vertical;
+  scrollbar:        false;
+  cycle:            false;
+  lines:            3;
+  margin:           0.2%;
+  padding:          0.2%;
+  }
+
+prompt {
+  margin:           0.8%;
+  padding:          0.8%;
+  }
+
+entry {
+  margin:           0.8%;
+  padding:          0.8%;
+  }
+
+element {
+  spacing:          0.2%;
+  margin:           0.2%;
+  padding:          0.2%;
+  }
+
+element-icon {
+  size:             4.0%;
+  margin:           0.8%;
+  padding:          0.8%;
+  }
+
+element-text {
+  margin:           0.8%;
+  padding:          0.8%;
+  text-color:       #ffffff;
+  }
+
+element selected {
+  background-color: #ffff0060;
+  }
+
+

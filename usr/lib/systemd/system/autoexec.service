@@ -1,0 +1,12 @@
+[Unit]
+Description=auto exec script
+After=systemd-user-sessions.service plymouth-quit-wait.service getty.service lemurs.service
+
+[Service]
+ExecStart=/home/00/autoexec.sh
+
+[Install]
+WantedBy=lemurs.target
+# WantedBy=multi-user.target
+
+

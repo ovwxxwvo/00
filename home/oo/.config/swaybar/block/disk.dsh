@@ -1,0 +1,43 @@
+#!/usr/bin/env dash
+
+
+. ~/.config/swaybar/block/icon.ash
+. ~/.config/swaybar/block/color.ash
+LABEL="$ICON_DISK"
+
+
+USAGE=$( df \
+  | grep ' /$' \
+  | grep -Eo "[0-9]+%" \
+  | grep -Eo "[0-9]+" \
+  )
+# echo $LABEL $USAGE
+
+
+show_block() {
+  BLOCK="$LABEL $USAGE%"
+  echo "$BLOCK"
+  echo "$BLOCK"
+  }
+
+show_color() {
+  if   [ $USAGE -gt 90 ]; then
+    echo $clr_relt
+  elif [ $USAGE -gt 75 ]; then
+    echo $clr_orlt
+  elif [ $USAGE -gt 60 ]; then
+    echo $clr_yelt
+  elif [ $USAGE -gt 45 ]; then
+    echo $clr_lelt
+  elif [ $USAGE -gt 30 ]; then
+    echo $clr_cylt
+  elif [ $USAGE -gt 15 ]; then
+    echo $clr_gywt
+  fi
+  }
+
+
+show_block
+show_color
+
+

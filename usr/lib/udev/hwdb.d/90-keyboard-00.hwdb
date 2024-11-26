@@ -1,0 +1,25 @@
+# KEYBOARD config,
+  # - Key mapping
+  # - Hard-coded layouts
+  # - Absence of modifier LEDs
+
+
+# example
+  # evdev:atkbd:dmi:bvn*:bvr*:bd*:svn<vendor>:pn<product>:pvr*
+  # evdev:input:b<bus_id>v<vendor_id>p<product_id>e<version_id>-<modalias>
+  # evdev:name:<input device name>:dmi:bvn*:bvr*:bd*:svn<vendor>:pn*
+
+# 内置键盘：匹配所有AT键盘
+evdev:atkbd:dmi:*
+  KEYBOARD_KEY_01=capslock
+  KEYBOARD_KEY_3a=esc
+
+# 外置键盘：匹配所有usb键盘
+evdev:input:b0003*
+  KEYBOARD_KEY_70029=capslock
+  KEYBOARD_KEY_70039=esc
+
+# DAREU A98
+# evdev:input:b0003v05ACp024F*
+
+

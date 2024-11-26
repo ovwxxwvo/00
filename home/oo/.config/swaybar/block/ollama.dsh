@@ -1,0 +1,36 @@
+#!/usr/bin/env dash
+
+
+. ~/.config/swaybar/block/icon.ash
+. ~/.config/swaybar/block/color.ash
+LABEL="$ICON_ollama"
+
+
+ACTIVE=$( ps -ef \
+  |grep -v 'grep' \
+  |grep -oc ' ollama serve$' \
+  )
+# echo ol $ACTIVE
+
+
+show_block() {
+  if [ $ACTIVE -eq 1 ]; then
+    BLOCK="$LABEL"
+  else
+    BLOCK=""
+  fi
+  echo "$BLOCK"
+  echo "$BLOCK"
+  }
+
+show_color() {
+  if [ $ACTIVE -eq 1 ]; then
+    echo $clr_gywt
+  fi
+  }
+
+
+show_block
+show_color
+
+

@@ -1,0 +1,11 @@
+[plugin]
+deps = [
+  { use = "yazi-rs/plugins:git"   },
+  { use = "yazi-rs/plugins:chmod" },
+  { use = "dawsers/toggle-view"   },
+  ]
+
+[flavor]
+deps = [{ use = "yazi-rs/flavors:catppuccin-frappe", rev = "8465c93" }]
+
+

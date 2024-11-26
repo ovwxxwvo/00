@@ -1,0 +1,16 @@
+<settings version="2">
+    <setting id="albumreviewsource" default="true">TheAudioDb.com</setting>
+    <setting id="tadbalbumlanguage" default="true">en</setting>
+    <setting id="albumratingsource" default="true">MusicBrainz</setting>
+    <setting id="albumstylessource" default="true">TheAudioDb.com</setting>
+    <setting id="albummoodssource" default="true">TheAudioDb.com</setting>
+    <setting id="albumthemessource" default="true">TheAudioDb.com</setting>
+    <setting id="fanarttvalbumthumbs">true</setting>
+    <setting id="tadbalbumthumbs">true</setting>
+    <setting id="allmusicalbumthumbs" default="true">false</setting>
+    <setting id="fanarttvalbumdiscart" default="true">false</setting>
+    <setting id="tadbalbumdiscart" default="true">false</setting>
+    <setting id="tadbalbumback" default="true">false</setting>
+    <setting id="tadbalbumspine" default="true">false</setting>
+    <setting id="mbsite" default="true">https://musicbrainz.org</setting>
+</settings>

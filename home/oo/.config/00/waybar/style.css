@@ -1,0 +1,103 @@
+* {
+  font-family         : "JetBrains Mono Nerd Font";
+  font-size           : 16px;
+
+  /* border-radius       : 20%; */
+  border-radius       : 20px;
+  margin              : 0px 1px;
+  padding             : 0px 1px;
+  }
+
+tooltip {
+  border              : 2px solid #101010;
+  background          : #404040;
+  color               : #808080;
+  }
+
+window#waybar {
+  transition-property : background-color;
+  transition-duration : .5s;
+  border              : rgba(255,255,255,0.1) 8px solid ;
+  background-color    : rgba(16,16,16,0.8);
+  color               : #808080;
+  }
+
+button {
+  margin              : 0px 2px;
+  padding             : 0px 4px;
+  border              : rgba(255,255,255,0.1) 2px solid ;
+  }
+  button.focused {
+  box-shadow          : inset 0 -1px #000000;
+  background-color    : #006060;
+  }
+    #tray,
+    #keyboard-state,
+    #idle_inhibitor,
+    #network,
+    #bluetooth,
+    #temperature,
+    #backlight,
+    #pulseaudio,
+    #cpu,
+    #memory,
+    #clock {
+  margin              : 0px 0px;
+  padding             : 0px 4px;
+  border              : rgba(255,255,255,0.1) 2px solid ;
+  background-color    : rgba(0,0,0,0.4);
+  }
+
+
+#scratchpad {
+  background          : rgba(0, 0, 0, 0.2);
+  }
+  #scratchpad.empty {
+  background-color    : transparent;
+  }
+
+#clock {
+  color               : #ffffa0;
+  }
+
+#keyboard-state {
+  color               : #b05050;
+  }
+
+#idle_inhibitor {
+  color               : #b0b0b0;
+  }
+
+#idle_inhibitor.activated {
+  color               : #d0d0d0;
+  }
+
+#network {
+  color               : #50b080;
+  }
+
+#bluetooth {
+  color               : #5080b0;
+  }
+
+#temperature {
+  color               : #b08050;
+  }
+
+#backlight {
+  color               : #b0b0b0;
+  }
+
+#pulseaudio {
+  color               : #b0b0b0;
+  }
+
+#cpu {
+  color               : #80b050;
+  }
+
+#memory {
+  color               : #80b050;
+  }
+
+

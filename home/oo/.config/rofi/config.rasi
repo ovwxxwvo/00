@@ -1,0 +1,10 @@
+// ROFI config,
+// Maintainer:  Jessee Chan <CYPHER0@foxmail.com>
+// Last Change: 2023.05.05
+
+
+@import "basic"
+
+@theme  "transparent"
+
+

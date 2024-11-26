@@ -1,0 +1,71 @@
+# TMUX config, terminal multiplexer.
+# Maintainer:	 Jessee Chan <CYPHER0@foxmail.com>
+# Last Change: 2023.05.05
+
+
+# status update interval
+set -g status-interval          1
+# status window alignment
+set -g status-justify           left
+# status window separator
+set -g window-status-separator  "  "
+
+%hidden clr_window="fg=#c0c0c0,bg=#202020"
+%hidden clr_border="fg=#101010,bg=#303030"
+%hidden clr_status="fg=#808080,bg=#303030"
+
+# window
+set -g  window-style             "$clr_window"
+set -g  window-active-style      "$clr_window"
+# border
+set -g  pane-border-style        "$clr_border"
+set -g  pane-active-border-style "$clr_border"
+# bar, Message
+set -g message-style             "$clr_status"
+set -g message-command-style     "$clr_status"
+# bar, Status
+set -g  status-style             "$clr_status"
+set -g  window-status-style      "$clr_status"
+# set -g  window-status-last-style      "fg=#ffffff,bg=#101010"
+# set -g  window-status-activity-style  "fg=#ffffff,bg=#404040"
+# set -g  window-status-current-style   "fg=#ffff00,bg=#1a1a0d"
+
+%hidden clr_default_n="fg=default,bg=default,noreverse"
+%hidden clr_default_r="fg=default,bg=default,reverse"
+%hidden clr_default_b="fg=default,bg=default,noreverse,bold"
+
+# status bar, Left
+set -g status-left "\
+#[$clr_default_n] #S \
+#[$clr_default_r]\
+#[$clr_default_n]\
+#[$clr_default_n] \
+ "
+
+# status bar, Right
+set -g status-right "\
+#[$clr_default_n] \
+#[$clr_default_n]\
+#[$clr_default_r]\
+#[$clr_default_n] %A\
+#[$clr_default_n ] | \
+#[$clr_default_n]%H:%M:%S \
+#[$clr_default_n]\
+#[$clr_default_r]\
+"
+
+# status bar, Tab unfocus
+set -g window-status-format "\
+#[$clr_default_n]\
+#[$clr_default_n] #I | #W \
+#[$clr_default_n]\
+"
+
+# status bar, Tab focus
+set -g window-status-current-format "\
+#[$clr_default_r]\
+#[$clr_default_b] #I | #W \
+#[$clr_default_r]\
+"
+
+

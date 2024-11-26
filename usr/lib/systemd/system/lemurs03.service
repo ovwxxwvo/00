@@ -1,0 +1,17 @@
+[Unit]
+Description=Lemurs03
+After=systemd-user-sessions.service plymouth-quit-wait.service
+After=getty@tty3.service
+
+[Service]
+ExecStart=/usr/bin/lemurs -v /etc/lemurs/variables_03.toml
+StandardInput=tty
+TTYPath=/dev/tty3
+TTYReset=yes
+TTYVHangup=yes
+Type=idle
+
+[Install]
+WantedBy=getty.target
+
+

@@ -1,0 +1,46 @@
+#!/usr/bin/env dash
+
+
+. ~/.config/swaybar/block/icon.ash
+. ~/.config/swaybar/block/color.ash
+LABEL="$ICON_WLAN"
+CONN="$ICON_CONN"
+DISC="$ICON_DISC"
+
+
+ENABLE=$( rfkill |grep 'wlan' \
+  |grep -o 'unblocked' \
+  |grep -c 'unblocked' \
+  |grep -c '2' \
+  )
+STATE=$( cat /proc/net/wireless \
+  |grep -c '0000' \
+  )
+# echo $ENABLE $STATE
+
+
+show_block() {
+  if   [ $ENABLE -eq 1 ] && [ $STATE -eq 1 ] ;then
+    BLOCK="$LABEL$CONN"
+  elif [ $ENABLE -eq 1 ] && [ $STATE -eq 0 ] ;then
+    BLOCK="$LABEL$DISC"
+  else
+    BLOCK=""
+  fi
+  echo "$BLOCK"
+  echo "$BLOCK"
+  }
+
+show_color() {
+  if [ $STATE -eq 1 ] ;then
+    echo $clr_sglt
+  else
+    echo $clr_sggy
+  fi
+  }
+
+
+show_block
+show_color
+
+

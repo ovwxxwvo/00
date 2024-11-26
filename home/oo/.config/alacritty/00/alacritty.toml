@@ -1,0 +1,26 @@
+# ALACRITTY config, the gpu enhanced terminal emulator.
+# Maintainer:  Jessee Chan <CYPHER0@foxmail.com>
+# Last Change: 2023.05.05
+
+
+# import:
+  # Import additional configuration files
+  #
+  # Imports are loaded in order, skipping all missing files,
+  # with the importing file being loaded last.
+  # If a field is already present in a previous import,
+  # it will be replaced.
+  #
+  # All imports must either be absolute paths starting with `/`,
+  # or paths relative to the user's home directory starting with `~/`.
+  #
+  #  - /path/to/alacritty.yml
+
+# - ~/.config/alacritty/basic.yml
+# - ~/.config/alacritty/color.yml
+# - ~/.config/alacritty/window.yml
+#
+# - ~/.config/alacritty/key/char.yml
+# - ~/.config/alacritty/key/ctrl.yml
+
+

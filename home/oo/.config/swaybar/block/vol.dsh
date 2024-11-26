@@ -1,0 +1,66 @@
+#!/usr/bin/env dash
+
+
+. ~/.config/swaybar/block/icon.ash
+. ~/.config/swaybar/block/color.ash
+LABEL="$ICON_VOL"
+VOL_MUTE="$ICON_VOL_MUTE"
+
+
+SINK=$( pactl get-default-sink )
+  VOL_MUTE=$( pactl get-sink-mute $SINK \
+    | grep -c 'yes' \
+    )
+  VOL_BLNC=$( pactl get-sink-volume $SINK \
+    | grep -Eo "balance .+" \
+    | grep -c '0.00' \
+    )
+  VOL_RT=$( pactl get-sink-volume $SINK \
+    | grep -Eo "right: [0-9]+ . +[0-9]+%" \
+    | grep -Eo "[0-9]+%" \
+    | grep -Eo "[0-9]+" \
+    )
+  VOL_LT=$( pactl get-sink-volume $SINK \
+    | grep -Eo "left: [0-9]+ . +[0-9]+%" \
+    | grep -Eo "[0-9]+%" \
+    | grep -Eo "[0-9]+" \
+    )
+  VOLUME=$VOL_RT
+# echo -e \
+  # "\n VOL_MUTE=$VOL_MUTE" \
+  # "\n VOL_BLNC=$VOL_BLNC" \
+  # "\n VOL_RT=$VOL_RT" \
+  # "\n VOL_LT=$VOL_LT" \
+  # "\n VOLUME=$VOLUME" \
+  # ""
+
+
+show_block() {
+  if [ $VOL_MUTE -eq 1 ]; then
+    BLOCK="$VOL_MUTE"
+  elif [ $VOL_BLNC -eq 1 ]; then
+    BLOCK="$LABEL $VOLUME%"
+  elif [ $VOL_BLNC -eq 0 ]; then
+    BLOCK="$LABEL $VOL_LT%:$VOL_RT%"
+  else
+    BLOCK=""
+  fi
+  echo "$BLOCK"
+  echo "$BLOCK"
+  }
+
+show_color() {
+  if [ $VOL_MUTE -eq 1 ]; then
+    echo $clr_gysl
+  elif [ $VOLUME -gt 100 ]; then
+    echo $clr_repr
+  else
+    echo $clr_gywt
+  fi
+  }
+
+
+show_block
+show_color
+
+

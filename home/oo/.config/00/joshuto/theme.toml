@@ -1,0 +1,149 @@
+# JOSHUTO config,
+# Maintainer:  Jessee Chan <CYPHER0@foxmail.com>
+# Last Change: 2024.08.24
+
+
+lscolors_enabled = false
+  # The image preview background color, only RGB colors are accepted.
+  # preview_background = "#FFFFFF"
+
+[tabs]
+
+[tabs.chars]
+  divider = " "
+  active_prefix    = ""
+  active_postfix   = ""
+  inactive_prefix  = ""
+  inactive_postfix = ""
+  scroll_front_prefix     = ""
+  scroll_front_postfix    = ""
+  scroll_front_prestring  = ""
+  scroll_front_poststring = " "
+  scroll_back_prefix      = ""
+  scroll_back_postfix     = ""
+  scroll_back_prestring   = " "
+  scroll_back_poststring  = ""
+
+[tabs.styles]
+
+  [tabs.styles.active]
+  fg = "#001020"
+  bg = "#a0d0ff"
+  bold = true
+
+  [tabs.styles.active_prefix]
+  fg = "#a0d0ff"
+  bg = "reset"
+
+  [tabs.styles.inactive]
+  fg = "#001020"
+  bg = "#708090"
+
+  [tabs.styles.inactive_prefix]
+  fg = "#708090"
+  bg = "reset"
+
+  [tabs.styles.scroll_front]
+  fg = "#909070"
+  bg = "#ffffa0"
+  bold = true
+
+  [tabs.styles.scroll_front_prefix]
+  fg = "#ffffa0"
+  bg = "reset"
+
+  [tabs.styles.scroll_front_postfix]
+  invert = true
+
+  [tabs.styles.scroll_back]
+  fg = "#202000"
+  bg = "#ffffa0"
+  bold = true
+
+  [tabs.styles.scroll_back_prefix]
+  fg = "#ffffa0"
+  bg = "reset"
+  invert = true
+
+  [tabs.styles.scroll_back_postfix]
+  invert = false
+
+[selection]
+  fg = "#ffb060"
+  bold = true
+  prefix = " "
+
+[visual_mode_selection]
+  fg = "#ffa0a0"
+  bold = true
+  prefix = "v "
+
+[regular]
+  fg = "#a0d0ff"
+
+[directory]
+  fg = "#50b0b0"
+  bold = true
+
+[link]
+  fg = "#5050b0"
+  bold = true
+
+[socket]
+  fg = "#b050b0"
+  bold = true
+
+[executable]
+  fg = "#b0b050"
+  bold = true
+
+[link_invalid]
+  fg = "#b05050"
+  bold = true
+
+[ext]
+
+# image
+  jpg.fg  = "#80b050"
+  png.fg  = "#80b050"
+  gif.fg  = "#80b050"
+  jpeg.fg = "#80b050"
+  heic.fg = "#80b050"
+  bmp.fg  = "#80b050"
+  pgm.fg  = "#80b050"
+  ppm.fg  = "#80b050"
+  svg.fg  = "#80b050"
+
+# audio
+  mp3.fg  = "#50b050"
+  amr.fg  = "#50b050"
+  aac.fg  = "#50b050"
+  ogg.fg  = "#50b050"
+  flac.fg = "#50b050"
+  wav.fg  = "#50b050"
+
+# video
+  mp4.fg  = "#50b080"
+  mkv.fg  = "#50b080"
+  flv.fg  = "#50b080"
+  avi.fg  = "#50b080"
+  m3u.fg  = "#50b080"
+  m4a.fg  = "#50b080"
+  m4v.fg  = "#50b080"
+  mov.fg  = "#50b080"
+  mpg.fg  = "#50b080"
+  rmvb.fg = "#50b080"
+  webm.fg = "#50b080"
+  wmv.fg  = "#50b080"
+
+# archive
+  7z.fg   = "#b05080"
+  zip.fg  = "#b05080"
+  rar.fg  = "#b05080"
+  gz.fg   = "#b05080"
+  tar.fg  = "#b05080"
+  tgz.fg  = "#b05080"
+  bz2.fg  = "#b05080"
+  xz.fg   = "#b05080"
+
+

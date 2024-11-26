@@ -1,0 +1,41 @@
+# ALACRITTY config,
+
+
+[keyboard]
+bindings = [
+
+  # {key= "NumpadEnter",                 chars= "^M" },  #  \x0d  ^M
+
+  {key= "Tab",        mods= "Control", chars= "Ñ"  },  #  \xd1  Ñ
+  {key= "Escape",     mods= "Control", chars= "Ò"  },  #  \xd2  Ò
+  {key= "Return",     mods= "Control", chars= "Ü"  },  #  \xd3  Ü
+
+  {key= "M",          mods= "Control", chars= "Ú"  },  #  \xda  Ú
+
+  {key= "LBracket",   mods= "Control", chars= "ã"  },  #  \xe3  ã
+  {key= "RBracket",   mods= "Control", chars= "ä"  },  #  \xe4  ä
+  {key= "Semicolon",  mods= "Control", chars= "å"  },  #  \xe5  å
+  {key= "Comma",      mods= "Control", chars= "ç"  },  #  \xe7  ç
+  {key= "Period",     mods= "Control", chars= "è"  },  #  \xe8  è
+
+  {key= "Key1",       mods= "Control", chars= "ñ"  },  #  \xf1  ñ
+  {key= "Key2",       mods= "Control", chars= "ò"  },  #  \xf2  ò
+  {key= "Key3",       mods= "Control", chars= "ó"  },  #  \xf3  ó
+  {key= "Key4",       mods= "Control", chars= "ô"  },  #  \xf4  ô
+  {key= "Key5",       mods= "Control", chars= "õ"  },  #  \xf5  õ
+  {key= "Key6",       mods= "Control", chars= "ö"  },  #  \xf6  ö
+  {key= "Key7",       mods= "Control", chars= "÷"  },  #  \xf7  ÷
+  {key= "Key8",       mods= "Control", chars= "ø"  },  #  \xf8  ø
+  {key= "Key9",       mods= "Control", chars= "ù"  },  #  \xf9  ù
+  {key= "Key0",       mods= "Control", chars= "ú"  },  #  \xfa  ú
+
+  # {key= "Apostrophe", mods= "Control", chars= "æ"  },  #  \xe6  æ
+  # {key= "Grave",      mods= "Control", chars= "ë"  },  #  \xeb  ë
+  # {key= "Minus",      mods= "Control", chars= "á"  },  #  \xe1  á
+  # {key= "Equals",     mods= "Control", chars= "â"  },  #  \xe2  â
+  # {key= "Slash",      mods= "Control", chars= "é"  },  #  \xe9  é
+  # {key= "Backslash",  mods= "Control", chars= "ê"  },  #  \xea  ê
+
+]
+
+

@@ -1,0 +1,34 @@
+# ALACRITTY config, color
+
+
+[colors]
+  transparent_background_colors = true
+  primary        = { background = '#202020', foreground = '#e0e0e0' }
+  cursor         = { text = "CellBackground", cursor = "CellForeground" }
+  vi_mode_cursor = { text = "CellBackground", cursor = "CellForeground" }
+
+[colors.normal]
+  red      = '#ff0000'
+  green    = '#00ff00'
+  blue     = '#0000ff'
+  yellow   = '#ffff00'
+  cyan     = '#00ffff'
+  magenta  = '#ff00ff'
+
+[colors.dim]
+  red      = '#600000'
+  green    = '#606000'
+  blue     = '#006000'
+  yellow   = '#006060'
+  cyan     = '#000060'
+  magenta  = '#600060'
+
+[colors.bright]
+  red      = '#ffa0a0'
+  green    = '#ffffa0'
+  blue     = '#a0ffa0'
+  yellow   = '#a0ffff'
+  cyan     = '#a0a0ff'
+  magenta  = '#ffa0ff'
+
+

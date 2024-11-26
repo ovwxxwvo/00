@@ -1,0 +1,7 @@
+# link config,
+
+
+ln -s  ~/.config/fcitx5   ~/.local/share/fcitx5         \
+ln -s  ~/.config/kodi     ~/.kodi                       \
+
+

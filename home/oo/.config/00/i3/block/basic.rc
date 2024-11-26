@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+
+cd '/home/00/status'
+. ./color.rc
+
+cd '/home/00/autostat'
+. ./reget.sh
+
+

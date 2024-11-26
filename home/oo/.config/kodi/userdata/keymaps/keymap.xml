@@ -1,0 +1,66 @@
+<!-- KODI config, the ultimate entertainment center. -->
+<!-- Maintainer:	Jessee Chan <CYPHER0@foxmail.com> -->
+<!-- Last Change: 2023.12.20 -->
+
+
+<keymap>
+  <global><keyboard>
+    <F5>ReloadSkin()</F5>
+    <!-- <n>Notification(Testing 123,Hello world)</n> -->
+    <!-- <m>Skin.ToggleDebug()</m> -->
+    <j>left</j>
+    <k>up</k>
+    <l>down</l>
+    <semicolon>right</semicolon>
+    <i>pageup</i>
+    <o>pagedown</o>
+    <comma>skipprevious</comma>
+    <period>skipnext</period>
+    <h>back</h>
+    <m>menu</m>
+    <u>previousmenu</u>
+    <n>activatewindow(settings)</n>
+    <y>activatewindow(shutdownmenu)</y>
+    <q>quit</q>
+    <f>runaddon(script.globalsearch)</f>
+    </keyboard></global>
+
+  <fullscreenlivetv><keyboard>
+    <comma>channeldown</comma>
+    <period>channelup</period>
+    </keyboard></fullscreenlivetv>
+  <fullscreenvideo><keyboard>
+    <comma>skipprevious</comma>
+    <period>skipnext</period>
+    <j>stepback</j>
+    <semicolon>stepforward</semicolon>
+    </keyboard></fullscreenvideo>
+  <visualisation><keyboard>
+    <comma>skipprevious</comma>
+    <period>skipnext</period>
+    <j>stepback</j>
+    <semicolon>stepforward</semicolon>
+    </keyboard></visualisation>
+
+  <pvrosdchannels><keyboard>
+    <comma>channeldown</comma>
+    <period>channelup</period>
+    </keyboard></pvrosdchannels>
+
+  <!-- <osdvideosettings><keyboard> -->
+  <!--   <comma>skipprevious</comma> -->
+  <!--   <period>skipnext</period> -->
+  <!--   </keyboard></osdvideosettings> -->
+  <!-- <osdaudiosettings><keyboard> -->
+  <!--   <comma>skipprevious</comma> -->
+  <!--   <period>skipnext</period> -->
+  <!--   </keyboard></osdaudiosettings> -->
+
+  <!-- <virtualkeyboard> -->
+  <!--   <keyboard> -->
+  <!--   </keyboard> -->
+  <!-- </virtualkeyboard> -->
+
+</keymap>
+
+
