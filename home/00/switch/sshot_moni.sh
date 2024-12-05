@@ -11,7 +11,7 @@ FILE_PATH='/home/download/screen/'"$SUFFIX"'.'"$EXT"
 
 function press_key {
   grim \
-  -o "$(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name')" \
+  -o "$(swaymsg -t get_outputs |jq -r '.[] | select(.focused) | .name')" \
   "$FILE_PATH" &
   }
 

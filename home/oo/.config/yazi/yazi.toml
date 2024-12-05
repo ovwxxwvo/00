@@ -1,8 +1,6 @@
 # YAZI config, blazing fast terminal file manager.
 # Maintainer:  Jessee Chan <CYPHER0@foxmail.com>
 # Last Change: 2024.10.28
-  # A TOML linter such as https://taplo.tamasfe.dev/ can use this schema to validate your config.
-  # If you encounter any issues, please make an issue at https://github.com/yazi-rs/schemas.
 
 
 "$schema" = "https://yazi-rs.github.io/schemas/yazi.json"

@@ -17,7 +17,6 @@
     { on = ["g","v"], run = "cd /home/script/"        ,desc="" },
     { on = ["g","z"], run = "cd /home/download/zero/" ,desc="" },
 
-    { on = ["g","."], run = "cd /0000/HH¦DATA/sex(儿童不宜)/" ,desc="" },
     { on = ["g","t"], run = "cd /0000/HH¦DATA/10_note/"   ,desc="10_note/"   },
     { on = ["g","r"], run = "cd /0000/HH¦DATA/21_office/" ,desc="21_office/" },
     { on = ["g","e"], run = "cd /0000/HH¦DATA/22_photo/"  ,desc="22_photo/"  },

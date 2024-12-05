@@ -1,0 +1,18 @@
+-- NVIM config,
+-- Maintainer:	Jessee Chan <CYPHER0@foxmail.com>
+-- Last Change: 2024.11.25
+
+
+local module = "telescope"
+if not pcall(require, module) then return end
+
+
+-- require(module).setup()
+-- require("telescope").load_extension("fzf_native")
+
+-- vim.api.nvim_create_autocmd("FileType", {
+--   pattern = "TelescopeResults",
+--   command = "setlocal nofoldenable",
+-- })
+
+

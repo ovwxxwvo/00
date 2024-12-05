@@ -1,28 +1,35 @@
--- NEOVIM config, a text editor based on vim.
+-- NVIM config, a text editor based on vim.
 -- Maintainer:	Jessee Chan <CYPHER0@foxmail.com>
--- Last Change: 2023.11.30
+-- Last Change: 2024.11.30
+
+
 
 
 vim.cmd[[source ~/.config/nvim/deft.vim]]
 
-require('lazy-nvim')
+require("plug")
+require("plugin")
 
-require('script.plugdown')
+local autocmd = os.getenv("HOME").."/.config/nvim/autocmd/"
+dofile(autocmd.."filetype.lua"     )
 
-require('plugin.noice')
-require('plugin.lualine')
-require('plugin.matchparen')
-require('plugin.mason')
-require('plugin.cmp')
-require('plugin.telescope')
+local config = os.getenv("HOME").."/.config/nvim/config/"
+dofile(config.."mason.luc"     )
+dofile(config.."cmp.luc"       )
+dofile(config.."telescope.luc" )
+dofile(config.."noice.luc"     )
+dofile(config.."lualine.luc"   )
 
-require('keymap.normal')
-require('keymap.visual')
-require('keymap.contrl')
-require('keymap.functn')
-require('keymap.window')
-require('keymap.plugin')
+local keymap = os.getenv("HOME").."/.config/nvim/keymap/"
+dofile(keymap.."normal.lua")
+dofile(keymap.."visual.lua")
+dofile(keymap.."contrl.lua")
+dofile(keymap.."functn.lua")
+dofile(keymap.."window.lua")
+dofile(keymap.."plugin.lua")
 
-require('color.defaut')
+require("misty")
+-- local color = os.getenv("HOME").."/.config/nvim/colors/"
+-- dofile(color.."misty.nvim/lua/misty/init.lua")
 
 

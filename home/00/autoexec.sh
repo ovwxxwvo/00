@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 ########################################
-# autoexec script for sway after login
+# autoexec script after sway
 ########################################
 
 

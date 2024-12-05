@@ -19,7 +19,7 @@ function press_key {
   if [ $ACTIVE -ne 1 ]; then
     wf-recorder \
     -a "$(pactl get-default-sink)" \
-    -o "$(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name')" \
+    -o "$(swaymsg -t get_outputs |jq -r '.[] | select(.focused) | .name')" \
     -f "$FILE_PATH" &
   else
     killall wf-recorder

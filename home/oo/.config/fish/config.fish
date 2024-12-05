@@ -6,12 +6,14 @@
 source  /home/00/autoshll.sh
 
 
-source  ~/.config/fish/basic.fsh
+set  config  "$HOME/.config/fish"
+source $config/basic.fsh
 
-source  ~/.config/fish/keymap/ctrl.fsh
-source  ~/.config/fish/keymap/copy.fsh
+set  keymap  "$HOME/.config/fish/keymap"
+source $keymap/ctrl.fsh
+source $keymap/copy.fsh
 
-
-source  ~/.config/fish/plugins/misty.fish/init.fish
+set  plugin  "$HOME/.config/fish/plugins"
+source $plugin/misty.fish/init.fish
 
 
