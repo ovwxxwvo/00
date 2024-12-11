@@ -7,6 +7,20 @@
 
   keymap = [
 
+  # plugin
+	  { on = [ "t","r" ], run = "tab_create --current"                     , desc = "create a new tab with CWD" },
+
+    { on = [ "t","s" ], run = "plugin --sync toggle-view --args=parent"  , desc = "toggle pane parent " },
+    { on = [ "t","d" ], run = "plugin --sync toggle-view --args=current" , desc = "toggle pane current" },
+    { on = [ "t","f" ], run = "plugin --sync toggle-view --args=preview" , desc = "toggle pane preview" },
+
+    { on = [ "t","t" ], run = "plugin --sync mpviewer --args=server"     , desc = "toggle mpv server"  },
+  	{ on = "<S-Left>" , run = "plugin --sync mpviewer --args='seek -5'"  , desc = "seek bw in preview" },
+  	{ on = "<S-Right>", run = "plugin --sync mpviewer --args='seek +5'"  , desc = "seek fw in preview" },
+  	{ on = "<S-Up>"   , run = "plugin --sync mpviewer --args='zoom +0.1'", desc = "zoom in in preview" },
+  	{ on = "<S-Down>" , run = "plugin --sync mpviewer --args='zoom -0.1'", desc = "zoom ot in preview" },
+  	{ on = "<Enter>"  , run = "plugin --sync mpviewer --args=enter"      , desc = "open file" },
+
   # go
     { on = ["g","o"], run = "cd /0000/HH¦DATA/" ,desc="" },
     { on = ["g","h"], run = "cd /home/"         ,desc="" },
@@ -52,7 +66,6 @@
 	  { on = "<F1>",    run = "help",                            desc = "help" },
   	{ on = "<Esc>",   run = "escape",                          desc = "back to normal mode" },
   	{ on = "<Space>", run = ["select --state=none","arrow 1"], desc = "select file" },
-  	{ on = "<Enter>", run = "plugin --sync mpventer"         , desc = "open file" },
 
   # navigate
   	{ on = "k"    , run = "arrow -1",                            desc = "move up" },
@@ -65,8 +78,6 @@
   	{ on = "o"    , run = "arrow  50%",                          desc = "move dn half page" },
   	{ on = "I"    , run = "back",                                desc = "go bkwd to the prev dir" },
   	{ on = "O"    , run = "forward",                             desc = "go frwd to the next dir" },
-  	{ on = "K"    , run = "seek -5",                             desc = "seek up 5 units in the preview" },
-  	{ on = "L"    , run = "seek  5",                             desc = "seek dn 5 units in the preview" },
   	{ on = "q"    , run = "close",                               desc = "close tab | exit the process" },
   	{ on = "<C-q>", run = "close",                               desc = "close tab | exit the process" },
 
@@ -164,13 +175,6 @@
 	  { on = "7", run = "tab_switch 7",             desc = "switch to the 7 tab" },
 	  { on = "8", run = "tab_switch 8",             desc = "switch to the 8 tab" },
 	  { on = "9", run = "tab_switch 9",             desc = "switch to the 9 tab" },
-
-  # plugin
-	  { on = [ "t","t" ], run = "tab_create --current"                    , desc = "create a new tab with CWD" },
-    { on = [ "t","s" ], run = "plugin --sync toggle-view --args=parent" , desc = "toggle pane parent " },
-    { on = [ "t","d" ], run = "plugin --sync toggle-view --args=current", desc = "toggle pane current" },
-    { on = [ "t","f" ], run = "plugin --sync toggle-view --args=preview", desc = "toggle pane preview" },
-    { on = [ "t","v" ], run = "plugin --sync mpserver"                  , desc = "toggle mpserver"     },
 
 # ========== ========== ========== ==========
 

@@ -4,7 +4,7 @@
 
 
 # basic
-  bind -n  $c_tab         " source ~/.config/tmux/key/ctrl.tmx \; display 'Reloaded Tmux Key' "   # C-Esc
+  bind -n  $c_tab         " source ~/.config/tmux/keymap/ctrl.tmx \; display 'Reloaded Tmux Key' "   # C-Esc
   bind -n  $c_escape      copy-mode       # C-Tab
 
 # tab & win

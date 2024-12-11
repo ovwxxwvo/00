@@ -4,11 +4,13 @@
 
 
 alias    ff='fish'
-alias    vv='nvim'
 alias    rr='yazi'
+alias    vv='nvim'
 alias    fi='fish'
 alias    vi='nvim'
 alias    ra='yazi'
+alias    oo='ollama'
+alias    ol='ollama'
 
 # alias   pdf='wpspdf'
 # alias  wpsw='wpsw'

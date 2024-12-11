@@ -8,7 +8,6 @@
   bind -n   F1            " split-window -h \; swap-pane -U "
   bind -n  $c_tab         " source ~/.config/tmux/keymap/ctrl.tmx \; display 'Reloaded Tmux Key' "   # C-Esc
   bind -n  $c_escape      copy-mode       # C-Tab
-  # bind -n  $c_grave       " set -g status off "
 
 # tab & win
   bind -n   C-Space       selectp -R

@@ -4,9 +4,9 @@
 ROOT='/mnt'
 SM_LIST=('
   HW-00   | oo | 1234567890 | 1.0
-  VBOX-00 | oo | 0          | 3.0
+  VBOX-00 | oo | 1234567890 | 3.0
   ')
-  # MR-00   | oo | 0          | 3.0
+  # MR-00   | oo | 1234567890 | 3.0
 HOSTS=(` echo "$SM_LIST" |awk -F"[\t |]+" '{print $2}' `)
   USERS=(` echo "$SM_LIST" |awk -F"[\t |]+" '{print $3}' `)
   PASSS=(` echo "$SM_LIST" |awk -F"[\t |]+" '{print $4}' `)

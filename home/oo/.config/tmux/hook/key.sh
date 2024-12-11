@@ -3,7 +3,7 @@
 # Last Change: 2023.05.15
 
 
-pts=$( tmux display-message -p '#{pane_tty}' )
+pts=$( tmux display -p '#{pane_tty}' )
 cmd=$( ps -o comm= -t $pts \
   | grep -Ev 'less' \
   | tail -n 1 )

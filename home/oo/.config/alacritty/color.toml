@@ -3,32 +3,32 @@
 
 [colors]
   transparent_background_colors = true
-  primary        = { background = '#202020', foreground = '#e0e0e0' }
   cursor         = { text = "CellBackground", cursor = "CellForeground" }
   vi_mode_cursor = { text = "CellBackground", cursor = "CellForeground" }
+  primary        = { foreground = "#d0d0d0",  background = "#303030"  }
 
 [colors.normal]
-  red      = '#ff0000'
-  green    = '#00ff00'
-  blue     = '#0000ff'
-  yellow   = '#ffff00'
-  cyan     = '#00ffff'
-  magenta  = '#ff00ff'
-
-[colors.dim]
-  red      = '#600000'
-  green    = '#606000'
-  blue     = '#006000'
-  yellow   = '#006060'
-  cyan     = '#000060'
-  magenta  = '#600060'
+  red      = "#b08050"
+  green    = "#50b080"
+  blue     = "#5080b0"
+  yellow   = "#b0b050"
+  cyan     = "#50b0b0"
+  magenta  = "#b050b0"
 
 [colors.bright]
-  red      = '#ffa0a0'
-  green    = '#ffffa0'
-  blue     = '#a0ffa0'
-  yellow   = '#a0ffff'
-  cyan     = '#a0a0ff'
-  magenta  = '#ffa0ff'
+  red      = "#ffd0a0"
+  green    = "#a0ffd0"
+  blue     = "#a0d0ff"
+  yellow   = "#ffffa0"
+  cyan     = "#a0ffff"
+  magenta  = "#ffa0ff"
+
+[colors.dim]
+  red      = "#b05050"
+  green    = "#50b050"
+  blue     = "#5050b0"
+  yellow   = "#80b050"
+  cyan     = "#8050b0"
+  magenta  = "#b05080"
 
 

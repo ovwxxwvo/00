@@ -6,7 +6,7 @@
 # General
 
   tty                   = 2
-  x11_display           = ":1"
+  x11_display           = ":0"
   xserver_timeout_secs  = 10
   pam_service           = "lemurs"
   shell_login_flag      = "short"

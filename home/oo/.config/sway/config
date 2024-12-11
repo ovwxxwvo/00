@@ -3,21 +3,21 @@
 # Last Change: 2024.10.05
 
 
-include ~/.config/sway/basic.cfg
-include ~/.config/sway/sway.cfg
-include ~/.config/sway/swaywin.cfg
-include ~/.config/sway/swaybar.cfg
+set  $config  ~/.config/sway
+include $config/basic.cfg
+include $config/sway.cfg
+include $config/swaywin.cfg
+include $config/swaybar.cfg
 
-set $win  Super
-set $alt  Mod1
-set $ctrl Ctrl
-set $shft Shift
-set $winl Super_L
-set $winr Super_R
+set  $win  ~/.config/sway/win
+include $win/charpet.cfg
+include $win/showkey.cfg
+include $win/mpviewer.cfg
 
-include ~/.config/sway/key/sys.cfg
-include ~/.config/sway/key/win.cfg
-include ~/.config/sway/key/app.cfg
-include ~/.config/sway/key/fun.cfg
+set  $key  ~/.config/sway/key
+include $key/sys.cfg
+include $key/win.cfg
+include $key/app.cfg
+include $key/fun.cfg
 
 

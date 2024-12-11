@@ -3,8 +3,6 @@
 -- Last Change: 2024.11.30
 
 
-
-
 vim.cmd[[source ~/.config/nvim/deft.vim]]
 
 require("plug")
