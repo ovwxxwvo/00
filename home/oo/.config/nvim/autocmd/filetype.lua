@@ -14,6 +14,7 @@ local t = {
   { {"*.json" ,"*.jsn"  ,                } , "json"   , "josnls"               },
   { {"*.rs"   ,                          } , "rust"   , "rust_analyzer"        },
 
+  { {"*.conf" ,"*.cfg"  ,                } , "dosini" ,                        },
   { {"*.tmux" ,"*.tmx"  ,                } , "tmux"   ,                        },
   { {"*.fish" ,"*.fsh"  ,                } , "fish"   ,                        },
 
