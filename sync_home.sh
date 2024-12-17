@@ -5,7 +5,8 @@
 # For example, the files in folder "/home" .
 ##################################################
 
-
+USR='oo'
+GRP='root'
 OPT=' -av '
 SRC='./home'
 DST='/'
@@ -15,10 +16,24 @@ echo ==================== set var ===================
 
 chmod_config() {
   echo ==================== chmod config ==============
-  sudo chown -R oo:root $SRC
-  sudo chmod -R 755     $SRC/00
-  sudo chmod -R 744     $SRC/oo
   ls -al $SRC
+
+  echo ==================== chown =====================
+  sudo chown -R $USR:$GRP $SRC
+  ls -al $SRC
+
+  echo ==================== chmod =====================
+  dirt_path=$( find $SRC -type d )
+  file_path=$( find $SRC -type f )
+  exec_path=$( find $SRC -type f \
+    |grep -E "\.sh$|\.bsh$|\.dsh$" \
+    )
+  chmod 754 $dirt_path
+  chmod 654 $file_path
+  chmod 754 $exec_path
+  sudo chmod 754 $SRC
+  ls -al $SRC
+
   }
 
 rsync_config() {

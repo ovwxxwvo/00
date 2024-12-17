@@ -8,11 +8,8 @@ include $config/basic.cfg
 include $config/sway.cfg
 include $config/swaywin.cfg
 include $config/swaybar.cfg
-
-set  $win  ~/.config/sway/win
-include $win/charpet.cfg
-include $win/showkey.cfg
-include $win/mpviewer.cfg
+include $config/swayxorg.cfg
+include $config/swayapp.cfg
 
 set  $key  ~/.config/sway/key
 include $key/sys.cfg

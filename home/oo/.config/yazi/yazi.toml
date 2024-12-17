@@ -107,70 +107,62 @@
   max_width       = 600
   max_height      = 900
   cache_dir       = ""
-  image_delay     = 10
-  # image_filter    = "nearest"
   image_filter    = "triangle"
+  image_delay     = 10
   image_quality   = 50
   sixel_fraction  = 20
   ueberzug_scale  = 1
   ueberzug_offset = [ 0, 0, 0, 0 ]
-  # image_filter    = "triangle"
 
 [opener]
 
-  edit = [
-  	{ run = 'nvim "$@"', desc = "nvim", block  = true, for = "unix" },
-    ]
+  editor  = [{ run = 'nvim        "$@"', desc = "nvim"       , block  = true, for = "unix" },]
+  player  = [{ run = 'mpv         "$@"', desc = "mpv"        , orphan = true, for = "unix" },]
+  viewer  = [{ run = 'mupdf       "$@"', desc = "mupdf"      , orphan = true, for = "unix" },]
+  office  = [{ run = 'libreoffice "$@"', desc = "libreoffice", orphan = true, for = "unix" },]
 
-  play = [
-  	{ run = 'mpv "$@"',  desc = "mpv",  orphan = true, for = "unix" },
-    ]
+  extract = [{ run = 'ya pub extract --list "$@"', desc = "Extract here", for = "unix" },]
 
-  extract = [
-  	{ run = 'ya pub extract --list "$@"', desc = "Extract here", for = "unix" },
-    ]
-
-  open = [
+  opener = [
   	{ run = 'xdg-open "$1"',                desc = "Open", for = "linux" },
-  	{ run = 'open "$@"',                    desc = "Open", for = "macos" },
-  	{ run = 'start "" "%1"', orphan = true, desc = "Open", for = "windows" },
+  	# { run = 'open "$@"',                    desc = "Open", for = "macos" },
+  	# { run = 'start "" "%1"', orphan = true, desc = "Open", for = "windows" },
     ]
 
   reveal = [
-  	# { run = 'xdg-open "$(dirname "$1")"',           desc = "Reveal", for = "linux" },
+  	{ run = 'xdg-open "$(dirname "$1")"'          , desc = "Reveal", for = "linux" },
+  	{ run = '''exiftool "$1"; echo "Press enter to exit";  read _''', block = true, desc = "Show EXIF", for = "unix" },
   	# { run = 'open -R "$1"',                         desc = "Reveal", for = "macos" },
   	# { run = 'explorer /select,"%1"', orphan = true, desc = "Reveal", for = "windows" },
-  	{ run = '''exiftool "$1"; echo "Press enter to exit";  read _''', block = true, desc = "Show EXIF",       for = "unix" },
-  	{ run = '''mediainfo "$1"; echo "Press enter to exit"; read _''', block = true, desc = "Show media info", for = "unix" },
     ]
 
 [open]
-
   rules = [
 
   # office
-  { name = "*.pdf",  use = "edit" },
-  { name = "*.doc",  use = "edit" },
-  { name = "*.docx", use = "edit" },
-  { name = "*.xls",  use = "edit" },
-  { name = "*.xlsx", use = "edit" },
-  { name = "*.ppt",  use = "edit" },
-  { name = "*.pptx", use = "edit" },
+  { name = "*.pdf"                            , use = [ "viewer" ,  ]},
+  { name = "*.doc"                            , use = [ "office" ,  ]},
+  { name = "*.docx"                           , use = [ "office" ,  ]},
+  { name = "*.xls"                            , use = [ "office" ,  ]},
+  { name = "*.xlsx"                           , use = [ "office" ,  ]},
+  { name = "*.ppt"                            , use = [ "office" ,  ]},
+  { name = "*.pptx"                           , use = [ "office" ,  ]},
 
-	# { name = "*/", use = [ "open", "reveal" ] },
-	{ mime = "text/*",  use = [ "edit", "reveal" ] },
-	{ mime = "image/*", use = [ "play", "reveal" ] },
-	{ mime = "audio/*", use = [ "play", "reveal" ] },
-	{ mime = "video/*", use = [ "play", "reveal" ] },
+  # media
+	{ mime = "text/*"                           , use = [ "editor" ,  ] },
+	{ mime = "image/*"                          , use = [ "player" ,  ] },
+	{ mime = "audio/*"                          , use = [ "player" ,  ] },
+	{ mime = "video/*"                          , use = [ "player" ,  ] },
 
 	# Archive
-	{ mime = "application/{,g}zip",                            use = [ "extract", "reveal" ] },
-	{ mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", use = [ "extract", "reveal" ] },
+	{ mime = "application/x-{tar,bzip*,xz}"     , use = [ "extract",  ] },
+	{ mime = "application/x-{rar,7z-compressed}", use = [ "extract",  ] },
+	{ mime = "application/{,g}zip"              , use = [ "extract",  ] },
 
-	# Empty file
-	# { mime = "inode/x-empty", use = [ "edit", "reveal" ] },
 	# Fallback
-	{ name = "*", use = [ "edit", "reveal" ] },
+	{ mime = "inode/x-empty"                    , use = [ "editor" ,  ] },
+	{ name = "*"                                , use = [ "editor" ,  ] },
+	{ name = "*/"                               , use = [ "opener" ,  ] },
 
   ]
 
@@ -178,24 +170,24 @@
 
 fetchers = [
 	# Mimetype
-  	{ id = "mime", name = "*",  run = "mime", if = "!mime", prio = "high" },
+  	{ id = "mime", name = "*" , run = "mime", if = "!mime", prio = "high" },
   # git
-    { id = "git",  name = "*",  run = "git" },
-    { id = "git",  name = "*/", run = "git" },
+    { id = "git" , name = "*" , run = "git" },
+    { id = "git" , name = "*/", run = "git" },
     ]
 
 preloaders = [
-  	# # Image
-  	# { mime = "image/{avif,hei?,jxl,svg+xml}", run = "magick" },
-  	# { mime = "image/*", run = "image" },
-  	# # Video
-  	# { mime = "video/*", run = "video" },
-  	# # PDF
-  	# { mime = "application/pdf", run = "pdf" },
-  	# # Font
-  	# { mime = "font/*", run = "font" },
-  	# { mime = "application/vnd.ms-opentype", run = "font" },
-    ]
+  # # Image
+  # { mime = "image/{avif,hei?,jxl,svg+xml}", run = "magick" },
+  # { mime = "image/*", run = "image" },
+  # # Video
+  # { mime = "video/*", run = "video" },
+  # # PDF
+  # { mime = "application/pdf", run = "pdf" },
+  # # Font
+  # { mime = "font/*", run = "font" },
+  # { mime = "application/vnd.ms-opentype", run = "font" },
+  ]
 
 previewers = [
 
@@ -223,32 +215,24 @@ previewers = [
   	{ name = "*.avi",  run = "mpviewer" },
   	{ name = "*.webm", run = "mpviewer" },
 
-  # #
-  	{ name = "*/", run = "folder", sync = true },
-  	# Code
-  	{ mime = "text/*", run = "code" },
-  	{ mime = "*/{xml,javascript,x-wine-extension-ini}", run = "code" },
-  	# Archive
-  	{ mime = "application/{,g}zip", run = "archive" },
-  	{ mime = "application/x-{tar,bzip*,7z-compressed,xz,rar,iso9660-image}", run = "archive" },
-  	# Fallback
-  	{ name = "*", run = "file" },
+  # Code
+  	{ mime = "text/*"                                  , run = "code"    },
+  	{ mime = "*/{xml,javascript,x-wine-extension-ini}" , run = "code"    },
+  	{ mime = "application/{json,x-ndjson}"             , run = "json"    },
+  # Archive
+  	{ mime = "application/x-{tar,bzip*,xz}"            , run = "archive" },
+  	{ mime = "application/x-{rar,7z-compressed}"       , run = "archive" },
+  	{ mime = "application/{,g}zip"                     , run = "archive" },
+  	{ mime = "application/x-{iso9660-image}"           , run = "archive" },
+	# Font
+  	{ mime = "font/*"                                  , run = "font"    },
+  	{ mime = "application/vnd.ms-opentype"             , run = "font"    },
 
+  # Fallback
+  	{ mime = "inode/x-empty"                           , run = "empty"   },
+  	{ name = "*"                                       , run = "file"    },
+  	{ name = "*/"                                      , run = "folder"   , sync = true },
 
     ]
-  	# Empty file
-  	# { mime = "inode/x-empty", run = "empty" },
-  	# # JSON
-  	# { mime = "application/{json,x-ndjson}", run = "json" },
-  	# # PDF
-  	# { mime = "application/pdf", run = "pdf" },
-  	# # Image
-  	# { mime = "image/*", run = "image" },
-  	# { mime = "image/{avif,hei?,jxl,svg+xml}", run = "magick" },
-  	# # Video
-  	# { mime = "video/*", run = "video" },
-  	# # Font
-  	# { mime = "font/*", run = "font" },
-  	# { mime = "application/vnd.ms-opentype", run = "font" },
 
 

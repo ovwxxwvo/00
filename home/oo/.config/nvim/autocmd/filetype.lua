@@ -14,13 +14,13 @@ local t = {
   { {"*.json" ,"*.jsn"  ,                } , "json"   , "josnls"               },
   { {"*.rs"   ,                          } , "rust"   , "rust_analyzer"        },
 
-  { {"*.conf" ,"*.cfg"  ,                } , "dosini" ,                        },
   { {"*.tmux" ,"*.tmx"  ,                } , "tmux"   ,                        },
   { {"*.fish" ,"*.fsh"  ,                } , "fish"   ,                        },
 
   { {"*.cpp"  ,"*.esp"  ,"rasi",         } , "cpp"    ,                        },
 
   }
+  -- { {"*.conf" ,"*.cfg"  ,                } , "dosini" ,                        },
 
 
 for i,v in ipairs(t) do

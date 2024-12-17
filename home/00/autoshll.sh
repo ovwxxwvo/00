@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 ########################################
-# autoload script after every bash
+# autoload script after bash exec
 ########################################
 
 

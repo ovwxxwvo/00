@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 ########################################
-# autoload script after login bash
+# autoload script after login bash once
 ########################################
 
 

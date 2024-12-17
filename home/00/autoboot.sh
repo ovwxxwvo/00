@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 ########################################
-# autoboot script before lemurs
+# autoboot script before lemurs once
 ########################################
 
 

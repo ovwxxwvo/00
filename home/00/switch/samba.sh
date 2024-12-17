@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 
-ROOT='/mnt'
+ROOT='/0000'
 SM_LIST=('
   HW-00   | oo | 1234567890 | 1.0
   VBOX-00 | oo | 1234567890 | 3.0
@@ -106,6 +106,7 @@ echo ----------
 
 
 function press_key {
+  #
 
   if [ $ENABLE -eq 0 ]; then return; fi
     # sleep 1
@@ -146,14 +147,13 @@ function press_key {
         echo umount ${dirts_src[j]} ${dirts_dst[j]}
         sudo umount -t cifs \
           "${dirts_dst[j]}"
-        sudo rm -rf "${dirts_dst[j]}"
+        sudo rmdir "${dirts_dst[j]}"
         done
-      sudo rm -rf "$ROOT/${HOSTS[i]}"
+      sudo rmdir "$ROOT/${HOSTS[i]}"
       done
     fi
 
-}
-
+  }
 
 press_key
 

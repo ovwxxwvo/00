@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
 
 
-swayidle -w \
-  timeout  600  'swaylock -f -c 000000' \
-  timeout 1800  'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-  before-sleep  'swaylock -f -c 000000'
+sleep 1
+swaymsg focus output "DP-5"
+firefox &
 
-wl-paste -t text --watch clipman store --no-persist
+sleep 1
+swaymsg focus output "DP-1"
+alacritty -e tmux &
 
 

@@ -62,7 +62,8 @@ require(module).setup{
   'nvim-lua/plenary.nvim',
   'BurntSushi/ripgrep',
   'sharkdp/fd',
-  'nvim-telescope/telescope-fzf-native.nvim',
+  -- 'nvim-telescope/telescope-fzf-native.nvim',
+  { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
   }, },
 
 { 'folke/noice.nvim',
