@@ -1,8 +1,9 @@
 #!/usr/bin/env dash
 
 
-. ~/.config/swaybar/block/icon.ash
-. ~/.config/swaybar/block/color.ash
+block="$HOME/.config/swaybar/block"
+. "$block"/icon.bsh
+. "$block"/color.bsh
 LABEL="$ICON_screen"
 
 
@@ -18,7 +19,7 @@ show_block() {
   }
 
 show_color() {
-    echo $clr_resk
+    echo $c_resk
   }
 
 

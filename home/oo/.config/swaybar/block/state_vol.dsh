@@ -1,8 +1,9 @@
 #!/usr/bin/env dash
 
 
-. ~/.config/swaybar/block/icon.ash
-. ~/.config/swaybar/block/color.ash
+block="$HOME/.config/swaybar/block"
+. "$block"/icon.bsh
+. "$block"/color.bsh
 LABEL="$ICON_VOL"
 VOL_MUTE="$ICON_VOL_MUTE"
 
@@ -37,11 +38,11 @@ SINK=$( pactl get-default-sink )
 
 show_block() {
   if [ $VOL_MUTE -eq 1 ]; then
-    BLOCK="$VOL_MUTE"
+    BLOCK=" $VOL_MUTE "
   elif [ $VOL_BLNC -eq 1 ]; then
-    BLOCK="$LABEL $VOLUME%"
+    BLOCK=" $LABEL $VOLUME% "
   elif [ $VOL_BLNC -eq 0 ]; then
-    BLOCK="$LABEL $VOL_LT%:$VOL_RT%"
+    BLOCK=" $LABEL $VOL_LT%:$VOL_RT% "
   else
     BLOCK=""
   fi
@@ -51,11 +52,11 @@ show_block() {
 
 show_color() {
   if [ $VOL_MUTE -eq 1 ]; then
-    echo $clr_gysl
+    echo $c_gysl
   elif [ $VOLUME -gt 100 ]; then
-    echo $clr_repr
+    echo $c_repr
   else
-    echo $clr_gywt
+    echo $c_gywt
   fi
   }
 

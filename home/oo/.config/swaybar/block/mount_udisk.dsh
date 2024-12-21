@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+
+
+block="$HOME/.config/swaybar/block"
+. "$block"/icon.bsh
+. "$block"/color.bsh
+LABEL="$ICON_UDISK"
+
+
+MNT="/0000"
+ENABLE=$( lsblk |grep "part" \
+  |grep -c "sd[a-z][1-9]" \
+  |grep -c "[1-9]" \
+  )
+ACTIVE=$( lsblk |grep "part" \
+  |grep -E "sd[a-z][1-9]" \
+  |grep -c "$MNT" \
+  |grep -c "[1-9]" \
+  )
+# echo ---------- ----------
+# echo $ENABLE $ACTIVE
+
+
+show_block() {
+  # if [ $ENABLE -eq 0 ]; then return; fi
+  if [ $ACTIVE -eq 1 ]; then
+    BLOCK="$LABEL "
+  else
+    BLOCK=""
+  fi
+  echo "$BLOCK"
+  echo "$BLOCK"
+  }
+
+show_color() {
+  if [ $ACTIVE -eq 1 ]; then
+    echo $c_vilt
+  fi
+  }
+
+
+show_block
+show_color
+
+

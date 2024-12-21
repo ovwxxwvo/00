@@ -1,41 +1,42 @@
 #!/usr/bin/env dash
 
 
-. ~/.config/swaybar/block/icon.ash
-. ~/.config/swaybar/block/color.ash
-LABEL="$ICON_CPU"
+block="$HOME/.config/swaybar/block"
+. "$block"/icon.bsh
+. "$block"/color.bsh
+LABEL="$ICON_MEM"
 
 
 USAGE=$( top -bn 1 \
-  | grep 'Cpu(s):' \
-  | awk -F"[\t :,]+" '{print $8}' \
-  | awk '{ printf "%02d", (100-$0) }' \
+  | grep 'Mem :' \
+  | awk -F"[\t :,]+" '{print $3,$7}' \
+  | awk '{ printf "%02d", ($2/$1*100) }' \
   )
-  # | awk '{ printf "%04.1f", (100-$0) }' \
+  # | awk '{ printf "%04.1f", ($2/$1*100) }' \
 # echo $LABEL $USAGE
 
 
 show_block() {
-  BLOCK="$LABEL $USAGE%"
+  BLOCK=" $LABEL $USAGE% "
   echo "$BLOCK"
   echo "$BLOCK"
   }
 
 show_color() {
   if   [ $USAGE -le 5  ]; then
-    echo $clr_gylt
+    echo $c_cylt
   elif [ $USAGE -le 15 ]; then
-    echo $clr_cylt
+    echo $c_sblt
   elif [ $USAGE -le 30 ]; then
-    echo $clr_grlt
+    echo $c_sglt
   elif [ $USAGE -le 45 ]; then
-    echo $clr_lelt
+    echo $c_lelt
   elif [ $USAGE -le 60 ]; then
-    echo $clr_yelt
+    echo $c_yelt
   elif [ $USAGE -le 75 ]; then
-    echo $clr_orlt
+    echo $c_orlt
   elif [ $USAGE -le 90 ]; then
-    echo $clr_relt
+    echo $c_relt
   fi
   }
 

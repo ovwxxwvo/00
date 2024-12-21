@@ -1,0 +1,76 @@
+#!/usr/bin/env bash
+
+
+block="$HOME/.config/swaybar/block"
+. "$block"/icon.bsh
+. "$block"/color.bsh
+LABEL="$ICON_SAMBA"
+
+
+LIST=('
+  HW-00   | oo | 1234567890 | 1.0
+  VBOX-00 | oo | 1234567890 | 3.0
+  ')
+  # MR-00   | oo | 1234567890 | 3.0
+HOSTS=(` echo "$LIST" |awk -F"[\t |]+" '{print $2}' `)
+IPS=();   for i in {1..5} ;do
+  IPS=(` for h in ${HOSTS[@]} \
+    ; do \
+    nmblookup -S $h \
+    | grep -Eo "^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+" \
+    ; done \
+    `)
+  done
+HOSTS=(); for i in {1..5} ;do
+  HOSTS=(` for ip in ${IPS[@]} \
+    ; do \
+    nmblookup -A $ip \
+    |grep -EA1 "status" \
+    |grep -v "status" \
+    |awk '{print $1}' \
+    ; done \
+    `)
+  done
+# echo ---------- ----------
+  # echo HOSTS ${HOSTS[@]}
+  # echo IPS   ${#IPS[@]}   ${IPS[@]}   ${!IPS[@]}
+  # echo HOSTS ${#HOSTS[@]} ${HOSTS[@]} ${!HOSTS[@]}
+
+ENABLE=$( for h in ${HOSTS[@]} ; do \
+    nmblookup -S $h \
+    | grep -Eo "^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+" \
+    ; done \
+  |grep -Ec "^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+" \
+  |grep -Ec "[1-9]" \
+  )
+ACTIVE=$( mount \
+  |grep -E "[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+" \
+  |grep -Ec "$MNT" \
+  |grep -Ec "[1-9]" \
+  )
+# echo ---------- ----------
+# echo $ENABLE $ACTIVE
+
+
+show_block() {
+  # if [ $ENABLE -eq 0 ]; then return; fi
+  if [ $ACTIVE -eq 1 ]; then
+    BLOCK="$LABEL "
+  else
+    BLOCK=""
+  fi
+  echo "$BLOCK"
+  echo "$BLOCK"
+  }
+
+show_color() {
+  if [ $ACTIVE -eq 1 ]; then
+    echo $c_lelt
+  fi
+  }
+
+
+show_block
+show_color
+
+

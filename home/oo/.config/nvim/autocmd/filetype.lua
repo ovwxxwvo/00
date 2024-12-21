@@ -18,6 +18,7 @@ local t = {
   { {"*.fish" ,"*.fsh"  ,                } , "fish"   ,                        },
 
   { {"*.cpp"  ,"*.esp"  ,"rasi",         } , "cpp"    ,                        },
+  { {"PKGBUILD",                         } , "bash"   , "bashls"               },
 
   }
   -- { {"*.conf" ,"*.cfg"  ,                } , "dosini" ,                        },

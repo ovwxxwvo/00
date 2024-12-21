@@ -1,20 +1,22 @@
 #!/usr/bin/env dash
 
 
-. ~/.config/swaybar/block/icon.ash
-. ~/.config/swaybar/block/color.ash
-LABEL="$ICON_screen"
+block="$HOME/.config/swaybar/block"
+. "$block"/icon.bsh
+. "$block"/color.bsh
+LABEL="$ICON_OLLAMA"
 
 
 ACTIVE=$( ps -ef \
-  |grep -Ev "grep|man" \
-  |grep -oc ' wf-recorder -a ' \
+  |grep -v 'grep' \
+  |grep -oc ' ollama serve$' \
   )
-# echo srecd $ACTIVE
+# echo ol $ACTIVE
+
 
 show_block() {
   if [ $ACTIVE -eq 1 ]; then
-    BLOCK="$LABEL"
+    BLOCK="$LABEL "
   else
     BLOCK=""
   fi
@@ -24,7 +26,7 @@ show_block() {
 
 show_color() {
   if [ $ACTIVE -eq 1 ]; then
-    echo $clr_resk
+    echo $c_gywt
   fi
   }
 

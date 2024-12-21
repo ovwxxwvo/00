@@ -1,14 +1,15 @@
 #!/usr/bin/env dash
 
 
-. ~/.config/swaybar/block/icon.ash
-. ~/.config/swaybar/block/color.ash
-LABEL="$ICON_WLAN"
+block="$HOME/.config/swaybar/block"
+. "$block"/icon.bsh
+. "$block"/color.bsh
+LABEL="$ICON_BTTH"
 CONN="$ICON_CONN"
 DISC="$ICON_DISC"
 
 
-ENABLE=$( rfkill |grep 'wlan' \
+ENABLE=$( rfkill |grep 'blue' \
   |grep -o 'unblocked' \
   |grep -c 'unblocked' \
   |grep -c '2' \
@@ -33,9 +34,9 @@ show_block() {
 
 show_color() {
   if [ $STATE -eq 1 ] ;then
-    echo $clr_sglt
+    echo $c_sblt
   else
-    echo $clr_sggy
+    echo $c_sbgy
   fi
   }
 

@@ -1,0 +1,23 @@
+#!/usr/bin/env dash
+
+
+block="$HOME/.config/swaybar/block"
+. "$block"/icon.bsh
+LABEL="$ICON_00"
+
+
+show_block() {
+  BLOCK="$LABEL"
+  echo "$BLOCK"
+  echo "$BLOCK"
+  }
+
+show_color() {
+  echo "#80808080"
+  }
+
+
+show_block
+show_color
+
+

@@ -2,16 +2,15 @@
 
 
 # See hosts(5) for details.
-::1   		 localhost
-127.0.0.1	 localhost
-127.0.0.1	 MR-00.localdomain	MR-00
 
+::1   		       localhost
+127.0.0.1	       localhost
+127.0.0.1	       MR-00.localdomain	MR-00
 
-# 20.205.243.166   github.com
-#  3.163.125.75    api.tmdb.org
-# 13.226.225.73    api.themoviedb.org
-13.224.167.108     api.themoviedb.org
-3.163.125.108      api.tmdb.org
-169.150.207.212    image.tmdb.org
+199.232.68.133   raw.githubusercontent.com
+
+13.224.167.108   api.themoviedb.org
+3.163.125.108    api.tmdb.org
+169.150.207.212  image.tmdb.org
 
 

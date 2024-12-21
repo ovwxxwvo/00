@@ -1,8 +1,9 @@
 #!/usr/bin/env dash
 
 
-. ~/.config/swaybar/block/icon.ash
-. ~/.config/swaybar/block/color.ash
+block="$HOME/.config/swaybar/block"
+. "$block"/icon.bsh
+. "$block"/color.bsh
 LABEL="$ICON_SHARE"
 
 
@@ -16,7 +17,7 @@ ACTIVE=$( systemctl status smb nmb \
 
 show_block() {
   if [ $ACTIVE -eq 1 ]; then
-    BLOCK="$LABEL"
+    BLOCK="$LABEL "
   else
     BLOCK=""
   fi
@@ -26,7 +27,7 @@ show_block() {
 
 show_color() {
   if [ $ACTIVE -eq 1 ]; then
-    echo $clr_yelt
+    echo $c_yelt
   fi
   }
 
