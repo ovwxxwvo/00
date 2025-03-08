@@ -1,0 +1,28 @@
+#!/usr/bin/env dash
+
+
+block="$HOME/.config/swaybar/block"
+. "$block"/icon.bsh
+. "$block"/color.bsh
+LABEL="$ICON_SYNC"
+
+
+show_block() {
+  BLOCK=" $LABEL Sync Config File ... "
+  echo "$BLOCK"
+  echo "$BLOCK"
+  sleep 4
+  BLOCK=""
+  echo "$BLOCK"
+  echo "$BLOCK"
+  }
+
+show_color() {
+  echo $c_gylt
+  }
+
+
+show_block
+# show_color
+
+

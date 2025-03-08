@@ -4,7 +4,7 @@
 ########################################
 
 
-/home/00/autoexec/sway.sh &
+# /home/00/autoexec/sway.sh &
 
 # /home/00/autoexec/kill.sh
 #

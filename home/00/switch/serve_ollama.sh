@@ -5,7 +5,7 @@ ACTIVE=$( ps -ef \
   |grep -v 'grep' \
   |grep -oc ' ollama serve$' \
   )
-echo ol $ACTIVE
+echo OL $ACTIVE
 
 
 function press_key {
@@ -14,7 +14,7 @@ function press_key {
   else
     killall ollama
   fi
-  sleep 1
+  sleep 0.5
   }
 
 press_key

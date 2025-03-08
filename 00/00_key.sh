@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+
+tmux_a_q_char=""    ; tmux_s_q_char=""    ; tmux_c_q_char=""    ; tmux_l_q_char=""
+tmux_a_w_char=""    ; tmux_s_w_char=""    ; tmux_c_w_char=""    ; tmux_l_w_char=""
+tmux_a_e_char=""    ; tmux_s_e_char=""    ; tmux_c_e_char=""    ; tmux_l_e_char=""
+tmux_a_r_char=""    ; tmux_s_r_char=""    ; tmux_c_r_char=""    ; tmux_l_r_char=""
+tmux_a_t_char=""    ; tmux_s_t_char=""    ; tmux_c_t_char=""    ; tmux_l_t_char=""
+tmux_a_y_char=""    ; tmux_s_y_char=""    ; tmux_c_y_char=""    ; tmux_l_y_char=""
+tmux_a_u_char=""    ; tmux_s_u_char=""    ; tmux_c_u_char=""    ; tmux_l_u_char=""
+tmux_a_i_char=""    ; tmux_s_i_char=""    ; tmux_c_i_char=""    ; tmux_l_i_char=""
+tmux_a_o_char=""    ; tmux_s_o_char=""    ; tmux_c_o_char=""    ; tmux_l_o_char=""
+tmux_a_p_char=""    ; tmux_s_p_char=""    ; tmux_c_p_char=""    ; tmux_l_p_char=""
+
+tmux_a_a_char=""    ; tmux_s_a_char=""    ; tmux_c_a_char=""    ; tmux_l_a_char=""
+tmux_a_s_char=""    ; tmux_s_s_char=""    ; tmux_c_s_char=""    ; tmux_l_s_char=""
+tmux_a_d_char=""    ; tmux_s_d_char=""    ; tmux_c_d_char=""    ; tmux_l_d_char=""
+tmux_a_f_char=""    ; tmux_s_f_char=""    ; tmux_c_f_char=""    ; tmux_l_f_char=""
+tmux_a_g_char=""    ; tmux_s_g_char=""    ; tmux_c_g_char=""    ; tmux_l_g_char=""
+tmux_a_h_char=""    ; tmux_s_h_char=""    ; tmux_c_h_char=""    ; tmux_l_h_char=""
+tmux_a_j_char=""    ; tmux_s_j_char=""    ; tmux_c_j_char=""    ; tmux_l_j_char=""
+tmux_a_k_char=""    ; tmux_s_k_char=""    ; tmux_c_k_char=""    ; tmux_l_k_char=""
+tmux_a_l_char=""    ; tmux_s_l_char=""    ; tmux_c_l_char=""    ; tmux_l_l_char=""
+tmux_a_semicolon="" ; tmux_s_semicolon="" ; tmux_c_semicolon="" ; tmux_l_semicolon=""
+
+tmux_a_z_char=""    ; tmux_s_z_char=""    ; tmux_c_z_char=""    ; tmux_l_z_char=""
+tmux_a_x_char=""    ; tmux_s_x_char=""    ; tmux_c_x_char=""    ; tmux_l_x_char=""
+tmux_a_c_char=""    ; tmux_s_c_char=""    ; tmux_c_c_char=""    ; tmux_l_c_char=""
+tmux_a_v_char=""    ; tmux_s_v_char=""    ; tmux_c_v_char=""    ; tmux_l_v_char=""
+tmux_a_b_char=""    ; tmux_s_b_char=""    ; tmux_c_b_char=""    ; tmux_l_b_char=""
+tmux_a_n_char=""    ; tmux_s_n_char=""    ; tmux_c_n_char=""    ; tmux_l_n_char=""
+tmux_a_m_char=""    ; tmux_s_m_char=""    ; tmux_c_m_char=""    ; tmux_l_m_char=""
+tmux_a_camma=""     ; tmux_s_camma=""     ; tmux_c_camma=""     ; tmux_l_camma=""
+tmux_a_period=""    ; tmux_s_period=""    ; tmux_c_period=""    ; tmux_l_period=""
+tmux_a_slash=""     ; tmux_s_slash=""     ; tmux_c_slash=""     ; tmux_l_slash=""
+
+

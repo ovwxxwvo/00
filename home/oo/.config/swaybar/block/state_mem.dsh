@@ -17,7 +17,7 @@ USAGE=$( top -bn 1 \
 
 
 show_block() {
-  BLOCK=" $LABEL $USAGE% "
+  BLOCK="$LABEL $USAGE%"
   echo "$BLOCK"
   echo "$BLOCK"
   }

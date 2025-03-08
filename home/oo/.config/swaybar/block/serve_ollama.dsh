@@ -16,7 +16,7 @@ ACTIVE=$( ps -ef \
 
 show_block() {
   if [ $ACTIVE -eq 1 ]; then
-    BLOCK="$LABEL "
+    BLOCK=" $LABEL"
   else
     BLOCK=""
   fi

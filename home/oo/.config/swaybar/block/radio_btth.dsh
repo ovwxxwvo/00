@@ -14,26 +14,29 @@ ENABLE=$( rfkill |grep 'blue' \
   |grep -c 'unblocked' \
   |grep -c '2' \
   )
-STATE=$( cat /proc/net/wireless \
-  |grep -c '0000' \
+POWER=$( bluetoothctl show \
+  |grep -c 'Powered: yes' \
   )
-# echo $ENABLE $STATE
+STATE=$( bluetoothctl info \
+  |grep -c 'Connected: yes' \
+  )
+# echo $ENABLE $POWER $STATE
 
 
 show_block() {
-  if   [ $ENABLE -eq 1 ] && [ $STATE -eq 1 ] ;then
-    BLOCK="$LABEL$CONN"
-  elif [ $ENABLE -eq 1 ] && [ $STATE -eq 0 ] ;then
-    BLOCK="$LABEL$DISC"
-  else
+  if   [ $ENABLE -eq 0 ] ;then
     BLOCK=""
+  elif [ $STATE -eq 0 ] ;then
+    BLOCK="$LABEL$DISC"
+  elif [ $STATE -eq 1 ] ;then
+    BLOCK="$LABEL$CONN"
   fi
   echo "$BLOCK"
   echo "$BLOCK"
   }
 
 show_color() {
-  if [ $STATE -eq 1 ] ;then
+  if [ $POWER -eq 1 ] ;then
     echo $c_sblt
   else
     echo $c_sbgy

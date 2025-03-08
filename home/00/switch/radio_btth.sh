@@ -6,22 +6,21 @@ ENABLE=$( rfkill |grep 'blue' \
   |grep -c 'unblocked' \
   |grep -c '2' \
   )
-STATE=$( cat /proc/net/wireless \
-  |grep -c '0000' \
+POWER=$( bluetoothctl show \
+  |grep -c 'Powered: yes' \
   )
-# echo $ENABLE $STATE
+# echo $ENABLE $POWER
 
 
 function press_key {
-  if   [ $STATE -eq 1 ]; then
+  if   [ $POWER -eq 1 ]; then
     # sudo systemctl stop bluetooth
-    bluetoothctl disconnect $MAC
     bluetoothctl power off
-  elif [ $STATE -eq 0 ]; then
+  elif [ $POWER -eq 0 ]; then
     # sudo systemctl start bluetooth
+    rfkill unblock bluetooth
     bluetoothctl power on
-    bluetoothctl connect $MAC
-    sleep 0.5
+    sleep 0.2
     pactl set-sink-volume @DEFAULT_SINK@ 40%
   fi
   }

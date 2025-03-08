@@ -9,23 +9,20 @@ ENABLE=$( rfkill |grep 'wlan' \
   |grep -c 'unblocked' \
   |grep -c '2' \
   )
-STATE=$( cat /proc/net/wireless \
+POWER=$( cat /proc/net/wireless \
   |grep -c '0000' \
   )
-# echo $DEV $ENABLE $STATE
+# echo $DEV $ENABLE $POWER
 
 
 function press_key {
-  if   [ $STATE -eq 1 ]; then
-    sudo ip link set $DEV down
+  if   [ $POWER -eq 1 ]; then
     # sudo systemctl stop NetworkManager
-    # sudo systemctl stop dhcpcd
-  elif [ $STATE -eq 0 ]; then
-    sudo ip link set $DEV up
+    sudo ip link set $DEV down
+  elif [ $POWER -eq 0 ]; then
     # sudo systemctl start NetworkManager
-    # sudo systemctl start dhcpcd
-    # nmcli dev wifi list
-    # nmcli dev wifi connect '' password ''
+    rfkill unblock wifi
+    sudo ip link set $DEV up
   fi
   }
 

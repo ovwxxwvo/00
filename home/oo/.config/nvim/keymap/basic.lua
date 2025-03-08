@@ -1,4 +1,4 @@
--- NEOVIM config, a text editor based on vim.
+-- NVIM config,
 -- Maintainer:	Jessee Chan <CYPHER0@foxmail.com>
 -- Last Change: 2023.07.28
 

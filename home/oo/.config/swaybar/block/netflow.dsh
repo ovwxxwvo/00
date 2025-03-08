@@ -27,25 +27,8 @@ get_data() {
   }
 
 show_block() {
-  # data ( before & after ) a second
-  RX_DATA_PREV=$RX_DATA_TEMP  # old
-  RX_DATA_NEXT=$RX_DATA       # new
-  RX_DATA_TEMP=$RX_DATA       # new
-  # speed ( K | M ) per second
-  RX_SPEED=$(($RX_DATA_NEXT-$RX_DATA_PREV))
-  if   [ $RX_SPEED -lt 1000 ]; then
-    RX_SPEED=$( echo $RX_SPEED | \
-      awk '{printf "%03dB/s", $1}' )
-  elif [ $RX_SPEED -lt 1024000 ]; then
-    RX_SPEED=$( echo $RX_SPEED | \
-      awk '{printf "%03dK/s", $1/1024}' )
-  elif [ $RX_SPEED -lt 1048576000 ]; then
-    RX_SPEED=$( echo $RX_SPEED | \
-      awk '{printf "%.1fM/s", $1/1048576}' )
-  else
-    RX_SPEED=$( echo $RX_SPEED | \
-      awk '{printf "%d", $1}' )
-  fi
+  # #
+
   # data ( before & after ) a second
   TX_DATA_PREV=$TX_DATA_TEMP  # old
   TX_DATA_NEXT=$TX_DATA       # new
@@ -58,15 +41,36 @@ show_block() {
   elif [ $TX_SPEED -lt 1024000 ]; then
     TX_SPEED=$( echo $TX_SPEED | \
       awk '{printf "%03dK/s", $1/1024}' )
-  elif [ $TX_SPEED -lt 1048576000 ]; then
+  elif [ $TX_SPEED -lt 10485760 ]; then
     TX_SPEED=$( echo $TX_SPEED | \
       awk '{printf "%.1fM/s", $1/1048576}' )
   else
     TX_SPEED=$( echo $TX_SPEED | \
-      awk '{printf "%d", $1}' )
+      awk '{printf "%03dM/s", $1/1048576}' )
   fi
+
+  # data ( before & after ) a second
+  RX_DATA_PREV=$RX_DATA_TEMP  # old
+  RX_DATA_NEXT=$RX_DATA       # new
+  RX_DATA_TEMP=$RX_DATA       # new
+  # speed ( K | M ) per second
+  RX_SPEED=$(($RX_DATA_NEXT-$RX_DATA_PREV))
+  if   [ $RX_SPEED -lt 1000 ]; then
+    RX_SPEED=$( echo $RX_SPEED | \
+      awk '{printf "%03dB/s", $1}' )
+  elif [ $RX_SPEED -lt 1024000 ]; then
+    RX_SPEED=$( echo $RX_SPEED | \
+      awk '{printf "%03dK/s", $1/1024}' )
+  elif [ $RX_SPEED -lt 10485760 ]; then
+    RX_SPEED=$( echo $RX_SPEED | \
+      awk '{printf "%.1fM/s", $1/1048576}' )
+  else
+    RX_SPEED=$( echo $RX_SPEED | \
+      awk '{printf "%03dM/s", $1/1048576}' )
+  fi
+
   # block show after sleep
-  BLOCK=" $TX_SPEED$LABEL$RX_SPEED "
+  BLOCK="$TX_SPEED$LABEL$RX_SPEED"
   echo "$BLOCK"
   }
 

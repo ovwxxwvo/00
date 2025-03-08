@@ -13,6 +13,7 @@ function press_key {
   grim \
   -o "$(swaymsg -t get_outputs |jq -r '.[] | select(.focused) | .name')" \
   "$FILE_PATH" &
+  sleep 0.5
   }
 
 

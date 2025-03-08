@@ -16,7 +16,7 @@ USAGE=$( df \
 
 
 show_block() {
-  BLOCK=" $LABEL $USAGE% "
+  BLOCK="$LABEL $USAGE%"
   echo "$BLOCK"
   echo "$BLOCK"
   }

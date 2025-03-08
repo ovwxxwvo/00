@@ -55,7 +55,7 @@ ACTIVE=$( mount \
 show_block() {
   # if [ $ENABLE -eq 0 ]; then return; fi
   if [ $ACTIVE -eq 1 ]; then
-    BLOCK="$LABEL "
+    BLOCK=" $LABEL"
   else
     BLOCK=""
   fi

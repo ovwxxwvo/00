@@ -7,13 +7,13 @@ LABEL="$ICON_00"
 
 
 show_block() {
-  BLOCK="$LABEL"
+  BLOCK=" $LABEL "
   echo "$BLOCK"
   echo "$BLOCK"
   }
 
 show_color() {
-  echo "#80808080"
+  echo "#a0ffff80"
   }
 
 

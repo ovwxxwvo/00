@@ -1,0 +1,64 @@
+# ---------------------
+  unmapAll
+  map  H 		  showHelp
+  map  r 		  reload
+
+# scroll --------------
+  map  k  		scrollUp
+  map  l  		scrollDown
+  map  j 		  scrollLeft
+  map  ; 		  scrollRight
+  map  i 		  scrollPageUp
+  map  o 		  scrollPageDown
+  map  gg 	  scrollToTop
+  map  G 		  scrollToBottom
+
+# tab -----------------
+  map  <c-t>  createTab
+  map  T 		  createTab
+  map  , 		  previousTab
+  map  . 		  nextTab
+  map  m  	  firstTab
+  map  /  	  lastTab
+  map  I      goBack
+  map  O      goForward
+  map  x 		  removeTab
+  map  X 		  restoreTab
+  map  W      moveTabToNewWindow
+  map  <<     moveTabLeft
+  map  >>     moveTabRight
+
+# link ----------------
+  map  z 		  LinkHints.activateMode
+  map  Z 		  LinkHints.activateModeToOpenInNewTab
+  map  f 		  LinkHints.activateMode
+  map  F 		  LinkHints.activateModeToOpenInNewTab
+  map  yy  	  copyCurrentUrl
+  map  p 		  openCopiedUrlInCurrentTab
+  map  P 		  openCopiedUrlInNewTab
+
+# text ----------------
+  map  s 		  enterInsertMode
+  map  a 		  enterInsertMode
+  map  v 		  enterVisualMode
+  map  V 		  enterVisualLineMode
+  map  gs 	  focusInput
+  map  ga 	  focusInput
+  map  gk 	  frame
+  map  gl 	  nextFrame
+
+# search --------------
+  map  ? 		  enterFindMode
+  map  h 		  performBackwardsFind
+  map  n 		  performFind
+
+# open ----------------
+  map  t 		  Vomnibar.activateTabSelection
+  map  b 		  Vomnibar.activateBookmarksInNewTab
+  map  d      Vomnibar.activateInNewTab
+  map  e      Vomnibar.activateEditUrlInNewTab
+  map  B 		  Vomnibar.activateBookmarks
+  map  D      Vomnibar.activate
+  map  E      Vomnibar.activateEditUrl
+
+

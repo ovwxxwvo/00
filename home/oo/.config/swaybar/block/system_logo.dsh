@@ -7,7 +7,7 @@ LABEL="$ICON_LOGO"
 
 
 show_block() {
-  BLOCK=" $LABEL "
+  BLOCK="$LABEL "
   echo "$BLOCK"
   echo "$BLOCK"
   }

@@ -24,7 +24,7 @@ function press_key {
   else
     killall wf-recorder
     fi
-  sleep 1
+  sleep 0.5
   }
 
 

@@ -11,14 +11,14 @@ require(module).setup{
   -- install = { colorscheme = { 'habamax' } },
   spec = {
 
-{ 'easymotion/vim-easymotion',
+{ 'asymotion/vim-easymotion',
   dependencies = {
   'scrooloose/nerdtree',
   'majutsushi/tagbar',
   'yggdroot/indentline',
-  -- 'andymass/vim-matchup',
   'tomtom/tcomment_vim',
   'tpope/vim-surround',
+  'tpope/vim-repeat',
   'godlygeek/tabular',
   }, },
 
@@ -62,7 +62,6 @@ require(module).setup{
   'nvim-lua/plenary.nvim',
   'BurntSushi/ripgrep',
   'sharkdp/fd',
-  -- 'nvim-telescope/telescope-fzf-native.nvim',
   { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
   }, },
 
@@ -83,6 +82,13 @@ require(module).setup{
   'dhruvasagar/vim-table-mode',
   }, },
 
+{ 'folke/which-key.nvim',
+  init = function()
+    vim.o.timeout = true
+    vim.o.timeoutlen = 300
+    end,
+  },
+
 } }
 
   -- { 'mikavilpas/yazi.nvim',
@@ -93,14 +99,6 @@ require(module).setup{
   --       show_help = '<f1>',
   --       },
   --     },
-  --   },
-
-  -- { 'folke/which-key.nvim',
-  --   event = 'VeryLazy',
-  --   init = function()
-  --     vim.o.timeout = true
-  --     vim.o.timeoutlen = 300
-  --     end,
   --   },
 
 

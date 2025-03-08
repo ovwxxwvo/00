@@ -5,7 +5,7 @@
   transparent_background_colors = true
   cursor         = { text = "CellBackground", cursor = "CellForeground" }
   vi_mode_cursor = { text = "CellBackground", cursor = "CellForeground" }
-  primary        = { foreground = "#d0d0d0",  background = "#303030"  }
+  primary        = { foreground = "#d0d0d0" , background = "#303030"    }
 
 [colors.normal]
   red      = "#b08050"

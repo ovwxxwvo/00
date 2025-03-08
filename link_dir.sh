@@ -7,7 +7,8 @@
 
 file_names=(
   '00_config'
-  '02_cipher'
+  '00_cipher'
+  '02_game'
   '04_script'
   '06_project'
   '08_program'

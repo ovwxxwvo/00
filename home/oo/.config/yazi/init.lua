@@ -9,7 +9,7 @@ require("autoshell")
 
 require("session"  ):setup(dofile(config.."session.lua"  ))
 require("uipatcher"):setup(dofile(config.."uipatcher.lua"))
-require("git"      ):setup()
+-- require("git"      ):setup()
 
 
 -- require("mpviewer" )

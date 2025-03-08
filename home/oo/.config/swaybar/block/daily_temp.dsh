@@ -28,7 +28,7 @@ TEMP=$( [ $WTTR -eq 0 ] \
 show_block() {
   if [ "$TEMP" != "" ] ;then
     # BLOCK="$LABEL$TEMP°C/$ADDR"
-    BLOCK=" $LABEL$TEMP°C "
+    BLOCK="$LABEL$TEMP°C"
     echo "$BLOCK"
     echo "$BLOCK"
   else

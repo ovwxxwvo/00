@@ -7,7 +7,7 @@ block="$HOME/.config/swaybar/block"
 
 
 show_block() {
-  BLOCK=$(date "+ %d/%b %H:%M:%S %a ")
+  BLOCK=$(date "+%d/%b %H:%M:%S %a")
   echo "$BLOCK"
   echo "$BLOCK"
   }

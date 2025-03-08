@@ -28,15 +28,12 @@
     set guioptions -=r  " remove scroll bar
     set guioptions -=L  " remove scroll bar
   endif                 "
+
 " termimal
   set title            " show info in the window title
   let &t_EI = "\e[1 q" " NORMAL  mode
   let &t_SI = "\e[5 q" " INSERT  mode
   let &t_SR = "\e[3 q" " REPLACE mode
-  " cursor mode
-    " 1 blinking block          2 solid block
-    " 3 blinking line under     4 solid line under
-    " 5 blinking line verti     6 solid line verti
 
 " appearance
   set number            " show the line number for each line
@@ -80,7 +77,7 @@
 
 " fold
   set foldmethod=indent " folding type: manual, indent, expr, marker, syntax
-  set foldignore==      " used to ignore lines when 'foldmethod' is "indent"
+  set foldignore==      " used to ignore lines when 'foldmethod' is 'indent'
   "set foldlevel=00     " folds with a level higher than this number will be closed
   "set nofoldenable     " set to display all folds open
 

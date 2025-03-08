@@ -12,7 +12,6 @@ cmd=$( ps -o comm= -t $pts \
 if [[ $cmd =~ 'vi' || $cmd =~ 'ya' ]]; then
   # tmux display ' key, vi & ra '
   tmux source ~/.config/tmux/keymap/unctrl.tmx
-  tmux source ~/.config/tmux/keymap/redo.tmx
 else
   tmux source ~/.config/tmux/keymap/ctrl.tmx
 fi

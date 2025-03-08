@@ -1,0 +1,51 @@
+# TMUX config, terminal multiplexer.
+# Maintainer:	 Jessee Chan <CYPHER0@foxmail.com>
+# Last Change: 2023.05.15
+  # Some of these are used for multiple keys= including:
+  #
+  # C-@ is also C-Space;
+  #
+  # C-[ is also Escape;
+  #
+  # C-i is also Tab;
+  #
+  # C-m is also Enter;
+  #
+  # C-- is also C-_;
+  #
+  # C-^ is also C-/.
+  #
+
+
+# redefine ctrl key
+
+  %hidden        c_tab='Ñ'
+  %hidden     c_escape='Ò'
+  %hidden     c_return='Ü'
+
+  %hidden          c_m='Ú'
+
+  # %hidden      c_minus='á'
+  # %hidden     c_equals='â'
+  %hidden   c_bracketl='ã'
+  %hidden   c_bracketr='ä'
+  %hidden  c_semicolon='å'
+  %hidden c_apostrophe='æ'
+  %hidden      c_comma='ç'
+  %hidden     c_period='è'
+  # %hidden      c_slash='é'
+  # %hidden  c_backslash='ê'
+  %hidden      c_grave='ë'
+
+  %hidden       c_key1='ñ'
+  %hidden       c_key2='ò'
+  %hidden       c_key3='ó'
+  %hidden       c_key4='ô'
+  %hidden       c_key5='õ'
+  %hidden       c_key6='ö'
+  %hidden       c_key7='÷'
+  %hidden       c_key8='ø'
+  %hidden       c_key9='ù'
+  %hidden       c_key0='ú'
+
+

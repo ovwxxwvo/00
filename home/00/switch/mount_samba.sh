@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 
-MNT='/0000'
+MNT="/0000"
 PRE="SM¦"
 echo ---------- ----------
 echo $MNT $PRE

@@ -1,7 +1,13 @@
 # link config,
 
 
-ln -s  ~/.config/fcitx5   ~/.local/share/fcitx5         \
-ln -s  ~/.config/kodi     ~/.kodi                       \
+cd /home/config/home/oo/.local/share/
+ln -sf  ../../.config/fcitx5  ./
+
+cd /home/config/home/oo/.mozilla
+ln -sf ../.config/firefox  ./
+
+cd /home/config/home/oo/
+ln -sf  ./.config/kodi  ./
 
 

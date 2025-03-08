@@ -1,0 +1,23 @@
+# vim: ft=dosini
+
+
+[Groups/0]
+# Group Name
+Name=Default
+# Layout
+Default Layout=00
+# Default Input Method
+DefaultIM=rime
+
+[Groups/0/Items/0]
+Name=keyboard-us
+Layout=
+
+[Groups/0/Items/1]
+Name=rime
+Layout=
+
+[GroupOrder]
+0=Default
+
+

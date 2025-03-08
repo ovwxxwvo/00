@@ -1,0 +1,16 @@
+# PULSEAUDIO config,
+# Maintainer:  Jessee Chan <CYPHER0@foxmail.com>
+# Last Change: 2024.02.24
+
+
+.include /etc/pulse/default.pa
+
+
+load-module module-alsa-sink device=hw:0,8 sink_name=alsa_output_typec2
+load-module module-alsa-sink device=hw:0,9 sink_name=alsa_output_typec3
+
+load-module module-detect
+load-module module-combine-sink sink_name=combined
+set-default-sink combined
+
+

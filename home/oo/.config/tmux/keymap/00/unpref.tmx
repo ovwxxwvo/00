@@ -1,0 +1,61 @@
+# TMUX config, terminal multiplexer.
+# Maintainer:	 Jessee Chan <CYPHER0@foxmail.com>
+# Last Change: 2023.05.15
+
+
+# basic
+  unbind -T prefix   v           # run -b ' tmux set-buffer "$(xclip -o -sel clipboard)" ; tmux paste-buffer '
+  unbind -T prefix   Escape      # " source ~/.config/tmux/key/redo.tmx \; display 'Reloaded Tmux Key' "   # C-Esc
+  unbind -T prefix   Tab         # copy-mode       # C-Tab
+
+# tab & win
+  unbind -T prefix   Space       # selectp -R
+  unbind -T prefix   q           # kill-pane
+  unbind -T prefix   m           # new-window      # C-m
+  unbind -T prefix   [           # splitw -h       # C-[
+  unbind -T prefix   ]           # splitw -v       # C-]
+  unbind -T prefix  \'           # next-layout     # C-'
+
+# tab focus
+  unbind -T prefix   1           # selectw -t 1    # C-1
+  unbind -T prefix   2           # selectw -t 2    # C-2
+  unbind -T prefix   3           # selectw -t 3    # C-3
+  unbind -T prefix   4           # selectw -t 4    # C-4
+  unbind -T prefix   5           # selectw -t 5    # C-5
+  unbind -T prefix   6           # selectw -t 6    # C-6
+  unbind -T prefix   7           # selectw -t 7    # C-7
+  unbind -T prefix   8           # selectw -t 8    # C-8
+  unbind -T prefix   9           # selectw -t 9    # C-9
+  unbind -T prefix   0           # selectw -t 10   # C-0
+# tab focus
+  unbind -T prefix  \,           # selectw -p      # C-,
+  unbind -T prefix  \.           # selectw -n      # C-.
+# win focus
+  unbind -T prefix   j           # selectp -L      # C-j
+  unbind -T prefix   k           # selectp -U      # C-k
+  unbind -T prefix   l           # selectp -D      # C-l
+  unbind -T prefix  \;           # selectp -R      # C-;
+
+# win move out tab
+  unbind -T prefix  "!"          # join-pane -t 1
+  unbind -T prefix  "@"          # join-pane -t 2
+  unbind -T prefix  "#"          # join-pane -t 3
+  unbind -T prefix  "$"          # join-pane -t 4
+  unbind -T prefix  "%"          # join-pane -t 5
+  unbind -T prefix  "^"          # join-pane -t 6
+  unbind -T prefix  "&"          # join-pane -t 7
+  unbind -T prefix  "*"          # join-pane -t 8
+  unbind -T prefix  "("          # join-pane -t 9
+  unbind -T prefix  ")"          # join-pane -t 10
+# win move  in tab
+  unbind -T prefix   S-Left      # swapp -U
+  unbind -T prefix   S-Right     # swapp -D
+  unbind -T prefix   S-Up        # swapp -U
+  unbind -T prefix   S-Down      # swapp -D
+# win resize
+  unbind -T prefix   Up          # resizep -U 2
+  unbind -T prefix   Down        # resizep -D 2
+  unbind -T prefix   Left        # resizep -L 2
+  unbind -T prefix   Right       # resizep -R 2
+
+

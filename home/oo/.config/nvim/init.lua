@@ -1,10 +1,9 @@
 -- NVIM config, a text editor based on vim.
 -- Maintainer:	Jessee Chan <CYPHER0@foxmail.com>
--- Last Change: 2024.11.30
+-- Last Change: 2024.12.22
 
 
 vim.cmd[[source ~/.config/nvim/deft.vim]]
-
 require("plug")
 require("plugin")
 
@@ -15,8 +14,8 @@ local keymap = os.getenv("HOME").."/.config/nvim/keymap/"
 dofile(keymap.."normal.lua")
 dofile(keymap.."visual.lua")
 dofile(keymap.."contrl.lua")
-dofile(keymap.."functn.lua")
 dofile(keymap.."window.lua")
+dofile(keymap.."keyext.lua")
 
 local config = os.getenv("HOME").."/.config/nvim/config/"
 dofile(config.."mason.luc"     )
@@ -24,7 +23,6 @@ dofile(config.."cmp.luc"       )
 dofile(config.."telescope.luc" )
 dofile(config.."noice.luc"     )
 dofile(config.."lualine.luc"   )
-
 dofile(keymap.."plugin.lua")
 
 require("misty")

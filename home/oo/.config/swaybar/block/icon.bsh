@@ -4,6 +4,7 @@
 # ICON_00=""
 ICON_00="╪"
 ICON_LOGO=""
+ICON_SYNC="󱍸"
 
 ICON_CPU=""
 ICON_MEM=""
@@ -15,8 +16,9 @@ ICON_BTTH=""
 
 ICON_UDISK="󱊞"
 ICON_SAMBA="󰌘"
-ICON_SHARE=""
 ICON_OLLAMA="󱀆"
+ICON_CLASH="󰖂"
+ICON_SHARE=""
 
 ICON_VOL=""
 ICON_MIC=""

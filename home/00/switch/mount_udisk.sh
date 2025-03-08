@@ -16,10 +16,9 @@ UPARTS=(` lsblk |grep "part" \
   |sort -n \
   `)
 ULABELS=(` for i in ${!UPARTS[@]} ;do \
-  sudo blkid \
+  lsblk -o name,label \
   |grep "${UPARTS[i]}" \
-  |grep -Eo " LABEL=\S+ " \
-  |awk -F"[\t =\"]+" '{print $3}' \
+  |awk -F"[\t ]+" '{print $2}' \
   ;done `)
 echo ---------- ----------
   echo UDISKS  ${#UDISKS[@]}  ${UDISKS[@]}

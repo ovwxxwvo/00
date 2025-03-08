@@ -13,6 +13,7 @@ function press_key {
   grim \
   -g "$(slurp)" \
   "$FILE_PATH" &
+  sleep 0.5
   }
 
 

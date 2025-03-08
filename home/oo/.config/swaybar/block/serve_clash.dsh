@@ -1,0 +1,37 @@
+#!/usr/bin/env dash
+
+
+block="$HOME/.config/swaybar/block"
+. "$block"/icon.bsh
+. "$block"/color.bsh
+LABEL="$ICON_CLASH"
+
+
+ACTIVE=$( ps -ef \
+  |grep -v 'grep' \
+  |grep -oc ' clash$' \
+  )
+# echo CL $ACTIVE
+
+
+show_block() {
+  if [ $ACTIVE -eq 1 ]; then
+    BLOCK=" $LABEL"
+  else
+    BLOCK=""
+  fi
+  echo "$BLOCK"
+  echo "$BLOCK"
+  }
+
+show_color() {
+  if [ $ACTIVE -eq 1 ]; then
+    echo $c_malt
+  fi
+  }
+
+
+show_block
+show_color
+
+
