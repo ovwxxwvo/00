@@ -1,0 +1,32 @@
+-- NVIM config,
+-- Maintainer:	Jessee Chan <CYPHER0@foxmail.com>
+-- Last Change: 2024.11.25
+
+
+local module = "mason"
+if not pcall(require, module) then return end
+
+
+require("mason").setup()
+require("mason-lspconfig").setup{
+  ensure_installed = {
+  "bashls",
+  "lua_ls",
+  "vimls",
+  "jsonls",
+  "rust_analyzer",
+  "jedi_language_server",
+  "yamlls",
+  "taplo",
+  "marksman",
+  "cssls",
+  "html",
+  "dockerls",
+  "clangd",
+  "cmake",
+  "asm_lsp",
+  -- "termux-language-server",
+  -- "harper-ls",
+  } }
+
+

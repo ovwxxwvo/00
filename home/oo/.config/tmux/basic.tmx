@@ -1,0 +1,50 @@
+# TMUX config, terminal multiplexer.
+# Maintainer:	 Jessee Chan <CYPHER0@foxmail.com>
+# Last Change: 2023.05.05
+
+
+#set term
+  # set -ga terminal-overrides  "fbterm"
+  # set -ga terminal-overrides  "alacritty:RGB"
+  set -g  default-terminal  "tmux-256color"
+  set -as terminal-features "alacritty:RGB"
+
+# set cmd
+  set -g  default-shell     "/usr/bin/bash"
+  set -g  default-command   "exec fish"
+
+# set key
+  set -g  xterm-keys        on
+  set -g  extended-keys     on
+  set -g  mouse             on
+
+# set clipboard
+  set -g set-clipboard      on
+  # set -g copy-command     'xclip -i'
+  # set -g copy-command     'xsel  -i'
+
+# set status
+  set -g focus-events       on
+  set -g set-titles         on
+  set -g renumber-windows   on
+  set -g automatic-rename   on
+  set -g monitor-activity   off
+  set -g visual-activity    off
+  set -g status             on
+  set -g status-position    bottom
+
+# set time
+  set -g display-time       1000
+  set -g display-panes-time 800
+  set -g escape-time        10
+  set -g repeat-time        600
+
+# set style
+  set -g history-limit      4000
+  set -g buffer-limit       10
+  set -g base-index         1
+  set -g pane-base-index    1
+  set -g status-key         'vi'
+  set -g mode-key           'vi'
+
+
