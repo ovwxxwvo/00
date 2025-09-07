@@ -1,12 +1,15 @@
 #!/usr/bin/env dash
 
 
+#   󰇥 
 # ICON_00=""
 ICON_00="╪"
 ICON_LOGO=""
 ICON_SYNC="󱍸"
 
+#  
 ICON_CPU=""
+ICON_GPU=""
 ICON_MEM=""
 ICON_BLK="󰋊"
 

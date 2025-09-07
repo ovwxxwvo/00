@@ -1,0 +1,6 @@
+
+
+KERNEL=="kfd", MODE="0666"
+SUBSYSTEM=="drm", KERNEL=="renderD*", MODE="0666"
+
+

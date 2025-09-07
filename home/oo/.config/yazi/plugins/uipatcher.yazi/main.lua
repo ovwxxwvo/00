@@ -4,14 +4,13 @@
 
 
 function Status:mode()
-	local mode = tostring(self._tab.mode):sub(1, THEME.status.mode_len):upper()
+	local mode = tostring(self._tab.mode):sub(1, 6):upper()
 
 	local style = self:style()
 	return ui.Line {
-		-- ui.Span(THEME.status.separator_open):fg(style.main.bg),
-		ui.Span(""):fg(style.main.bg),
+		ui.Span(th.status.sep_left.open):fg(style.main.bg):bg("reset"),
 		ui.Span(" " .. mode .. " "):style(style.main),
-		ui.Span(THEME.status.separator_close):fg(style.main.bg):bg(style.alt.bg),
+		ui.Span(th.status.sep_left.close):fg(style.main.bg):bg(style.alt.bg),
 	  }
 
   end
@@ -37,7 +36,7 @@ function Status:name()
 function Header:logo()
   Header:children_add(function()
     -- return ui.Line {}
-  	return ui.Span("  " .. THEME.header.logo_char .. " "):fg(THEME.header.logo_fg)
+  	return ui.Span(header_logo_char):fg(header_logo_fg)
   end, 500, Header.RIGHT)
   end
 
@@ -46,7 +45,7 @@ function Header:host()
   	if ya.target_family() ~= "unix" then
   		return ui.Line {}
   	end
-  	return ui.Span(ya.user_name() .. "@" .. ya.host_name() .. " "):fg(THEME.header.host_fg)
+  	return ui.Span(ya.user_name() .. "@" .. ya.host_name() .. " "):fg(header_host_fg)
   end, 500, Header.LEFT)
   end
 
@@ -58,9 +57,9 @@ function Status:owner()
   	end
   	return ui.Line {
   		ui.Span(" "),
-  		ui.Span(ya.user_name(h.cha.uid) or tostring(h.cha.uid)):fg(THEME.status.user_fg),
+  		ui.Span(ya.user_name(h.cha.uid) or tostring(h.cha.uid)):fg(status_user_fg),
   		ui.Span(":"),
-  		ui.Span(ya.group_name(h.cha.gid) or tostring(h.cha.gid)):fg(THEME.status.group_fg),
+  		ui.Span(ya.group_name(h.cha.gid) or tostring(h.cha.gid)):fg(status_group_fg),
   		ui.Span(" "),
   	}
   end, 500, Status.RIGHT)
@@ -69,12 +68,12 @@ function Status:owner()
 return {
 setup = function(_, config)
 
-  -- THEME.header.logo_fg   = ""
-  -- THEME.header.host_fg   = ""
-  -- THEME.status.user_fg   = ""
-  -- THEME.status.group_fg  = ""
-  -- THEME.header.logo_char = "󰇥"
-  -- THEME.status.mode_len  = 2
+  -- header_logo_fg   = ""
+  -- header_host_fg   = ""
+  -- status_user_fg   = ""
+  -- status_group_fg  = ""
+  -- header_logo_char = "󰇥"
+  -- status_mode_len  = 6
 
 	config = config or {}
 

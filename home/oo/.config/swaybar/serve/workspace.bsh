@@ -1,0 +1,49 @@
+#!/usr/bin/env bash
+
+
+get_data() {
+  IFS=$'\n'
+  ws_nums=(` swaymsg -t get_workspaces |jq -r '.[] | .num' `)
+  ws_nams=(` swaymsg -t get_workspaces |jq -r '.[] | .name' `)
+  ws_reps=(` swaymsg -t get_workspaces |jq -r '.[] | .representation' |grep -o '\[.*\]' `)
+  # echo ${!ws_nums[@]}
+  # echo ${!ws_reps[@]}
+
+  # echo
+  # echo rep
+  for i in ${!ws_reps[@]} ;do
+    # echo $i
+    # echo ${ws_reps[i]}
+    ws_reps[i]=$(echo ${ws_reps[i]} \
+      |sed 's/\[/[ /g' \
+      |sed 's/\]/]/g' \
+      |sed 's/alacritty/ /gi' \
+      |sed 's/firefox/ /gi' \
+      |sed 's/[a-z._]\+/󰣆 /gi' \
+      )
+    # echo ${ws_reps[i]}
+    done
+
+  }
+
+show_block() {
+  # echo
+  # echo num
+  for i in ${!ws_nums[@]} ;do
+    num=${ws_nums[$i]}
+    rep=${ws_reps[$i]}
+    nam=${ws_nams[$i]}
+    # echo "$num: $rep"
+    swaymsg rename workspace $nam to "$num: $rep"
+    done
+
+  }
+
+
+while true; do
+sleep 2
+get_data    || true
+show_block  || true
+done
+
+

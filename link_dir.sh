@@ -8,10 +8,10 @@
 file_names=(
   '00_config'
   '00_cipher'
-  '02_game'
-  '04_script'
-  '06_project'
-  '08_program'
+  '02_script'
+  '04_project'
+  '06_program'
+  '08_game'
   '50_vbox'
   '80_download'
   )

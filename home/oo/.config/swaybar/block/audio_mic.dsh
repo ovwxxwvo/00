@@ -1,0 +1,41 @@
+#!/usr/bin/env dash
+
+
+block="$HOME/.config/swaybar/block"
+. "$block"/icon.bsh
+. "$block"/color.bsh
+LABEL="$ICON_MIC"
+OF="$ICON_OF"
+
+
+SINK=$( pactl get-default-source )
+MIC_MUTE=$( pactl get-source-mute $SINK \
+  | grep -c 'yes' \
+  )
+# echo -e \
+#   "\n MIC_MUTE=$MIC_MUTE" \
+
+
+show_block() {
+  if [ $MIC_MUTE -eq 1 ]; then
+    BLOCK="$LABEL$OF"
+  else
+    BLOCK="$LABEL"
+  fi
+  echo "$BLOCK"
+  echo "$BLOCK"
+  }
+
+show_color() {
+  if [ $MIC_MUTE -eq 1 ]; then
+    echo $c_gysl
+  else
+    echo $c_gywt
+  fi
+  }
+
+
+show_block
+show_color
+
+

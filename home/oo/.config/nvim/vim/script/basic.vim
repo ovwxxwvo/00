@@ -90,8 +90,8 @@
   set clipboard+=unnamedplus "unnamed to use the * register like unnamed register
 
 " multi-byte characters
+  " set termencoding=utf-8                 " character encoding for terminal
   set encoding=utf-8                     " character encoding for Vim: utf-8
-  set termencoding=utf-8                 " character encoding for terminal
   set fileencodings=ucs-bom,utf-8,gb2312 " character encoding for current file
   set fileformats=unix,dos,mac           " auto detected character encodings
 

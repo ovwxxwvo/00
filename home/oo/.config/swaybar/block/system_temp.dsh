@@ -1,0 +1,64 @@
+#!/usr/bin/env dash
+
+
+block="$HOME/.config/swaybar/block"
+. "$block"/icon.bsh
+. "$block"/color.bsh
+LABEL="$ICON_TEMP"
+
+
+ADDR=$( curl -s ip-api.com \
+  |grep 'city' \
+  |grep -Eo '[A-Za-z]+' \
+  |grep -Ev '^\s*m\s*$|^\s*city\s*$' \
+  )
+  # |grep -Eo '[A-Za-z][A-Za-z]+' \
+WTTR=$( curl -s wttr.in/$ADDR?format="%c+%t\n" \
+  |grep -ic 'Unknown' \
+  )
+TEMP=$( [ $WTTR -eq 0 ] \
+  && curl -s wttr.in/$ADDR?format="%c+%t\n" \
+    |grep -Eo "[+-]?[0-9][0-9]" \
+  || curl -s wttr.in/guangzhou?format="%c+%t\n" \
+    |grep -Eo "[+-]?[0-9][0-9]" \
+  )
+# echo $LABEL $ADDR $WTTR $TEMP
+
+
+show_block() {
+  if [ "$TEMP" != "" ] ;then
+    # BLOCK="$LABEL$TEMP°C/$ADDR"
+    BLOCK="$LABEL$TEMP°C "
+    echo "$BLOCK"
+    echo "$BLOCK"
+  else
+    BLOCK=""
+    echo "$BLOCK"
+    echo "$BLOCK"
+    exit
+  fi
+  }
+
+show_color() {
+  if   [ $TEMP -gt 30 ] ;then
+    echo $c_relt
+  elif [ $TEMP -gt 25 ] ;then
+    echo $c_orlt
+  elif [ $TEMP -gt 20 ] ;then
+    echo $c_lelt
+  elif [ $TEMP -gt 15 ] ;then
+    echo $c_sglt
+  elif [ $TEMP -gt 10 ] ;then
+    echo $c_sblt
+  elif [ $TEMP -gt  5 ] ;then
+    echo $c_vilt
+  else
+    echo $c_gylt
+  fi
+  }
+
+
+show_block
+show_color
+
+

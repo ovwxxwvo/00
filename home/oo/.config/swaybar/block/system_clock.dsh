@@ -1,0 +1,23 @@
+#!/usr/bin/env dash
+
+
+block="$HOME/.config/swaybar/block"
+. "$block"/icon.bsh
+. "$block"/color.bsh
+
+
+show_block() {
+  BLOCK=$(date "+%d/%b %H:%M:%S %a")
+  echo "$BLOCK"
+  echo "$BLOCK"
+  }
+
+show_color() {
+  echo $c_gylt
+  }
+
+
+show_block
+show_color
+
+

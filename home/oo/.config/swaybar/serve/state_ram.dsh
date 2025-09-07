@@ -1,0 +1,44 @@
+#!/usr/bin/env dash
+
+
+SERVE_NAME='ram'
+SERVE_DIRT='/tmp/swaybar_block'
+SERVE_FILE_TXT="${SERVE_DIRT}/state_${SERVE_NAME}.txt"
+SERVE_FILE_TMP="${SERVE_DIRT}/state_${SERVE_NAME}.tmp"
+DATA=''
+
+
+make_file() {
+  # echo make_file
+  [ ! -e "$SERVE_FILE_TXT" ] && touch "$SERVE_FILE_TXT"
+  [ ! -e "$SERVE_FILE_TMP" ] && touch "$SERVE_FILE_TMP"
+  }
+
+push_data() {
+  # echo push_data
+
+  USAGE=$( \
+    cat /proc/meminfo \
+    |grep -E "MemTotal|MemAvailable" \
+    |grep -Eo "[0-9]+" \
+    |paste -sd ' ' \
+    |awk -F"[\t ]+" '{print (($1-$2)/$1*100)}' \
+    |awk '{printf "%02d", $0}' \
+    )
+    # |awk '{ printf "%04.1f", $0 }' \
+
+  # echo "$USAGE"
+  echo "$USAGE" > "$SERVE_FILE_TMP"
+  mv "$SERVE_FILE_TMP" "$SERVE_FILE_TXT"
+
+  }
+
+
+# make_file
+while true ;do
+push_data
+sleep 1
+done
+
+
+

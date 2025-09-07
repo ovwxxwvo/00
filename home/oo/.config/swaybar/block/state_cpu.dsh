@@ -1,18 +1,15 @@
 #!/usr/bin/env dash
 
 
-block="$HOME/.config/swaybar/block"
-. "$block"/icon.bsh
-. "$block"/color.bsh
+BLOCK="$HOME/.config/swaybar/block"
+. "$BLOCK"/icon.bsh
+. "$BLOCK"/color.bsh
 LABEL="$ICON_CPU"
 
-
-USAGE=$( top -bn 1 \
-  | grep 'Cpu(s):' \
-  | awk -F"[\t :,]+" '{print $8}' \
-  | awk '{ printf "%02d", (100-$0) }' \
-  )
-  # | awk '{ printf "%04.1f", (100-$0) }' \
+SERVE_NAME='cpu'
+SERVE_DIRT='/tmp/swaybar_block'
+SERVE_FILE_TXT="${SERVE_DIRT}/state_${SERVE_NAME}.txt"
+USAGE=$( cat "$SERVE_FILE_TXT" )
 # echo $LABEL $USAGE
 
 
@@ -23,19 +20,19 @@ show_block() {
   }
 
 show_color() {
-  if   [ $USAGE -le 5  ]; then
-    echo $c_cylt
-  elif [ $USAGE -le 15 ]; then
-    echo $c_sblt
-  elif [ $USAGE -le 30 ]; then
-    echo $c_sglt
-  elif [ $USAGE -le 45 ]; then
-    echo $c_lelt
-  elif [ $USAGE -le 60 ]; then
+  if   [ $USAGE -le 5   ]; then
+    echo $c_gylt
+  elif [ $USAGE -le 20  ]; then
+    echo $c_bllt
+  elif [ $USAGE -le 40  ]; then
+    echo $c_grlt
+  elif [ $USAGE -le 60  ]; then
     echo $c_yelt
-  elif [ $USAGE -le 75 ]; then
+  elif [ $USAGE -le 80  ]; then
     echo $c_orlt
-  elif [ $USAGE -le 90 ]; then
+  elif [ $USAGE -le 90  ]; then
+    echo $c_pilt
+  else
     echo $c_relt
   fi
   }

@@ -1,0 +1,47 @@
+#!/usr/bin/env dash
+
+
+block="$HOME/.config/swaybar/block"
+. "$block"/icon.bsh
+. "$block"/color.bsh
+LABEL="$ICON_CPU"
+
+
+USAGE=$( rocm-smi \
+  |grep -E "[0-9]+%" \
+  |awk -F"[\t %]+" '{print $16}' \
+  |awk '{printf "%02d", $0}' \
+  )
+  # | awk '{ printf "%04.1f", $0 }' \
+# echo $LABEL $USAGE
+
+
+show_block() {
+  BLOCK="G$LABEL $USAGE%"
+  echo "$BLOCK"
+  echo "$BLOCK"
+  }
+
+show_color() {
+  if   [ $USAGE -le 5   ]; then
+    echo $c_cylt
+  elif [ $USAGE -le 20  ]; then
+    echo $c_sblt
+  elif [ $USAGE -le 40  ]; then
+    echo $c_sglt
+  elif [ $USAGE -le 60  ]; then
+    echo $c_lelt
+  elif [ $USAGE -le 80  ]; then
+    echo $c_yelt
+  elif [ $USAGE -le 90  ]; then
+    echo $c_orlt
+  else
+    echo $c_relt
+  fi
+  }
+
+
+show_block
+show_color
+
+

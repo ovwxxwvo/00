@@ -16,8 +16,8 @@ THEME.git.updated_sign   = "^"
 THEME.git.ignored_sign   = "~"
 THEME.git.untracked_sign = "?"
 
-THEME.header.logo_fg     = "#ffd0a0"
-THEME.header.host_fg     = "#a0d0ff"
+THEME.header.logo_fg     = "#f0e0c0"
+THEME.header.host_fg     = "#c0e0f0"
 THEME.status.user_fg     = ""
 THEME.status.group_fg    = ""
 

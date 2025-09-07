@@ -1,6 +1,5 @@
 --- @sync entry
 
-
 local mpserver = '~/.config/yazi/plugins/mpviewer.yazi/'
 
 local function server()
@@ -60,7 +59,8 @@ function M:entry(job)
 
 function M:peek(job)
 	local start = os.clock()
-	ya.sleep(math.max(0, PREVIEW.image_delay / 1000 + start - os.clock()))
+	ya.sleep(math.max(0, rt.preview.image_delay / 1000 + start - os.clock()))
+  -- print('----')
 
   local u = job.file.url
   local a = job.area
@@ -78,8 +78,9 @@ function M:peek(job)
   local cmd    = script..paramt..rmverr
   local state = io.popen(cmd):read("*a")
 
-  -- os.execute(cmd)
+  -- os.execute()
   end
+
 
 return M
 

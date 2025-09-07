@@ -8,6 +8,7 @@ require("plug")
 require("plugin")
 
 local autocmd = os.getenv("HOME").."/.config/nvim/autocmd/"
+dofile(autocmd.."foldmethod.lua"     )
 dofile(autocmd.."filetype.lua"     )
 
 local keymap = os.getenv("HOME").."/.config/nvim/keymap/"

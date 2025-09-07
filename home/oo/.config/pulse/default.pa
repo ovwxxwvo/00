@@ -1,16 +1,27 @@
 # PULSEAUDIO config,
 # Maintainer:  Jessee Chan <CYPHER0@foxmail.com>
-# Last Change: 2024.02.24
+# Last Change: 2025.03.28
 
 
 .include /etc/pulse/default.pa
 
 
-load-module module-alsa-sink device=hw:0,8 sink_name=alsa_output_typec2
-load-module module-alsa-sink device=hw:0,9 sink_name=alsa_output_typec3
-
 load-module module-detect
-load-module module-combine-sink sink_name=combined
-set-default-sink combined
+load-module module-udev-detect
+set-default-sink output
+
+
+# load-module module-alsa-sink device=hw:0,8 sink_name=alsa_output_typec2
+# load-module module-alsa-sink device=hw:0,9 sink_name=alsa_output_typec3
+#
+# load-module module-combine-sink sink_name=combined
+# set-default-sink combined
+
+
+# load-module module-alsa-sink device=hw:0,3 sink_name=alsa_output_hdmi0
+# load-module module-alsa-sink device=hw:0,7 sink_name=alsa_output_hdmi1
+
+# set-default-sink alsa_output_hdmi0
+# set-default-sink alsa_output_hdmi1
 
 

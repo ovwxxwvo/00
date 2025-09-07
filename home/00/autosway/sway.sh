@@ -10,7 +10,8 @@ swayidle -w  \
 # swaybg   -i  '/home/00/background/00.jpg'  &
 
 # swaybar  -b  bar-0  &
-# i3blocks -c "~/.config/swaybar/i3blocks.conf
+# i3blocks -c "$HOME/.config/swaybar/i3blocks.conf"
+# nice dash   "$HOME/.config/swaybar/serve.dsh"
 
 # wl-paste -t text --watch clipman store --no-persist
 

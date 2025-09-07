@@ -1,0 +1,45 @@
+#!/usr/bin/env dash
+
+
+block="$HOME/.config/swaybar/block"
+. "$block"/icon.bsh
+. "$block"/color.bsh
+LABEL="$ICON_MEM"
+
+
+SERVE_NAME='vrm'
+SERVE_DIRT='/tmp/swaybar_block'
+SERVE_FILE_TXT="${SERVE_DIRT}/state_${SERVE_NAME}.txt"
+USAGE=$( cat "$SERVE_FILE_TXT" )
+# echo $LABEL $USAGE
+
+
+show_block() {
+  BLOCK="$LABEL $USAGE%"
+  echo "$BLOCK"
+  echo "$BLOCK"
+  }
+
+show_color() {
+  if   [ $USAGE -le 5   ]; then
+    echo $c_gylt
+  elif [ $USAGE -le 20  ]; then
+    echo $c_bllt
+  elif [ $USAGE -le 40  ]; then
+    echo $c_grlt
+  elif [ $USAGE -le 60  ]; then
+    echo $c_yelt
+  elif [ $USAGE -le 80  ]; then
+    echo $c_orlt
+  elif [ $USAGE -le 90  ]; then
+    echo $c_pilt
+  else
+    echo $c_relt
+  fi
+  }
+
+
+show_block
+show_color
+
+

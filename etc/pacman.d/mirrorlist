@@ -21,3 +21,6 @@ Server = http://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch
 # Server = http://mirror.redrock.team/archlinux/$repo/os/$arch
 
 
+# Server = http://mirrors.evowise.com/archlinux/$repo/os/$arch
+
+

@@ -8,7 +8,7 @@
 [manager]
   ratio          = [ 3, 7, 10 ]
   scrolloff      = 5
-  linemode       = "none"
+  linemode       = "size"
   sort_by        = "extension"
   sort_sensitive = false
   sort_reverse 	 = false
@@ -107,7 +107,7 @@
   max_height      = 900
   cache_dir       = ""
   image_filter    = "triangle"
-  image_delay     = 50
+  image_delay     = 100
   image_quality   = 50
   sixel_fraction  = 20
   ueberzug_scale  = 1

@@ -167,8 +167,8 @@ rd_fdmn() {
 echo $$
   mk_desc
   rd_vmst  1
-  rd_fdmj  2 "lock|power|led|vol|wlan|btth|udisk|vpn|share|samba"
-  rd_fdmn 60
+  # rd_fdmj  2 "lock|power|led|vol|wlan|btth|udisk|vpn|share|samba"
+  # rd_fdmn 60
   # rd_fdmj  2 "wlan|btth|udisk"
   # rd_fdmj 10 "lock|led|vol|vpn|share|samba"
   # rd_fdmj 60 "power"
