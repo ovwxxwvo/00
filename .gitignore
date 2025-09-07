@@ -1,9 +1,9 @@
 # git ignore
 
 
-home/oo/.config/tmux/plugins/misty.tmux/.git
-home/oo/.config/fish/plugins/misty.fish/.git
-home/oo/.config/yazi/flavors/misty.yazi/.git
-home/oo/.config/nvim/colors/misty.nvim/.git
+home/oo/.config/tmux/plugins/misty.tmux/.git/
+home/oo/.config/fish/plugins/misty.fish/.git/
+home/oo/.config/yazi/flavors/misty.yazi/.git/
+home/oo/.config/nvim/colors/misty.nvim/.git/
 
 
