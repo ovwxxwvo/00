@@ -1,23 +1,17 @@
-# SOUND config,
+# ALSA config,
+# Maintainer:  Jessee Chan <CYPHER0@foxmail.com>
+# Last Change: 2026.02.15
 
 
-# ctl.!default {
-#   type hw
-#   card Audio
+# pcm._hdmi_ac3 {
+#   type a52
+#   format S16_LE
+#   channels 6
+#   rate 48000
+#   slave.pcm "hdmi:CARD=HDMI,DEV=0"
+#   options {
+#     bitrate 640
 #   }
-# pcm.!default {
-#   type hw
-#   card Audio
-#   }
-
-
-# playback.pcm {
-#   type hw
-#   card Audio
-#   }
-# capture.pcm {
-#   type hw
-#   card 1
-#   }
+# }
 
 

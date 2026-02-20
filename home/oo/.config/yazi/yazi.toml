@@ -5,7 +5,7 @@
 
 "$schema" = "https://yazi-rs.github.io/schemas/yazi.json"
 
-[manager]
+[mgr]
   ratio          = [ 3, 7, 10 ]
   scrolloff      = 5
   linemode       = "size"
@@ -58,7 +58,7 @@
   rename_origin = "hovered"
   rename_offset = [ 0, 1, 50, 3 ]
 
-[select]
+[pick]
   open_title    = "Open with:"
   open_origin   = "hovered"
   open_offset   = [ 0, 1, 50, 7 ]
@@ -114,54 +114,56 @@
   ueberzug_offset = [ 0, 0, 0, 0 ]
 
 [opener]
+  editor = [{ run = "nvim        %s", block  = true, for = "unix" },]
+  player = [{ run = "mpv         %s", orphan = true, for = "unix" },]
+  viewer = [{ run = "mupdf       %s", orphan = true, for = "unix" },]
+  office = [{ run = "libreoffice %s", orphan = true, for = "unix" },]
 
-  editor  = [{ run = 'nvim        "$@"', desc = "nvim"       , block  = true, for = "unix" },]
-  player  = [{ run = 'mpv         "$@"', desc = "mpv"        , orphan = true, for = "unix" },]
-  viewer  = [{ run = 'mupdf       "$@"', desc = "mupdf"      , orphan = true, for = "unix" },]
-  office  = [{ run = 'libreoffice "$@"', desc = "libreoffice", orphan = true, for = "unix" },]
+  opener = [{ run = "xdg-open %s1",                  for = "linux" },]
+  reveal = [{ run = "xdg-open %d1",                  for = "linux" },]
 
-  extract = [{ run = 'ya pub extract --list "$@"', desc = "Extract here", for = "unix" },]
-
-  opener = [
-  	{ run = 'xdg-open "$1"',                desc = "Open", for = "linux" },
-  	# { run = 'open "$@"',                    desc = "Open", for = "macos" },
-  	# { run = 'start "" "%1"', orphan = true, desc = "Open", for = "windows" },
+  extract = [
+  	{ run = "ya pub extract --list %s",   desc = "Extract here" },
     ]
-
-  reveal = [
-  	{ run = 'xdg-open "$(dirname "$1")"'          , desc = "Reveal", for = "linux" },
-  	{ run = '''exiftool "$1"; echo "Press enter to exit";  read _''', block = true, desc = "Show EXIF", for = "unix" },
-  	# { run = 'open -R "$1"',                         desc = "Reveal", for = "macos" },
-  	# { run = 'explorer /select,"%1"', orphan = true, desc = "Reveal", for = "windows" },
+  download = [
+  	{ run = "ya emit download --open %S", desc = "Download and open" },
+  	{ run = "ya emit download %S",        desc = "Download" },
     ]
 
 [open]
   rules = [
 
   # office
-  { name = "*.pdf"                            , use = [ "viewer" ,  ]},
-  { name = "*.doc"                            , use = [ "office" ,  ]},
-  { name = "*.docx"                           , use = [ "office" ,  ]},
-  { name = "*.xls"                            , use = [ "office" ,  ]},
-  { name = "*.xlsx"                           , use = [ "office" ,  ]},
-  { name = "*.ppt"                            , use = [ "office" ,  ]},
-  { name = "*.pptx"                           , use = [ "office" ,  ]},
+  { url  = "*.pdf"   , use = [ "viewer" ,  ]},
+  { url  = "*.doc"   , use = [ "office" ,  ]},
+  { url  = "*.docx"  , use = [ "office" ,  ]},
+  { url  = "*.xls"   , use = [ "office" ,  ]},
+  { url  = "*.xlsx"  , use = [ "office" ,  ]},
+  { url  = "*.ppt"   , use = [ "office" ,  ]},
+  { url  = "*.pptx"  , use = [ "office" ,  ]},
 
   # media
-	{ mime = "text/*"                           , use = [ "editor" ,  ] },
-	{ mime = "image/*"                          , use = [ "player" ,  ] },
-	{ mime = "audio/*"                          , use = [ "player" ,  ] },
-	{ mime = "video/*"                          , use = [ "player" ,  ] },
+	{ url  = "*.jpg"   , use = [ "player" ,  ] },
+	{ url  = "*.mp3"   , use = [ "player" ,  ] },
+	{ url  = "*.mkv"   , use = [ "player" ,  ] },
+	{ mime = "text/*"  , use = [ "editor" ,  ] },
+	{ mime = "image/*" , use = [ "player" ,  ] },
+	{ mime = "audio/*" , use = [ "player" ,  ] },
+	{ mime = "video/*" , use = [ "player" ,  ] },
 
 	# Archive
-	{ mime = "application/x-{tar,bzip*,xz}"     , use = [ "extract",  ] },
-	{ mime = "application/x-{rar,7z-compressed}", use = [ "extract",  ] },
-	{ mime = "application/{,g}zip"              , use = [ "extract",  ] },
+	{ mime = "application/x-{tar,rar,bzip*,xz}", use = [ "extract",  ] },
+	{ mime = "application/x-{7z-compressed}"   , use = [ "extract",  ] },
+	{ mime = "application/{,g}zip"             , use = [ "extract",  ] },
 
+	# Folder
+	{ url  = "*/"      , use = [ "open", "reveal" ] },
+	# Empty file
+	{ mime = "inode/empty"       , use = [ "open", "reveal" ] },
+	# Virtual file system
+	{ mime = "vfs/{absent,stale}", use = ["download"] },
 	# Fallback
-	{ mime = "inode/x-empty"                    , use = [ "editor" ,  ] },
-	{ name = "*"                                , use = [ "editor" ,  ] },
-	{ name = "*/"                               , use = [ "opener" ,  ] },
+	{ url  = "*"                 , use = [ "open", "reveal" ] },
 
   ]
 
@@ -169,69 +171,106 @@
 
 fetchers = [
 	# Mimetype
-  	{ id = "mime", name = "*" , run = "mime", if = "!mime", prio = "high" },
-  # git
-    # { id = "git" , name = "*" , run = "git" },
-    # { id = "git" , name = "*/", run = "git" },
-    ]
+	{ id = "mime", url = "*/",         run = "mime.dir",    prio = "high" },
+	{ id = "mime", url = "local://*",  run = "mime.local",  prio = "high" },
+	{ id = "mime", url = "remote://*", run = "mime.remote", prio = "high" },
+  ]
 
-preloaders = [
-  # # Image
-  # { mime = "image/{avif,hei?,jxl,svg+xml}", run = "magick" },
-  # { mime = "image/*", run = "image" },
-  # # Video
-  # { mime = "video/*", run = "video" },
-  # # PDF
-  # { mime = "application/pdf", run = "pdf" },
-  # # Font
-  # { mime = "font/*", run = "font" },
-  # { mime = "application/vnd.ms-opentype", run = "font" },
+spotters = [
+	{ url = "*/"     , run = "folder" },
+
+  # image
+  	{ url = "*.jpg",  run = "mpviewer" },
+  	{ url = "*.png",  run = "mpviewer" },
+  	{ url = "*.gif",  run = "mpviewer" },
+  	{ url = "*.bmp",  run = "mpviewer" },
+  	{ url = "*.tif",  run = "mpviewer" },
+  	{ url = "*.tiff", run = "mpviewer" },
+
+  # audio
+  	{ url = "*.mp3",  run = "mpviewer" },
+  	{ url = "*.m4a",  run = "mpviewer" },
+  	{ url = "*.aac",  run = "mpviewer" },
+  	{ url = "*.ogg",  run = "mpviewer" },
+  	{ url = "*.wav",  run = "mpviewer" },
+  	{ url = "*.flac", run = "mpviewer" },
+
+  # video
+  	{ url = "*.mp4",  run = "mpviewer" },
+  	{ url = "*.m4v",  run = "mpviewer" },
+  	{ url = "*.mkv",  run = "mpviewer" },
+  	{ url = "*.flv",  run = "mpviewer" },
+  	{ url = "*.avi",  run = "mpviewer" },
+  	{ url = "*.webm", run = "mpviewer" },
+
+  # Text
+  	{ mime = "text/*"                           , run = "code"  },
+  	{ mime = "*/{xml,javascript}"               , run = "code"  },
+  	{ mime = "*/{x-wine-extension-ini}"         , run = "code"  },
+  	{ mime = "application/{json,x-ndjson}"      , run = "json"    },
+
+  # Archive
+  	{ mime = "application/x-{tar,rar,bzip*,xz}" , run = "archive" },
+  	{ mime = "application/x-{7z-compressed}"    , run = "archive" },
+  	{ mime = "application/{,g}zip"              , run = "archive" },
+  	{ mime = "application/x-{iso9660-image}"    , run = "archive" },
+
+	# Virtual file system
+	{ mime = "vfs/*" , run = "vfs" },
+	# Error
+	{ mime = "null/*", run = "null" },
+	# Fallback
+	{ url = "*"      , run = "file" },
+
   ]
 
 previewers = [
+  { url  = "*/"                               , run = "folder" },
 
   # image
-  	{ name = "*.jpg",  run = "mpviewer" },
-  	{ name = "*.png",  run = "mpviewer" },
-  	{ name = "*.gif",  run = "mpviewer" },
-  	{ name = "*.bmp",  run = "mpviewer" },
-  	{ name = "*.tif",  run = "mpviewer" },
-  	{ name = "*.tiff", run = "mpviewer" },
+  	{ url = "*.jpg",  run = "mpviewer" },
+  	{ url = "*.png",  run = "mpviewer" },
+  	{ url = "*.gif",  run = "mpviewer" },
+  	{ url = "*.bmp",  run = "mpviewer" },
+  	{ url = "*.tif",  run = "mpviewer" },
+  	{ url = "*.tiff", run = "mpviewer" },
 
   # audio
-  	{ name = "*.mp3",  run = "mpviewer" },
-  	{ name = "*.m4a",  run = "mpviewer" },
-  	{ name = "*.aac",  run = "mpviewer" },
-  	{ name = "*.ogg",  run = "mpviewer" },
-  	{ name = "*.wav",  run = "mpviewer" },
-  	{ name = "*.flac", run = "mpviewer" },
+  	{ url = "*.mp3",  run = "mpviewer" },
+  	{ url = "*.m4a",  run = "mpviewer" },
+  	{ url = "*.aac",  run = "mpviewer" },
+  	{ url = "*.ogg",  run = "mpviewer" },
+  	{ url = "*.wav",  run = "mpviewer" },
+  	{ url = "*.flac", run = "mpviewer" },
 
   # video
-  	{ name = "*.mp4",  run = "mpviewer" },
-  	{ name = "*.m4v",  run = "mpviewer" },
-  	{ name = "*.mkv",  run = "mpviewer" },
-  	{ name = "*.flv",  run = "mpviewer" },
-  	{ name = "*.avi",  run = "mpviewer" },
-  	{ name = "*.webm", run = "mpviewer" },
+  	{ url = "*.mp4",  run = "mpviewer" },
+  	{ url = "*.m4v",  run = "mpviewer" },
+  	{ url = "*.mkv",  run = "mpviewer" },
+  	{ url = "*.flv",  run = "mpviewer" },
+  	{ url = "*.avi",  run = "mpviewer" },
+  	{ url = "*.webm", run = "mpviewer" },
 
-  # Code
-  	{ mime = "text/*"                                  , run = "code"    },
-  	{ mime = "*/{xml,javascript,x-wine-extension-ini}" , run = "code"    },
-  	{ mime = "application/{json,x-ndjson}"             , run = "json"    },
+  # Text
+  	{ mime = "text/*"                           , run = "code"  },
+  	{ mime = "*/{xml,javascript}"               , run = "code"  },
+  	{ mime = "*/{x-wine-extension-ini}"         , run = "code"  },
+  	{ mime = "application/{json,x-ndjson}"      , run = "json"    },
+
   # Archive
-  	{ mime = "application/x-{tar,bzip*,xz}"            , run = "archive" },
-  	{ mime = "application/x-{rar,7z-compressed}"       , run = "archive" },
-  	{ mime = "application/{,g}zip"                     , run = "archive" },
-  	{ mime = "application/x-{iso9660-image}"           , run = "archive" },
+  	{ mime = "application/x-{tar,rar,bzip*,xz}" , run = "archive" },
+  	{ mime = "application/x-{7z-compressed}"    , run = "archive" },
+  	{ mime = "application/{,g}zip"              , run = "archive" },
+  	{ mime = "application/x-{iso9660-image}"    , run = "archive" },
+
 	# Font
-  	{ mime = "font/*"                                  , run = "font"    },
-  	{ mime = "application/vnd.ms-opentype"             , run = "font"    },
+  	{ mime = "font/*"                           , run = "font"    },
+  	{ mime = "application/vnd.ms-opentype"      , run = "font"    },
 
   # Fallback
-  	{ mime = "inode/x-empty"                           , run = "empty"   },
-  	{ name = "*"                                       , run = "file"    },
-  	{ name = "*/"                                      , run = "folder"   , sync = true },
+  	{ mime = "inode/x-empty"                    , run = "empty"   },
+  	{ url  = "*"                                , run = "file"    },
 
-    ]
+  ]
 
 

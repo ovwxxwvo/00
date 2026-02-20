@@ -3,7 +3,7 @@
 # Last Change: 2024.10.24
 
 
-[manager]
+[mgr]
 
   keymap = [
 
@@ -14,6 +14,7 @@
   	{ on = "<S-Up>"     , run = "plugin mpviewer 'zoom +0.1'"               , desc = "zoom in in preview"        },
   	{ on = "<S-Down>"   , run = "plugin mpviewer 'zoom -0.1'"               , desc = "zoom ot in preview"        },
   	{ on = "<Enter>"    , run = "plugin smart-enter"                        , desc = "open file"                 },
+  	{ on = "H"          , run = "open --interactive"                        , desc = "open file"                 },
 
 	  { on = [ "t","r" ]  , run = "tab_create --current"                      , desc = "create a new tab with CWD" },
     { on = [ "t","v" ]  , run = "plugin hide-preview"                       , desc = "hide or show preview"      },
@@ -72,9 +73,9 @@
   	{ on = "k"        , run = "arrow -1"                       , desc = "move up" },
   	{ on = "l"        , run = "arrow  1"                       , desc = "move dn" },
   	{ on = "j"        , run = "leave"                          , desc = "move ot" },
-  	{ on = ";"        , run = "plugin smart-enter"             , desc = "move in" },
-  	{ on = ","        , run = "plugin parent-arrow -1"  , desc = "move up" },
-  	{ on = "."        , run = "plugin parent-arrow 1"   , desc = "move dn" },
+  	{ on = ";"        , run = "enter"                          , desc = "move in" },
+  	{ on = ","        , run = "plugin parent-arrow -1"         , desc = "move up" },
+  	{ on = "."        , run = "plugin parent-arrow 1"          , desc = "move dn" },
   	{ on = "i"        , run = "arrow -50%"                     , desc = "move up half page" },
   	{ on = "o"        , run = "arrow  50%"                     , desc = "move dn half page" },
   	{ on = "I"        , run = "back"                           , desc = "go bkwd to the prev dir" },
@@ -177,7 +178,7 @@
   	{ on = [ "S","c" ], run = [ "sort created      --reverse=no","linemode ctime"], desc = "Sort by created time" },
   	{ on = [ "S","r" ], run = [ "sort random       --reverse=no",                ], desc = "Sort randomly" },
 
-# ========== ========== ========== ==========
+  # ========== ========== ========== ==========
 
 	{ on = "<Up>",    run = "arrow -1", desc = "Move cursor up" },
 	{ on = "<Down>",  run = "arrow 1",  desc = "Move cursor down" },
@@ -221,7 +222,7 @@
 	{ on = "<C-a>"  , run = "move -999"     , desc = "Move bw to the BOL"  },
 	{ on = "<C-f>"  , run = "move 999"      , desc = "Move fw to the EOL"  },
 	{ on = "<C-w>"  , run = "kill backward" , desc = "Kill bw the word"    },
-	{ on = "<A-e>"  , run = "kill forward"  , desc = "Kill fw the word"    },
+	{ on = "<C-e>"  , run = "kill forward"  , desc = "Kill fw the word"    },
 	{ on = "<C-x>"  , run = "kill bol"      , desc = "Kill bw the BOL"     },
 	{ on = "<C-c>"  , run = "kill eol"      , desc = "Kill fw the EOL"     },
 
@@ -238,7 +239,7 @@
 	{ on = "j"      , run = "move -1"                        , desc = "Move bw a character" },
 	{ on = ";"      , run = "move 1"                         , desc = "Move fw a character" },
 
-# ========== ========== ========== ==========
+  # ========== ========== ========== ==========
 
 	# { on = "<C-[>",   run = "escape",         desc = "Go back the normal mode, or cancel input" },
 	# { on = "<C-c>",   run = "close",          desc = "Cancel input" },
@@ -312,24 +313,24 @@
 
 [select]
 
-  keymap = [
-
-	{ on = "<Esc>",   run = "close",          desc = "Cancel selection" },
-	{ on = "<C-[>",   run = "close",          desc = "Cancel selection" },
-	{ on = "<C-c>",   run = "close",          desc = "Cancel selection" },
-	{ on = "<Enter>", run = "close --submit", desc = "Submit the selection" },
-
-	{ on = "k", run = "arrow -1", desc = "Move cursor up" },
-	{ on = "j", run = "arrow 1",  desc = "Move cursor down" },
-
-	{ on = "<Up>",   run = "arrow -1", desc = "Move cursor up" },
-	{ on = "<Down>", run = "arrow 1",  desc = "Move cursor down" },
-
-	# Help
-	{ on = "~",    run = "help", desc = "Open help" },
-	{ on = "<F1>", run = "help", desc = "Open help" },
-
-  ]
+  # keymap = [
+  #
+	# { on = "<Esc>",   run = "close",          desc = "Cancel selection" },
+	# { on = "<C-[>",   run = "close",          desc = "Cancel selection" },
+	# { on = "<C-c>",   run = "close",          desc = "Cancel selection" },
+	# { on = "<Enter>", run = "close --submit", desc = "Submit the selection" },
+  #
+	# { on = "k", run = "arrow -1", desc = "Move cursor up" },
+	# { on = "j", run = "arrow 1",  desc = "Move cursor down" },
+  #
+	# { on = "<Up>",   run = "arrow -1", desc = "Move cursor up" },
+	# { on = "<Down>", run = "arrow 1",  desc = "Move cursor down" },
+  #
+	# # Help
+	# { on = "~",    run = "help", desc = "Open help" },
+	# { on = "<F1>", run = "help", desc = "Open help" },
+  #
+  # ]
 
 [confirm]
 
@@ -355,7 +356,7 @@
 
   ]
 
-[completion]
+[cmp]
 
   keymap = [
 

@@ -10,6 +10,3 @@ export EDITOR='nvim'
 export PLAYER='mpv'
 
 
-# export CARGO_REGISTRY_INDEX=https://mirrors.tuna.tsinghua.edu.cn/git/crates.io-index.git
-
-

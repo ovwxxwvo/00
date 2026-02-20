@@ -6,6 +6,8 @@
 
 source /home/00/autoload/basic.sh
 
+source /home/00/autoload/mirror.sh
+
 source /home/00/autoload/fcitx.sh
 source /home/00/autoload/gui.sh
 

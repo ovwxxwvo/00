@@ -9,8 +9,10 @@ alias  vv='nvim'
 alias  fi='fish'
 alias  vi='nvim'
 alias  ra='yazi'
-alias  oo='ollama'
 alias  ol='ollama'
+
+alias  oo='/home/oo/.opencode/bin/opencode'
+alias  opencode='/home/oo/.opencode/bin/opencode'
 
 alias  pyv313='/home/program/pyvenv313/bin/python'
 alias  pip313='/home/program/pyvenv313/bin/pip'

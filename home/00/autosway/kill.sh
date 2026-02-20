@@ -14,6 +14,8 @@ killall wl-paste
 
 killall fcitx5
 
+pulseaudio --kill
+
 sleep 1
 
 

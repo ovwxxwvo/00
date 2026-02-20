@@ -13,7 +13,7 @@ user_pref("network.http.max-persistent-connections-per-server" , 2     );
 
 user_pref("ui.systemUsesDarkTheme"                             , 1     );
 user_pref("layout.css.prefers-color-scheme.content-override"   , 3     );
-user_pref("layout.css.devPixelsPerPx"                          , "1.4" );
+user_pref("layout.css.devPixelsPerPx"                          , "1.0" );
 
 user_pref("toolkit.telemetry.reportingpolicy.firstRun" , false );
 user_pref("app.shield.optoutstudies.enabled "          , false );
