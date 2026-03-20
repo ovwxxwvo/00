@@ -1,0 +1,24 @@
+[Default Applications]
+inode/directory=yazi.desktop
+
+text/plain=nvim.desktop
+text/markdown=nvim.desktop
+
+image/jpeg=mpv.desktop
+audio/mpeg=mpv.desktop
+audio/ogg=mpv.desktop
+video/mp4=mpv.desktop
+video/x-matroska=firefox.desktop
+
+applications/pdf=firefox.desktop
+applications/doc=onlyoffice-desktopeditors.desktop
+applications/docx=onlyoffice-desktopeditors.desktop
+applications/xls=onlyoffice-desktopeditors.desktop
+applications/xlsx=onlyoffice-desktopeditors.desktop
+applications/ppt=onlyoffice-desktopeditors.desktop
+applications/pptx=onlyoffice-desktopeditors.desktop
+
+x-scheme-handler/http=firefox.desktop
+x-scheme-handler/https=firefox.desktop
+x-scheme-handler/about=firefox.desktop
+x-scheme-handler/unknown=firefox.desktop

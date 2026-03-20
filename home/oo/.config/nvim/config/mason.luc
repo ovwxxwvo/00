@@ -14,19 +14,10 @@ require("mason-lspconfig").setup{
   "lua_ls",
   "vimls",
   "jsonls",
+  "pyright",
   "rust_analyzer",
-  "jedi_language_server",
-  "yamlls",
-  "taplo",
-  "marksman",
-  "cssls",
-  "html",
-  "dockerls",
   "clangd",
-  "cmake",
   "asm_lsp",
-  -- "termux-language-server",
-  -- "harper-ls",
   } }
 
 

@@ -3,7 +3,8 @@
 # Last Change: 2024.08.08
 
 
-export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CONFIG_HOME="$HOME/.config/"
+export OLLAMA_MODELS="/home/program/data/ollama/models/"
 
 export MANPAGER='nvim +Man!'
 export EDITOR='nvim'

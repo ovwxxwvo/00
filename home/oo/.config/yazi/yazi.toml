@@ -114,13 +114,13 @@
   ueberzug_offset = [ 0, 0, 0, 0 ]
 
 [opener]
-  editor = [{ run = "nvim        %s", block  = true, for = "unix" },]
-  player = [{ run = "mpv         %s", orphan = true, for = "unix" },]
-  viewer = [{ run = "mupdf       %s", orphan = true, for = "unix" },]
-  office = [{ run = "libreoffice %s", orphan = true, for = "unix" },]
+  editor = [{ run = "nvim       %s", block  = true, for = "unix" },]
+  player = [{ run = "mpv        %s", orphan = true, for = "unix" },]
+  reader = [{ run = "firefox    %s", orphan = true, for = "unix" },]
+  office = [{ run = "onlyoffice-desktopeditors %s", orphan = true, for = "unix" },]
 
-  opener = [{ run = "xdg-open %s1",                  for = "linux" },]
-  reveal = [{ run = "xdg-open %d1",                  for = "linux" },]
+  opener = [{ run = "xdg-open %s", desc = "Opener", for = "linux" },]
+	reveal = [{ run = "xdg-open %d", desc = "Reveal", for = "linux" },]
 
   extract = [
   	{ run = "ya pub extract --list %s",   desc = "Extract here" },
@@ -133,38 +133,38 @@
 [open]
   rules = [
 
-  # office
-  { url  = "*.pdf"   , use = [ "viewer" ,  ]},
-  { url  = "*.doc"   , use = [ "office" ,  ]},
-  { url  = "*.docx"  , use = [ "office" ,  ]},
-  { url  = "*.xls"   , use = [ "office" ,  ]},
-  { url  = "*.xlsx"  , use = [ "office" ,  ]},
-  { url  = "*.ppt"   , use = [ "office" ,  ]},
-  { url  = "*.pptx"  , use = [ "office" ,  ]},
-
   # media
-	{ url  = "*.jpg"   , use = [ "player" ,  ] },
-	{ url  = "*.mp3"   , use = [ "player" ,  ] },
-	{ url  = "*.mkv"   , use = [ "player" ,  ] },
-	{ mime = "text/*"  , use = [ "editor" ,  ] },
-	{ mime = "image/*" , use = [ "player" ,  ] },
-	{ mime = "audio/*" , use = [ "player" ,  ] },
-	{ mime = "video/*" , use = [ "player" ,  ] },
+	{ mime = "text/*"  , use = [ "editor" , "reveal" ] },
+	{ mime = "image/*" , use = [ "player" , "reveal" ] },
+	{ mime = "audio/*" , use = [ "player" , "reveal" ] },
+	{ mime = "video/*" , use = [ "player" , "reveal" ] },
+  { url  = "*.txt"   , use = [ "editor" , "reveal" ]},
+  { url  = "*.jpg"   , use = [ "player" , "reveal" ]},
+  { url  = "*.mp3"   , use = [ "player" , "reveal" ]},
+  { url  = "*.mp4"   , use = [ "player" , "reveal" ]},
+
+  # # office
+  { url  = "*.pdf"   , use = [ "reader" , "reveal" ]},
+  { url  = "*.doc"   , use = [ "office" , "reveal" ]},
+  { url  = "*.docx"  , use = [ "office" , "reveal" ]},
+  { url  = "*.xls"   , use = [ "office" , "reveal" ]},
+  { url  = "*.xlsx"  , use = [ "office" , "reveal" ]},
+  { url  = "*.ppt"   , use = [ "office" , "reveal" ]},
+  { url  = "*.pptx"  , use = [ "office" , "reveal" ]},
 
 	# Archive
-	{ mime = "application/x-{tar,rar,bzip*,xz}", use = [ "extract",  ] },
-	{ mime = "application/x-{7z-compressed}"   , use = [ "extract",  ] },
-	{ mime = "application/{,g}zip"             , use = [ "extract",  ] },
+	{ mime = "application/x-{tar,rar,bzip*,xz}", use = [ "extract", "reveal" ] },
+	{ mime = "application/x-{7z-compressed}"   , use = [ "extract", "reveal" ] },
+	{ mime = "application/{,g}zip"             , use = [ "extract", "reveal" ] },
 
-	# Folder
-	{ url  = "*/"      , use = [ "open", "reveal" ] },
-	# Empty file
-	{ mime = "inode/empty"       , use = [ "open", "reveal" ] },
 	# Virtual file system
 	{ mime = "vfs/{absent,stale}", use = ["download"] },
+	# Empty file
+	{ mime = "inode/empty" , use = [ "opener", "reveal" ] },
+	# Folder
+	{ url  = "*/"          , use = [ "opener", "reveal" ] },
 	# Fallback
-	{ url  = "*"                 , use = [ "open", "reveal" ] },
-
+	{ url  = "*"           , use = [ "editor", "reader" ] },
   ]
 
 [plugin]
