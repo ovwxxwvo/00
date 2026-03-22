@@ -4,10 +4,13 @@
 
 
 export XDG_CONFIG_HOME="$HOME/.config/"
+export XDG_CURRENT_DESKTOP="sway"
+export GTK_USE_PORTAL=1
+
 export OLLAMA_MODELS="/home/program/data/ollama/models/"
 
-export MANPAGER='nvim +Man!'
-export EDITOR='nvim'
-export PLAYER='mpv'
+export MANPAGER="nvim +Man!"
+export EDITOR="nvim"
+export PLAYER="mpv"
 
 

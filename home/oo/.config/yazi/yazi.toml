@@ -159,10 +159,10 @@
 
 	# Virtual file system
 	{ mime = "vfs/{absent,stale}", use = ["download"] },
-	# Empty file
-	{ mime = "inode/empty" , use = [ "opener", "reveal" ] },
 	# Folder
 	{ url  = "*/"          , use = [ "opener", "reveal" ] },
+	# Empty file
+	{ mime = "inode/empty" , use = [ "editor", "reveal" ] },
 	# Fallback
 	{ url  = "*"           , use = [ "editor", "reader" ] },
   ]

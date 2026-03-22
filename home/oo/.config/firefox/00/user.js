@@ -7,6 +7,8 @@
 
 user_pref("browser.startup.homepage", "~/.config/firefox/00/00.html");
 
+user_pref("widget.use-xdg-desktop-portal.file-picker", 1 );
+
 user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true  );
 user_pref("browser.backspace_action"                           , 0     );
 user_pref("browser.link.open_newwindow"                        , 3     );
