@@ -6,6 +6,7 @@
 export XDG_CONFIG_HOME="$HOME/.config/"
 export XDG_CURRENT_DESKTOP="sway"
 export GTK_USE_PORTAL=1
+export QT_QPA_PLATFORMTHEME="xdgdesktopportal"
 
 export OLLAMA_MODELS="/home/program/data/ollama/models/"
 
