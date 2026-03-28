@@ -24,15 +24,15 @@ show_block() {
 show_color() {
   if   [ $USAGE -gt 90 ]; then
     echo $c_relt
-  elif [ $USAGE -gt 75 ]; then
+  elif [ $USAGE -gt 80 ]; then
     echo $c_orlt
   elif [ $USAGE -gt 60 ]; then
     echo $c_yelt
-  elif [ $USAGE -gt 45 ]; then
+  elif [ $USAGE -gt 40 ]; then
     echo $c_lelt
-  elif [ $USAGE -gt 30 ]; then
+  elif [ $USAGE -gt 20 ]; then
     echo $c_cylt
-  elif [ $USAGE -gt 15 ]; then
+  elif [ $USAGE -gt  5 ]; then
     echo $c_gywt
   fi
   }

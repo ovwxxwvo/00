@@ -1,0 +1,44 @@
+#!/usr/bin/env dash
+
+
+block="$HOME/.config/swaybar/block"
+. "$block"/icon.bsh
+. "$block"/color.bsh
+LABEL="$ICON_BLK"
+
+
+USAGE=$( df \
+  | grep ' /0000/HH¦DATA$' \
+  | grep -Eo "[0-9]+%" \
+  | grep -Eo "[0-9]+" \
+  )
+# echo $LABEL $USAGE
+
+
+show_block() {
+  BLOCK="$LABEL $USAGE%"
+  echo "$BLOCK"
+  echo "$BLOCK"
+  }
+
+show_color() {
+  if   [ $USAGE -gt 90 ]; then
+    echo $c_relt
+  elif [ $USAGE -gt 80 ]; then
+    echo $c_orlt
+  elif [ $USAGE -gt 60 ]; then
+    echo $c_yelt
+  elif [ $USAGE -gt 40 ]; then
+    echo $c_lelt
+  elif [ $USAGE -gt 20 ]; then
+    echo $c_cylt
+  elif [ $USAGE -gt  5 ]; then
+    echo $c_gywt
+  fi
+  }
+
+
+show_block
+show_color
+
+
