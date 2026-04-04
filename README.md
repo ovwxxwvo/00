@@ -24,30 +24,33 @@ Linux 和 Vim 是我的一见钟情，在我工作 5 年时。
 ![screenshot](00/04_nvim.png)  
 
 ----  
+###### System Software Tree (系统软件树)  
 
-#### System Software Tree （系统软件树）  
 ```  
                 |  
-        basic --|    yazi  fish nvim mpv     --|  
-  application   |        \  |  /    /          |  
-                |         \ | /    /           |  
-     terminal --|          tmux---/          --|  
-  multiplexer   |           |                  |  
+       basic -- |    yazi  fish nvim         --|  
+ application    |        \  |  /               |  
+                |         \ | /                |  
+    terminal -- |          tmux              --|  
+ multiplexer    |           |                  |  
                 |           |                  |  
        shell -- |          bash------\       --|  
                 |           |  \      \        |  
-                |           |   \      \       |  pt  
+                |           |   \      \       |  pts  
     terminal -- |    alacritty  fbterm  |    ---> ( pseudo terminal )  
     emulator    |      /    |     |     |  
                 |     |     |     |     |  
-     session -- |    i3   sway    |     |    --|  
-     manager    |     |     |     |     |      |  
-                |     |     |     |    /       |  
-     display -- |  xorg  wayland  fb  /      --|  
-    protocol    |      \    |    /   /         |  
+   compositor   | picom   sway    |     |      |  
+                |     + (wayland) |     |      |  
+                |     +     |     |     |      |  
+      window -- |    i3     |     |     |    --|  
+     manager    |     +     |     |     |      |  
+                |     +     |     |    /       |  
+     display -- |  xorg     |     fb  /      --|  
+      server    | (x11)\    |    /   /         |  
                 |       \   |   /   /          |  tty  
        login -- |        lemurs  getty+login ---> ( virtual terminal )  
-     systemd    |           |     /  
+     manager    |           |     /  
                 |           |    /                console  
       system -- |        linux+systemctl     ---> (  )  
                 |           |  
@@ -56,13 +59,14 @@ Linux 和 Vim 是我的一见钟情，在我工作 5 年时。
   MY ARCH LINUX (  )    / | | | \  
 ```  
 
-#### Graphical Interface （图形界面）  
+Graphical Interface (图形界面)  
 ```  
-  sway + swayidle + swaylock + swaybg + swaybar + firefox  
+  sway + swayidle + swaylock + swaybg + swaybar  
 -------------------------------------------------------  
   wayland  
 ```  
 
+----  
 #### Hardware Base （硬件基础）  
 ```  
 cpu : AMD Ryzen | Radeon Graphic  
@@ -71,7 +75,6 @@ hdd : nvme | Linux RAID
 ```  
 
 ----  
-
 #### Application Selection （应用选择）  
 
 It's really not easy to come this far, but make life more meaningful.  
@@ -94,7 +97,6 @@ browser           : firefox
 ```  
 
 ____  
-
 #### About Config Files （关于配置文件）  
 
 - some system config files may not be directly usable,  
@@ -106,7 +108,5 @@ ____
 - 一些系统配置文件可能无法直接使用，因为它们基于硬件。  
 - 应用程序配置文件通常可以直接使用，但配置文件的结构可能与大多数不同。  
 - 大多数应用程序插件需要下载。  
-
-----  
 
 
