@@ -3,9 +3,9 @@
 # Last Change: 2026.01.20
 
 
-# export GIT_CONFIG_COUNT=1
-# export GIT_CONFIG_KEY_0='url.https://mirrors.tuna.tsinghua.edu.cn/git/github.com/.insteadOf'
-# export GIT_CONFIG_VALUE_0='https://github.com/'
+export GIT_CONFIG_COUNT=1
+export GIT_CONFIG_KEY_0='url.https://mirrors.tuna.tsinghua.edu.cn/git/github.com/.insteadOf'
+export GIT_CONFIG_VALUE_0='https://github.com/'
 
 export PIP_TRUSTED_HOST='pypi.tuna.tsinghua.edu.cn'
 export PIP_INDEX_URL='https://pypi.tuna.tsinghua.edu.cn/simple'

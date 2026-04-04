@@ -27,6 +27,7 @@
 
     { on = ["g","h"]    , run = "cd /home/"                                 , desc="" },
     { on = ["g","o"]    , run = "cd /data/"                                 , desc="" },
+    { on = ["g","i"]    , run = "cd /0000/"                                 , desc="" },
 
     { on = ["g","d"]    , run = "cd /home/download/"                        , desc="" },
     { on = ["g","v"]    , run = "cd /home/script/"                          , desc="" },

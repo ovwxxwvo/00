@@ -1,6 +1,6 @@
 # ALIAS,
 # Maintainer:	 Jessee Chan <CYPHER0@foxmail.com>
-# Last Change: 2024.08.08
+# Last Change: 2026.04.04
 
 
 alias  ff='fish'
@@ -9,26 +9,13 @@ alias  vv='nvim'
 alias  fi='fish'
 alias  vi='nvim'
 alias  ra='yazi'
-alias  ol='ollama'
-
-alias  oo='/home/oo/.opencode/bin/opencode'
-alias  opencode='/home/oo/.opencode/bin/opencode'
-
-alias  pyv313='/home/program/pyvenv313/bin/python'
-alias  pip313='/home/program/pyvenv313/bin/pip'
-alias  pyv311='/home/program/pyvenv311/bin/python'
-alias  pip311='/home/program/pyvenv311/bin/pip'
-alias  you-get='/home/program/pyvenv313/bin/you-get'
 
 alias  office='onlyoffice-desktopeditors'
 alias  onlyoffice='onlyoffice-desktopeditors'
-alias   pdf='wpspdf'
-alias  wpsw='wpsw'
-alias  wpss='wpss'
-alias  wpsp='wpsp'
 
-# alias  bdnd='/home/program/application/baidunetdisk/opt/baidunetdisk/baidunetdisk'
-# alias sdwui='/home/program/docker/sdwui/sdwui.sh'
+alias  opencode='/home/oo/.opencode/bin/opencode'
+
+alias  baidunetdisk='/home/program/application/baidunetdisk/opt/baidunetdisk/baidunetdisk'
 
 # alias get_idf=". $HOME/esp/esp-idf/export.sh"
 

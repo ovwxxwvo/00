@@ -16,7 +16,8 @@ local basic = dofile(keymap.."basic.lua")
   local o = basic.o
 
 local t = {
-  { a, '<F1>',   '<ESC>:only<CR>:split<CR>:e.<CR><C-w>H', opt, },
+  -- { a, '<F1>',   '<ESC>:only<CR>:split<CR>:e.<CR><C-w>H', opt, },
+  { a, '<F1>',   '<ESC>:only<CR>:vsplit<CR>:wincmd L<CR>:Yazi<CR>', opt, },
 
   --
   { a, 'Ü',       '<ESC>jA', opt, },

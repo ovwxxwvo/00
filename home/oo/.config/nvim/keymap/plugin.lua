@@ -8,6 +8,7 @@ if package.loaded[module] == nil then return end
 
 local telescope = require("telescope.builtin")
 local lspbuff   = require("vim.lsp.buf")
+local conform   = require("conform")
 
 local keymap = os.getenv("HOME").."/.config/nvim/keymap/"
 local basic  = dofile(keymap.."basic.lua")
@@ -37,9 +38,10 @@ local t = {
   { n, "fh",    telescope.help_tags     ,{}, },
 
   { a, "<C-n>", lspbuff.rename          ,{}, },
+  { a, "<C-f>", conform.format          ,{}, },
 
-  { a, "<C-t>", ":TagbarToggle<CR>"     ,{}, },
-  { a, "<C-g>", ":NERDTreeToggle<CR>"   ,{}, },
+  -- { a, "<C-t>", ":NERDTreeToggle<CR>"   ,{}, },
+  -- { a, "<C-t>", ":TagbarToggle<CR>"     ,{}, },
 
   { n, "z",     "<Plug>(easymotion-overwin-f)" ,{}, },
 

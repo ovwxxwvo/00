@@ -11,6 +11,11 @@ require(module).setup{
   -- install = { colorscheme = { 'habamax' } },
   spec = {
 
+{ 'mikavilpas/yazi.nvim',
+  dependencies = {
+  'nvim-lua/plenary.nvim',
+  },},
+
 { 'asymotion/vim-easymotion',
   dependencies = {
   'scrooloose/nerdtree',
@@ -56,6 +61,10 @@ require(module).setup{
   'uga-rosa/cmp-dictionary',
   -- 'hrsh7th/cmp-copilot',
   }, },
+
+{ 'stevearc/conform.nvim',
+  opts = {},
+  },
 
 { 'nvim-telescope/telescope.nvim',
   dependencies = {

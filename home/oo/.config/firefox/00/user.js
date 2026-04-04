@@ -5,7 +5,7 @@
 
 // user_pref("", --);
 
-user_pref("browser.startup.homepage", "~/.config/firefox/00/00.html");
+user_pref("browser.startup.homepage", "~/.config/firefox/00/index.html");
 
 user_pref("widget.use-xdg-desktop-portal.file-picker", 1 );
 

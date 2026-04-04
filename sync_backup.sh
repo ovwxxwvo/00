@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 ##################################################
 # Be careful about what you are trying to do.
-# This script will replace the system config files.
-# For example, the files in folder "/etc" & "/usr" .
+# This script will replace the home config files.
+# For example, the files in folder "/home" .
 ##################################################
 
 cd "$(dirname "$0")" || exit 1
@@ -10,15 +10,30 @@ pwd
 
 USR="$USER"
 GRP="$USR"
-# OPT='-vur --progress --exclude=".git" --exclude=".venv" --dry-run'
-OPT='-vur --progress --exclude=".git" --exclude=".venv"'
-SRC='./'
-DST='/'
+# OPT='-vur --progress --no-perms --no-owner --no-group --delete --exclude=".git" --exclude=".venv"'
+OPT='-vur --progress --no-perms --no-owner --no-group --delete --exclude=".git" --exclude=".venv" --dry-run'
+SRC="/0000/HH¦DATA/"
+DST="/0000/UD¦BACKUP/"
 DIRS=(
-  'home/00'
-  'etc'
-  'usr'
+  '01_cipher'
+  '02_config'
+  '11_script'
+  '21_memory'
+  '22_asset'
+  '23_note'
+  '24_vessel'
+  '25_log'
+  '31_docmt'
+  '32_image'
+  '33_audio'
+  '34_video'
+  '35_study'
+  '41_tool'
   )
+  # '12_project'
+  # '13_program'
+  # '42_data'
+  # '43_download'
 SRCS=()
 DSTS=()
 
@@ -39,19 +54,13 @@ chmod_config() {
     echo ==================== chown $s ===========
     echo "$s"
     # sudo chown -R "root:root" "$s"
-    sudo chown -R "$USR:$GRP" "$s"
+    chown -R "$USR:$GRP" "$s"
     echo ==================== chmod $s ===========
-    # sudo chmod -R 755 $s
-    sudo find "$s" -type d -exec chmod 755 {} \;
-    sudo find "$s" -type f -exec chmod 644 {} \;
-    sudo find "$s" -type f \( -name "*.sh" -o -name "*.py" -o -name "*.bsh" -o -name "*.dsh" \) -exec chmod 754 {} \;
-      # dirt_path=$( find $s -type  d )
-      # file_path=$( find $s -type f )
-      # exec_path=$( find $s -type f |grep -E "/sway$" )
-      # sudo chmod 755 $dirt_path
-      # sudo chmod 644 $file_path
-      # sudo chmod 755 $exec_path
-    sudo chmod 755 "$s"
+    # sudo chmod -R 755       $s
+    chmod 755 "$s"
+    find "$s" -type d -exec chmod 755 {} \;
+    find "$s" -type f -exec chmod 644 {} \;
+    find "$s" -type f \( -name "*.sh" -o -name "*.py" -o -name "*.bsh" -o -name "*.dsh" \) -exec chmod 754 {} \;
     ls -al "$s"
     echo -------------------- --------------------
     done
@@ -69,8 +78,9 @@ rsync_config() {
     done
   }
 
+
 get_path
-# chmod_config
+chmod_config
 rsync_config
 
 

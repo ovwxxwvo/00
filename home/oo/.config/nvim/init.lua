@@ -21,6 +21,7 @@ dofile(keymap.."keyext.lua")
 local config = os.getenv("HOME").."/.config/nvim/config/"
 dofile(config.."mason.luc"     )
 dofile(config.."cmp.luc"       )
+dofile(config.."conform.luc"   )
 dofile(config.."telescope.luc" )
 dofile(config.."noice.luc"     )
 dofile(config.."lualine.luc"   )

@@ -13,7 +13,7 @@ USR="$USER"
 GRP="$USR"
 SRC="./home/oo/"
 DST="/home/$USR/"
-OPT='-vua --progress --exclude=".git"'
+OPT='-vua --progress --exclude=".git" --exclude=".venv"'
 echo ==================== set var ===================
   echo "SRC  : $SRC"
   echo "DST  : $DST"
@@ -29,7 +29,7 @@ chmod_config() {
   echo ==================== chmod =====================
   find "$SRC" -type d -exec chmod 755 {} \;
   find "$SRC" -type f -exec chmod 644 {} \;
-  find "$SRC" -type f \( -name "*.sh" -o -name "*.bsh" -o -name "*.dsh" \) -exec chmod 754 {} \;
+  find "$SRC" -type f \( -name "*.sh" -o -name "*.py" -o -name "*.bsh" -o -name "*.dsh" \) -exec chmod 754 {} \;
     # dirt_path=$( find "$SRC" -type d )
     # file_path=$( find "$SRC" -type f )
     # exec_path=$( find "$SRC" -type f \
@@ -52,5 +52,6 @@ rsync_config() {
 
 chmod_config
 rsync_config
+# read -p ''
 
 

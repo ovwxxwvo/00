@@ -86,6 +86,7 @@
   set noswapfile	      " use a swap file for this buffer
   set autowrite         " auto wrte a file when leaving a modified buffer
   set autoread          " auto read a file when it was modified outside of Vim
+  set updatetime=1000	  " idle time to trigger CursorHold (ms)
   set history=200		    " keep 200 lines of command line history
   set clipboard+=unnamedplus "unnamed to use the * register like unnamed register
 
