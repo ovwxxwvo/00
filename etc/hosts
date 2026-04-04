@@ -12,15 +12,15 @@
 3.163.125.108    api.tmdb.org
 169.150.207.212  image.tmdb.org
 
-# 140.82.113.3          github.com
-# 140.82.113.5          api.github.com
-# 185.199.109.153       assets-cdn.github.com
-# 185.199.109.154       github.githubassets.com
-# 146.75.77.194         github.global.ssl.fastly.net
-# 185.199.109.133       raw.githubusercontent.com
-# 185.199.111.133       avatars.githubusercontent.com
-# 185.199.111.133       camo.githubusercontent.com
-# 140.82.113.4          gist.github.com
-# 140.82.112.22         central.github.com
+140.82.113.3          github.com
+140.82.113.5          api.github.com
+185.199.109.153       assets-cdn.github.com
+185.199.109.154       github.githubassets.com
+146.75.77.194         github.global.ssl.fastly.net
+185.199.109.133       raw.githubusercontent.com
+185.199.111.133       avatars.githubusercontent.com
+185.199.111.133       camo.githubusercontent.com
+140.82.113.4          gist.github.com
+140.82.112.22         central.github.com
 
 
